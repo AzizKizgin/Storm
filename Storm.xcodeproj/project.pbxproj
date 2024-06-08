@@ -89,6 +89,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E040F6D32C148E610023EEA1 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		E040F6D42C148E690023EEA1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E040F6D62C148E860023EEA1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E040F6D82C148EB10023EEA1 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		E040F6D92C148ED40023EEA1 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 		E0D2AA0F2C13B5610042535A = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +147,11 @@
 		E0D2AA1A2C13B5610042535A /* Storm */ = {
 			isa = PBXGroup;
 			children = (
+				E040F6D92C148ED40023EEA1 /* Commons */,
+				E040F6D82C148EB10023EEA1 /* Firebase */,
+				E040F6D62C148E860023EEA1 /* Helpers */,
+				E040F6D42C148E690023EEA1 /* Models */,
+				E040F6D32C148E610023EEA1 /* Screens */,
 				E0D2AA452C13B62F0042535A /* GoogleService-Info.plist */,
 				E0D2AA1B2C13B5610042535A /* StormApp.swift */,
 				E0D2AA1D2C13B5610042535A /* ContentView.swift */,
