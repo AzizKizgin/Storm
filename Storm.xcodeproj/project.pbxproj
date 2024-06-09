@@ -10,6 +10,10 @@
 		E01493AB2C15B588001A3C1C /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493AA2C15B588001A3C1C /* Checkbox.swift */; };
 		E01493AD2C15B82F001A3C1C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493AC2C15B82F001A3C1C /* LoginView.swift */; };
 		E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493AE2C15BDBB001A3C1C /* ForgotPasswordView.swift */; };
+		E01493B12C15C466001A3C1C /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493B02C15C466001A3C1C /* FirebaseManager.swift */; };
+		E01493B32C15C5F7001A3C1C /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493B22C15C5F7001A3C1C /* Keys.swift */; };
+		E01493B52C15D1EB001A3C1C /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493B42C15D1EB001A3C1C /* AuthenticationViewModel.swift */; };
+		E01493B72C15D94A001A3C1C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493B62C15D94A001A3C1C /* User.swift */; };
 		E023D7102C14D00100F2C0EA /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D70F2C14D00100F2C0EA /* StartView.swift */; };
 		E023D7152C14E7FC00F2C0EA /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D7142C14E7FC00F2C0EA /* FormButton.swift */; };
 		E023D7182C14EC9E00F2C0EA /* TopMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D7172C14EC9E00F2C0EA /* TopMessage.swift */; };
@@ -17,6 +21,9 @@
 		E023D71C2C14F5F500F2C0EA /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D71B2C14F5F500F2C0EA /* RegisterView.swift */; };
 		E023D71E2C14FD1800F2C0EA /* FormInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D71D2C14FD1800F2C0EA /* FormInput.swift */; };
 		E023D7202C14FF6400F2C0EA /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D71F2C14FF6400F2C0EA /* PasswordField.swift */; };
+		E077F2EB2C162B0D009DF485 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E077F2EA2C162B0D009DF485 /* Chat.swift */; };
+		E077F2ED2C162B1E009DF485 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E077F2EC2C162B1E009DF485 /* Message.swift */; };
+		E077F2EF2C162E1A009DF485 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = E077F2EE2C162E1A009DF485 /* Emoji.swift */; };
 		E0D2AA1C2C13B5610042535A /* StormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D2AA1B2C13B5610042535A /* StormApp.swift */; };
 		E0D2AA1E2C13B5610042535A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D2AA1D2C13B5610042535A /* ContentView.swift */; };
 		E0D2AA202C13B5620042535A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0D2AA1F2C13B5620042535A /* Assets.xcassets */; };
@@ -33,6 +40,7 @@
 		E0D2AA532C13B6C40042535A /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = E0D2AA522C13B6C40042535A /* FirebaseInAppMessagingSwift-Beta */; };
 		E0D2AA552C13B6C40042535A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = E0D2AA542C13B6C40042535A /* FirebaseMessaging */; };
 		E0D2AA572C13B6C40042535A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E0D2AA562C13B6C40042535A /* FirebaseStorage */; };
+		E0E4A9CB2C15FDCE0044D3C2 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E4A9CA2C15FDCE0044D3C2 /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +64,10 @@
 		E01493AA2C15B588001A3C1C /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		E01493AC2C15B82F001A3C1C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E01493AE2C15BDBB001A3C1C /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		E01493B02C15C466001A3C1C /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		E01493B22C15C5F7001A3C1C /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		E01493B42C15D1EB001A3C1C /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		E01493B62C15D94A001A3C1C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E023D70F2C14D00100F2C0EA /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		E023D7142C14E7FC00F2C0EA /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
 		E023D7172C14EC9E00F2C0EA /* TopMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMessage.swift; sourceTree = "<group>"; };
@@ -63,6 +75,9 @@
 		E023D71B2C14F5F500F2C0EA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		E023D71D2C14FD1800F2C0EA /* FormInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInput.swift; sourceTree = "<group>"; };
 		E023D71F2C14FF6400F2C0EA /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
+		E077F2EA2C162B0D009DF485 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		E077F2EC2C162B1E009DF485 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E077F2EE2C162E1A009DF485 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		E0D2AA182C13B5610042535A /* Storm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D2AA1B2C13B5610042535A /* StormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormApp.swift; sourceTree = "<group>"; };
 		E0D2AA1D2C13B5610042535A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +89,7 @@
 		E0D2AA362C13B5620042535A /* StormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormUITests.swift; sourceTree = "<group>"; };
 		E0D2AA382C13B5620042535A /* StormUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E0D2AA452C13B62F0042535A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E0E4A9CA2C15FDCE0044D3C2 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +133,7 @@
 				E023D71B2C14F5F500F2C0EA /* RegisterView.swift */,
 				E01493AC2C15B82F001A3C1C /* LoginView.swift */,
 				E01493AE2C15BDBB001A3C1C /* ForgotPasswordView.swift */,
+				E01493B42C15D1EB001A3C1C /* AuthenticationViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -152,6 +169,11 @@
 		E040F6D42C148E690023EEA1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E01493B62C15D94A001A3C1C /* User.swift */,
+				E0E4A9CA2C15FDCE0044D3C2 /* Contact.swift */,
+				E077F2EA2C162B0D009DF485 /* Chat.swift */,
+				E077F2EC2C162B1E009DF485 /* Message.swift */,
+				E077F2EE2C162E1A009DF485 /* Emoji.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +188,7 @@
 		E040F6D82C148EB10023EEA1 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				E01493B02C15C466001A3C1C /* FirebaseManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -211,6 +234,7 @@
 				E0D2AA1D2C13B5610042535A /* ContentView.swift */,
 				E0D2AA1F2C13B5620042535A /* Assets.xcassets */,
 				E0D2AA212C13B5620042535A /* Preview Content */,
+				E01493B22C15C5F7001A3C1C /* Keys.swift */,
 			);
 			path = Storm;
 			sourceTree = "<group>";
@@ -384,18 +408,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E01493B12C15C466001A3C1C /* FirebaseManager.swift in Sources */,
 				E023D7102C14D00100F2C0EA /* StartView.swift in Sources */,
 				E0D2AA1E2C13B5610042535A /* ContentView.swift in Sources */,
 				E023D71A2C14EF6D00F2C0EA /* StartImage.swift in Sources */,
+				E01493B72C15D94A001A3C1C /* User.swift in Sources */,
 				E023D71C2C14F5F500F2C0EA /* RegisterView.swift in Sources */,
 				E01493AB2C15B588001A3C1C /* Checkbox.swift in Sources */,
+				E077F2ED2C162B1E009DF485 /* Message.swift in Sources */,
+				E01493B52C15D1EB001A3C1C /* AuthenticationViewModel.swift in Sources */,
 				E023D7202C14FF6400F2C0EA /* PasswordField.swift in Sources */,
+				E077F2EF2C162E1A009DF485 /* Emoji.swift in Sources */,
 				E0D2AA1C2C13B5610042535A /* StormApp.swift in Sources */,
+				E0E4A9CB2C15FDCE0044D3C2 /* Contact.swift in Sources */,
 				E023D7182C14EC9E00F2C0EA /* TopMessage.swift in Sources */,
 				E01493AD2C15B82F001A3C1C /* LoginView.swift in Sources */,
 				E023D71E2C14FD1800F2C0EA /* FormInput.swift in Sources */,
+				E01493B32C15C5F7001A3C1C /* Keys.swift in Sources */,
 				E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */,
 				E023D7152C14E7FC00F2C0EA /* FormButton.swift in Sources */,
+				E077F2EB2C162B0D009DF485 /* Chat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
