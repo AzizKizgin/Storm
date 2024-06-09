@@ -98,4 +98,5 @@ iOSInjectionProject/
 
 GoogleService-Info.plist
 Package.resolved
+Keys.swift
 # End of https://www.toptal.com/developers/gitignore/api/xcode,swift
