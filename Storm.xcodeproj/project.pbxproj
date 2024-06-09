@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E01493AB2C15B588001A3C1C /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493AA2C15B588001A3C1C /* Checkbox.swift */; };
+		E01493AD2C15B82F001A3C1C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493AC2C15B82F001A3C1C /* LoginView.swift */; };
+		E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493AE2C15BDBB001A3C1C /* ForgotPasswordView.swift */; };
+		E023D7102C14D00100F2C0EA /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D70F2C14D00100F2C0EA /* StartView.swift */; };
+		E023D7152C14E7FC00F2C0EA /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D7142C14E7FC00F2C0EA /* FormButton.swift */; };
+		E023D7182C14EC9E00F2C0EA /* TopMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D7172C14EC9E00F2C0EA /* TopMessage.swift */; };
+		E023D71A2C14EF6D00F2C0EA /* StartImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D7192C14EF6D00F2C0EA /* StartImage.swift */; };
+		E023D71C2C14F5F500F2C0EA /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D71B2C14F5F500F2C0EA /* RegisterView.swift */; };
+		E023D71E2C14FD1800F2C0EA /* FormInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D71D2C14FD1800F2C0EA /* FormInput.swift */; };
+		E023D7202C14FF6400F2C0EA /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D71F2C14FF6400F2C0EA /* PasswordField.swift */; };
 		E0D2AA1C2C13B5610042535A /* StormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D2AA1B2C13B5610042535A /* StormApp.swift */; };
 		E0D2AA1E2C13B5610042535A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D2AA1D2C13B5610042535A /* ContentView.swift */; };
 		E0D2AA202C13B5620042535A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0D2AA1F2C13B5620042535A /* Assets.xcassets */; };
@@ -43,6 +53,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E01493AA2C15B588001A3C1C /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		E01493AC2C15B82F001A3C1C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E01493AE2C15BDBB001A3C1C /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		E023D70F2C14D00100F2C0EA /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		E023D7142C14E7FC00F2C0EA /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
+		E023D7172C14EC9E00F2C0EA /* TopMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMessage.swift; sourceTree = "<group>"; };
+		E023D7192C14EF6D00F2C0EA /* StartImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartImage.swift; sourceTree = "<group>"; };
+		E023D71B2C14F5F500F2C0EA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		E023D71D2C14FD1800F2C0EA /* FormInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInput.swift; sourceTree = "<group>"; };
+		E023D71F2C14FF6400F2C0EA /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
 		E0D2AA182C13B5610042535A /* Storm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D2AA1B2C13B5610042535A /* StormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormApp.swift; sourceTree = "<group>"; };
 		E0D2AA1D2C13B5610042535A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,9 +109,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E023D70C2C14CFD200F2C0EA /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E023D7162C14EC7800F2C0EA /* Views */,
+				E023D70F2C14D00100F2C0EA /* StartView.swift */,
+				E023D71B2C14F5F500F2C0EA /* RegisterView.swift */,
+				E01493AC2C15B82F001A3C1C /* LoginView.swift */,
+				E01493AE2C15BDBB001A3C1C /* ForgotPasswordView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		E023D7112C14D1DC00F2C0EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E023D7142C14E7FC00F2C0EA /* FormButton.swift */,
+				E01493AA2C15B588001A3C1C /* Checkbox.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E023D7162C14EC7800F2C0EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E023D7172C14EC9E00F2C0EA /* TopMessage.swift */,
+				E023D7192C14EF6D00F2C0EA /* StartImage.swift */,
+				E023D71D2C14FD1800F2C0EA /* FormInput.swift */,
+				E023D71F2C14FF6400F2C0EA /* PasswordField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E040F6D32C148E610023EEA1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E023D70C2C14CFD200F2C0EA /* Authentication */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -120,6 +173,7 @@
 		E040F6D92C148ED40023EEA1 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				E023D7112C14D1DC00F2C0EA /* Views */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -330,8 +384,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E023D7102C14D00100F2C0EA /* StartView.swift in Sources */,
 				E0D2AA1E2C13B5610042535A /* ContentView.swift in Sources */,
+				E023D71A2C14EF6D00F2C0EA /* StartImage.swift in Sources */,
+				E023D71C2C14F5F500F2C0EA /* RegisterView.swift in Sources */,
+				E01493AB2C15B588001A3C1C /* Checkbox.swift in Sources */,
+				E023D7202C14FF6400F2C0EA /* PasswordField.swift in Sources */,
 				E0D2AA1C2C13B5610042535A /* StormApp.swift in Sources */,
+				E023D7182C14EC9E00F2C0EA /* TopMessage.swift in Sources */,
+				E01493AD2C15B82F001A3C1C /* LoginView.swift in Sources */,
+				E023D71E2C14FD1800F2C0EA /* FormInput.swift in Sources */,
+				E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */,
+				E023D7152C14E7FC00F2C0EA /* FormButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
