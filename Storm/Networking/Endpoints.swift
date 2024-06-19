@@ -54,5 +54,9 @@ enum Endpoints {
         return url
     }
     
-    
+    public static func getUpdateLastSeenURL() -> URL {
+        let urlString = "\(userURL)/update-user-last-seen"
+        let url = URL(string: urlString)!
+        return url
+    }
 }
