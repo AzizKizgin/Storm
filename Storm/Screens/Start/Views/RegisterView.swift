@@ -8,21 +8,18 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State var email: String = ""
-    @State var username: String = ""
-    @State var password: String = ""
-    @State var isChecked: Bool = false
+    @Bindable private var authenticationVM = AuthenticationViewModel()
     var body: some View {
         VStack {
             TopMessage(title: "Register", message: "Sign up and start connecting!")
             Spacer()
             VStack(spacing: 75) {
                 VStack(spacing: 32){
-                    FormInput("username", text: $username)
-                    FormInput("email", text: $email, type: .email)
-                    FormInput("password", text: $password, type: .password)
-                    FormInput("confirm password", text: $password, type: .password)
-                    CheckBox(isChecked: $isChecked, title: "I agree with terms and conditions")
+                    FormInput("username", text: $authenticationVM.username)
+                    FormInput("email", text: $authenticationVM.email, type: .email)
+                    FormInput("password", text: $authenticationVM.password, type: .password)
+                    FormInput("confirm password", text: $authenticationVM.password, type: .password)
+                    CheckBox(isChecked: $authenticationVM.isChecked, title: "I agree with terms and conditions")
                         .underline()
                 }
                 .padding(.horizontal)
