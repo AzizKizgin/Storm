@@ -10,9 +10,8 @@ import Combine
 import SwiftUI
 import SwiftData
 
+@MainActor
 @Observable class AuthenticationViewModel {
-//    @ObservationIgnored
-//    @Environment(\.modelContext) private var modelContext
     private let auth = FirebaseManager.shared.auth
     var registerInfo = RegisterInfo()
     var isChecked: Bool = false
@@ -23,10 +22,9 @@ import SwiftData
     
     private var cancellable: AnyCancellable?
     
-    func register(completion: @escaping (UserResponse?) -> Void) {
+    func register() {
         if !isChecked {
             setError("Please agree with terms")
-            completion(nil)
             return
         }
         cancellable = UserDataManager.shared.register(info: registerInfo)
@@ -36,10 +34,9 @@ import SwiftData
                     print("finished")
                 case .failure(let error):
                     self.setError("Error: \(error.localizedDescription)")
-                    completion(nil)
                 }
             }, receiveValue: { (user: UserResponse) in
-                completion(user)
+                UserDataSource.shared.appendItem(user.toUser())
             })
     }
     
