@@ -38,6 +38,8 @@
 		E0DFE6AC2C22E60700F78184 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFE6AB2C22E60700F78184 /* DataManager.swift */; };
 		E0DFE6AE2C22E65300F78184 /* RequestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFE6AD2C22E65300F78184 /* RequestTypes.swift */; };
 		E0DFE6B02C22E8A800F78184 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFE6AF2C22E8A800F78184 /* Endpoints.swift */; };
+		E0FD9DE42C2411D2008B3AC8 /* RegisterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FD9DE32C2411D2008B3AC8 /* RegisterInfo.swift */; };
+		E0FD9DE82C241823008B3AC8 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FD9DE72C241823008B3AC8 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		E0DFE6AB2C22E60700F78184 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E0DFE6AD2C22E65300F78184 /* RequestTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTypes.swift; sourceTree = "<group>"; };
 		E0DFE6AF2C22E8A800F78184 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		E0FD9DE32C2411D2008B3AC8 /* RegisterInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInfo.swift; sourceTree = "<group>"; };
+		E0FD9DE72C241823008B3AC8 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,7 @@
 		E040F6D62C148E860023EEA1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E0FD9DE72C241823008B3AC8 /* Utils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -180,6 +185,14 @@
 				E023D7112C14D1DC00F2C0EA /* Components */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		E0420F082C240AC8008738BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E0FD9DE32C2411D2008B3AC8 /* RegisterInfo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E0D2AA0F2C13B5610042535A = {
@@ -205,6 +218,7 @@
 		E0D2AA1A2C13B5610042535A /* Storm */ = {
 			isa = PBXGroup;
 			children = (
+				E0420F082C240AC8008738BB /* Models */,
 				E0DFE6AA2C22E5E300F78184 /* Networking */,
 				E0DFE6A72C22E36100F78184 /* ViewModels */,
 				E040F6D92C148ED40023EEA1 /* Commons */,
@@ -421,8 +435,10 @@
 				E0D2AA1C2C13B5610042535A /* StormApp.swift in Sources */,
 				E023D7182C14EC9E00F2C0EA /* TopMessage.swift in Sources */,
 				E01493AD2C15B82F001A3C1C /* LoginView.swift in Sources */,
+				E0FD9DE42C2411D2008B3AC8 /* RegisterInfo.swift in Sources */,
 				E023D71E2C14FD1800F2C0EA /* FormInput.swift in Sources */,
 				E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */,
+				E0FD9DE82C241823008B3AC8 /* Utils.swift in Sources */,
 				E023D7152C14E7FC00F2C0EA /* FormButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
