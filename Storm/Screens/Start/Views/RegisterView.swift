@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 struct RegisterView: View {
     @Bindable private var authenticationVM = AuthenticationViewModel()
     var body: some View {
