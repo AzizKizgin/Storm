@@ -28,6 +28,7 @@ struct PasswordField: View {
                 Button(action: {showContent.toggle()}, label: {
                     Image(systemName:showContent ? "eye": "eye.slash")
                         .foregroundColor(isFocused ? .focus : .accent)
+                        .frame(height: 25)
                 })
             }
             Rectangle()
