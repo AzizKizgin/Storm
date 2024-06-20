@@ -1,11 +1,5 @@
-//
-//  DataManager.swift
-//  Storm
-//
-//  Created by Aziz Kızgın on 19.06.2024.
-//
-
 import Foundation
+import Combine
 
 class DataManager {
     
@@ -15,9 +9,21 @@ class DataManager {
     
     func sendRequest<T: Decodable>(
         for url: URL,
-        data: Data? = nil,
-        requestType: RequestType,
-        completion: @escaping (Result<T, Error>) -> Void) {
+        data: Encodable? = nil,
+        requestType: RequestType) -> AnyPublisher<T, Error> {
+
+        guard let request = createRequest(for: url, data: data, requestType: requestType) else {
+            return Fail(error: NSError(domain: "Storm", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to create request"]))
+                .eraseToAnyPublisher()
+        }
+        
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .tryMap { try self.handleResponse(output: $0) }
+            .decode(type: T.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
+    }
+    
+    private func createRequest(for url: URL, data: Encodable?, requestType: RequestType) -> URLRequest? {
         var request = URLRequest(url: url)
         request.httpMethod = requestType.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -25,47 +31,32 @@ class DataManager {
         if let token = UserDefaults.standard.string(forKey: "token") {
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
-            
-        if let data{
-            request.httpBody = data
+        
+        if let data = data {
+            do {
+                request.httpBody = try JSONEncoder().encode(data)
+            } catch {
+                print("error")
+                return nil
+            }
         }
-
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print(error)
-                completion(.failure(error))
-                return
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse else {
-                let unknownError = NSError(domain: "Storm", code: 0, userInfo: [NSLocalizedDescriptionKey: "Unknown error"])
-                completion(.failure(unknownError))
-                return
-            }
-            
-            guard let data = data else {
-                let dataError = NSError(domain: "Storm", code: 0, userInfo: [NSLocalizedDescriptionKey: "No data received"])
-                completion(.failure(dataError))
-                return
-            }
-            
-            switch httpResponse.statusCode {
-            case 200..<300: // Successful response
-                do {
-                    let object = try JSONDecoder().decode(T.self, from: data)
-                    completion(.success(object))
-                } catch let decoderError {
-                    completion(.failure(decoderError))
-                }
-            case 400..<500: // Client error
-                let errorMessage = String(data: data, encoding: .utf8) ?? "Bad request"
-                let badRequestError = NSError(domain: "Storm", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: errorMessage])
-                completion(.failure(badRequestError))
-            default: // Server error or other status codes
-                let serverError = NSError(domain: "Storm", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: "Server error"])
-                completion(.failure(serverError))
-            }
-         
-        }.resume()
+        
+        return request
+    }
+    
+    private func handleResponse(output: URLSession.DataTaskPublisher.Output) throws -> Data {
+        guard let httpResponse = output.response as? HTTPURLResponse else {
+            throw NSError(domain: "Storm", code: 0, userInfo: [NSLocalizedDescriptionKey: "Unknown error"])
+        }
+        
+        switch httpResponse.statusCode {
+        case 200..<300:
+            return output.data
+        case 400..<500:
+            let errorMessage = String(data: output.data, encoding: .utf8) ?? "Bad request"
+            throw NSError(domain: "Storm", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: errorMessage])
+        default:
+            throw NSError(domain: "Storm", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: "Server error"])
+        }
     }
 }
