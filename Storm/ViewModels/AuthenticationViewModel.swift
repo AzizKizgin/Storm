@@ -20,21 +20,23 @@ import SwiftUI
     
     private var cancellable: AnyCancellable?
     
-    func register() {
+    func register(completion: @escaping (UserResponse?) -> Void) {
         if !isChecked {
             setError("Please agree with terms")
+            completion(nil)
             return
         }
         cancellable = UserManager.shared.register(info: registerInfo)
-            .sink(receiveCompletion: { completion in
-                switch completion {
+            .sink(receiveCompletion: { completionResult in
+                switch completionResult {
                 case .finished:
-                    self.showSuccess.toggle()
+                    print("finished")
                 case .failure(let error):
                     self.setError("Error: \(error.localizedDescription)")
+                    completion(nil)
                 }
-            }, receiveValue: { (message: SuccessMessage) in
-                self.successMessage = LocalizedStringKey(message.message)
+            }, receiveValue: { (user: UserResponse) in
+                completion(user)
             })
     }
     

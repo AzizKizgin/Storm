@@ -12,7 +12,7 @@ class UserManager {
     static let shared = UserManager()
     private init() {}
     
-    func register(info: RegisterInfo) -> AnyPublisher<SuccessMessage, Error> {
+    func register(info: RegisterInfo) -> AnyPublisher<UserResponse, Error> {
         return DataManager.shared.sendRequest(
             for: Endpoints.getRegisterURL(),
             data: info,
