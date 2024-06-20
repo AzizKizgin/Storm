@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
+import SwiftData
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
@@ -20,9 +21,22 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct StormApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    var modelContainer: ModelContainer = {
+        let schema = Schema([
+            User.self
+        ])
+        let modelConfiguration = ModelConfiguration(schema: schema)
+
+        do {
+            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+        } catch {
+            fatalError("Could not create ModelContainer: \(error)")
+        }
+    }()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(modelContainer)
         }
     }
 }
