@@ -15,4 +15,9 @@ struct UserResponse: Decodable {
     var createdAt: String
     var profilePicture: String?
     var token: String?
+    
+    // user response to local User
+    func toUser() -> User {
+        return User(id: self.id, email: self.email, username: self.username, about: self.about, createdAt: self.createdAt, profilePicture: self.profilePicture ?? "")
+    }
 }
