@@ -16,9 +16,8 @@ import SwiftData
     var registerInfo = RegisterInfo()
     var isChecked: Bool = false
     var errorMessage: LocalizedStringKey = ""
-    var successMessage: LocalizedStringKey = ""
     var showError: Bool = false
-    var showSuccess: Bool = false
+    var isLoading: Bool = false
     
     private var cancellable: AnyCancellable?
     
@@ -27,8 +26,10 @@ import SwiftData
             setError("Please agree with terms")
             return
         }
+        self.isLoading = true
         cancellable = UserDataManager.shared.register(info: registerInfo)
             .sink(receiveCompletion: { completionResult in
+                self.isLoading = false 
                 switch completionResult {
                 case .finished:
                     print("finished")
@@ -37,6 +38,7 @@ import SwiftData
                 }
             }, receiveValue: { (user: UserResponse) in
                 UserDataSource.shared.appendItem(user.toUser())
+                self.isLoading = false
             })
     }
     
