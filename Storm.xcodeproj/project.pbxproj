@@ -22,7 +22,6 @@
 		E05CC67E2C24BBA1009241C8 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC67D2C24BBA1009241C8 /* UserResponse.swift */; };
 		E05CC6802C24C2A5009241C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC67F2C24C2A5009241C8 /* User.swift */; };
 		E05CC6842C24CE30009241C8 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC6832C24CE30009241C8 /* UserDataSource.swift */; };
-		E05CC6862C24D3B6009241C8 /* LoadingModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC6852C24D3B6009241C8 /* LoadingModal.swift */; };
 		E0D2AA1C2C13B5610042535A /* StormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D2AA1B2C13B5610042535A /* StormApp.swift */; };
 		E0D2AA1E2C13B5610042535A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D2AA1D2C13B5610042535A /* ContentView.swift */; };
 		E0D2AA202C13B5620042535A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0D2AA1F2C13B5620042535A /* Assets.xcassets */; };
@@ -81,7 +80,6 @@
 		E05CC67D2C24BBA1009241C8 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		E05CC67F2C24C2A5009241C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E05CC6832C24CE30009241C8 /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
-		E05CC6852C24D3B6009241C8 /* LoadingModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModal.swift; sourceTree = "<group>"; };
 		E0D2AA182C13B5610042535A /* Storm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D2AA1B2C13B5610042535A /* StormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormApp.swift; sourceTree = "<group>"; };
 		E0D2AA1D2C13B5610042535A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 				E023D7192C14EF6D00F2C0EA /* StartImage.swift */,
 				E023D7142C14E7FC00F2C0EA /* FormButton.swift */,
 				E01493AA2C15B588001A3C1C /* Checkbox.swift */,
-				E05CC6852C24D3B6009241C8 /* LoadingModal.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -453,7 +450,6 @@
 				E0D2AA1E2C13B5610042535A /* ContentView.swift in Sources */,
 				E023D71A2C14EF6D00F2C0EA /* StartImage.swift in Sources */,
 				E023D71C2C14F5F500F2C0EA /* RegisterView.swift in Sources */,
-				E05CC6862C24D3B6009241C8 /* LoadingModal.swift in Sources */,
 				E01493AB2C15B588001A3C1C /* Checkbox.swift in Sources */,
 				E01493B52C15D1EB001A3C1C /* AuthenticationViewModel.swift in Sources */,
 				E0DFE6B02C22E8A800F78184 /* Endpoints.swift in Sources */,
