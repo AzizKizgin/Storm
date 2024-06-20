@@ -8,8 +8,11 @@
 import Foundation
 import Combine
 import SwiftUI
+import SwiftData
 
 @Observable class AuthenticationViewModel {
+//    @ObservationIgnored
+//    @Environment(\.modelContext) private var modelContext
     private let auth = FirebaseManager.shared.auth
     var registerInfo = RegisterInfo()
     var isChecked: Bool = false
@@ -26,7 +29,7 @@ import SwiftUI
             completion(nil)
             return
         }
-        cancellable = UserManager.shared.register(info: registerInfo)
+        cancellable = UserDataManager.shared.register(info: registerInfo)
             .sink(receiveCompletion: { completionResult in
                 switch completionResult {
                 case .finished:

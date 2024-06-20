@@ -42,7 +42,7 @@
 		E0DFE6B02C22E8A800F78184 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFE6AF2C22E8A800F78184 /* Endpoints.swift */; };
 		E0FD9DE42C2411D2008B3AC8 /* RegisterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FD9DE32C2411D2008B3AC8 /* RegisterInfo.swift */; };
 		E0FD9DE82C241823008B3AC8 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FD9DE72C241823008B3AC8 /* Utils.swift */; };
-		E0FD9DED2C2423C4008B3AC8 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FD9DEC2C2423C3008B3AC8 /* UserManager.swift */; };
+		E0FD9DED2C2423C4008B3AC8 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FD9DEC2C2423C3008B3AC8 /* UserDataManager.swift */; };
 		E0FD9DEF2C24252C008B3AC8 /* SuccessMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FD9DEE2C24252C008B3AC8 /* SuccessMessage.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,7 +94,7 @@
 		E0DFE6AF2C22E8A800F78184 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		E0FD9DE32C2411D2008B3AC8 /* RegisterInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInfo.swift; sourceTree = "<group>"; };
 		E0FD9DE72C241823008B3AC8 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		E0FD9DEC2C2423C3008B3AC8 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		E0FD9DEC2C2423C3008B3AC8 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		E0FD9DEE2C24252C008B3AC8 /* SuccessMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -292,7 +292,7 @@
 		E0FD9DEB2C2423B6008B3AC8 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				E0FD9DEC2C2423C3008B3AC8 /* UserManager.swift */,
+				E0FD9DEC2C2423C3008B3AC8 /* UserDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -460,7 +460,7 @@
 				E023D71E2C14FD1800F2C0EA /* FormInput.swift in Sources */,
 				E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */,
 				E0FD9DE82C241823008B3AC8 /* Utils.swift in Sources */,
-				E0FD9DED2C2423C4008B3AC8 /* UserManager.swift in Sources */,
+				E0FD9DED2C2423C4008B3AC8 /* UserDataManager.swift in Sources */,
 				E023D7152C14E7FC00F2C0EA /* FormButton.swift in Sources */,
 				E05CC67E2C24BBA1009241C8 /* UserResponse.swift in Sources */,
 				E05CC6802C24C2A5009241C8 /* User.swift in Sources */,

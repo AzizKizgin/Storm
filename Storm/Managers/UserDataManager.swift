@@ -1,5 +1,5 @@
 //
-//  UserManager.swift
+//  UserDataManager.swift
 //  Storm
 //
 //  Created by Aziz Kızgın on 20.06.2024.
@@ -8,8 +8,8 @@
 import Foundation
 import Combine
 
-class UserManager {
-    static let shared = UserManager()
+class UserDataManager {
+    static let shared = UserDataManager()
     private init() {}
     
     func register(info: RegisterInfo) -> AnyPublisher<UserResponse, Error> {
