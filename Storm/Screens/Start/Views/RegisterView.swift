@@ -29,10 +29,6 @@ struct RegisterView: View {
             .alert(authenticationVM.errorMessage, isPresented: $authenticationVM.showError){
                 Button("Okay", role: .cancel) {}
             }
-            .alert(authenticationVM.successMessage, isPresented: $authenticationVM.showSuccess){
-                // TODO: - redirection must be added
-                Button("Okay", role: .cancel) {}
-            }
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
