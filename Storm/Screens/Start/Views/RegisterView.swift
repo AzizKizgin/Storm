@@ -15,15 +15,22 @@ struct RegisterView: View {
             Spacer()
             VStack(spacing: 75) {
                 VStack(spacing: 32){
-                    FormInput("username", text: $authenticationVM.username)
-                    FormInput("email", text: $authenticationVM.email, type: .email)
-                    FormInput("password", text: $authenticationVM.password, type: .password)
-                    FormInput("confirm password", text: $authenticationVM.password, type: .password)
+                    FormInput("username", text: $authenticationVM.registerInfo.username)
+                    FormInput("email", text: $authenticationVM.registerInfo.email, type: .email)
+                    FormInput("password", text: $authenticationVM.registerInfo.password, type: .password)
+                    FormInput("confirm password", text: $authenticationVM.registerInfo.confirmPassword, type: .password)
                     CheckBox(isChecked: $authenticationVM.isChecked, title: "I agree with terms and conditions")
                         .underline()
                 }
                 .padding(.horizontal)
-                FormButton("Sign up", onPress: {})
+                FormButton("Sign up", onPress: authenticationVM.register)
+            }
+            .alert(authenticationVM.errorMessage, isPresented: $authenticationVM.showError){
+                Button("Okay", role: .cancel) {}
+            }
+            .alert(authenticationVM.successMessage, isPresented: $authenticationVM.showSuccess){
+                // TODO: - redirection must be added
+                Button("Okay", role: .cancel) {}
             }
             Spacer()
         }
