@@ -8,7 +8,7 @@
 import Foundation
 
 enum Endpoints {
-    private static let baseURL = "http://localhost:5270/api"
+    private static let baseURL = "http://localhost:5117/api"
     private static let userURL = "\(baseURL)/user"
     
     // MARK: - User URLs
