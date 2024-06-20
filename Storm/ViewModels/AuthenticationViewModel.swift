@@ -9,9 +9,7 @@ import Foundation
 
 @Observable class AuthenticationViewModel {
     private let auth = FirebaseManager.shared.auth
-    var email: String = ""
-    var username: String = ""
-    var password: String = ""
+    var userInfo = RegisterInfo()
     var isChecked: Bool = false
     
     func register() {
