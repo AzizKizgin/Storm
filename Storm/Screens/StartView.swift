@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StartView: View {
+    @State private var showSignIn: Bool = false
+    @State private var showSignUp: Bool = false
     var body: some View {
         VStack{
             Spacer()
@@ -16,16 +18,20 @@ struct StartView: View {
             StartImage()
             Spacer()
             VStack(spacing: 16) {
-                FormButton("Sign up", onPress: {})
-                FormButton("Sign in", onPress: {}, light: true)
+                FormButton("Sign up", onPress: {showSignUp.toggle()})
+                FormButton("Sign in", onPress: {showSignIn.toggle()}, light: true)
             }
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.main)
+        .navigationDestination(isPresented: $showSignUp){RegisterView()}
+        .navigationDestination(isPresented: $showSignIn){LoginView()}
     }
 }
 
 #Preview {
-    StartView()
+    NavigationStack {
+        StartView()
+    }
 }
