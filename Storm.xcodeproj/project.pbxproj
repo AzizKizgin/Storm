@@ -38,6 +38,7 @@
 		E0D2AA532C13B6C40042535A /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = E0D2AA522C13B6C40042535A /* FirebaseInAppMessagingSwift-Beta */; };
 		E0D2AA552C13B6C40042535A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = E0D2AA542C13B6C40042535A /* FirebaseMessaging */; };
 		E0D2AA572C13B6C40042535A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E0D2AA562C13B6C40042535A /* FirebaseStorage */; };
+		E0DBF0732C25AC450014BDD8 /* LoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DBF0722C25AC450014BDD8 /* LoginInfo.swift */; };
 		E0DFE6AC2C22E60700F78184 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFE6AB2C22E60700F78184 /* DataManager.swift */; };
 		E0DFE6AE2C22E65300F78184 /* RequestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFE6AD2C22E65300F78184 /* RequestTypes.swift */; };
 		E0DFE6B02C22E8A800F78184 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFE6AF2C22E8A800F78184 /* Endpoints.swift */; };
@@ -91,6 +92,7 @@
 		E0D2AA362C13B5620042535A /* StormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormUITests.swift; sourceTree = "<group>"; };
 		E0D2AA382C13B5620042535A /* StormUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E0D2AA452C13B62F0042535A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E0DBF0722C25AC450014BDD8 /* LoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfo.swift; sourceTree = "<group>"; };
 		E0DFE6AB2C22E60700F78184 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E0DFE6AD2C22E65300F78184 /* RequestTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTypes.swift; sourceTree = "<group>"; };
 		E0DFE6AF2C22E8A800F78184 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				E0FD9DEE2C24252C008B3AC8 /* SuccessMessage.swift */,
 				E05CC67D2C24BBA1009241C8 /* UserResponse.swift */,
 				E05CC67F2C24C2A5009241C8 /* User.swift */,
+				E0DBF0722C25AC450014BDD8 /* LoginInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				E0FD9DEF2C24252C008B3AC8 /* SuccessMessage.swift in Sources */,
 				E0D2AA1C2C13B5610042535A /* StormApp.swift in Sources */,
 				E023D7182C14EC9E00F2C0EA /* TopMessage.swift in Sources */,
+				E0DBF0732C25AC450014BDD8 /* LoginInfo.swift in Sources */,
 				E01493AD2C15B82F001A3C1C /* LoginView.swift in Sources */,
 				E0FD9DE42C2411D2008B3AC8 /* RegisterInfo.swift in Sources */,
 				E023D71E2C14FD1800F2C0EA /* FormInput.swift in Sources */,
