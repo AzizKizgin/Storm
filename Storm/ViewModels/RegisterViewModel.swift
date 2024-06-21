@@ -18,6 +18,7 @@ import SwiftData
     var errorMessage: LocalizedStringKey = ""
     var showError: Bool = false
     var isLoading: Bool = false
+    var isSuccess: Bool = false
     
     private var cancellable: AnyCancellable?
     
@@ -37,6 +38,8 @@ import SwiftData
                 }
             }, receiveValue: { (user: UserResponse) in
                 UserDataSource.shared.appendItem(user.toUser())
+                UserDefaults.standard.set(user.token, forKey: "token")
+                self.isSuccess = true
                 self.isLoading = false
             })
     }
