@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-enum FormInputType {
-    case password, email, username
-}
-
 struct FormInput: View {
     @Binding var text: String
     var title: LocalizedStringKey
