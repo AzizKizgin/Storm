@@ -12,7 +12,7 @@ struct ContentView: View {
     @Query private var user: [User]
     var body: some View {
         NavigationStack {
-            if user.first != nil {
+            if !user.isEmpty {
                 EmptyView()
             }
             else {
