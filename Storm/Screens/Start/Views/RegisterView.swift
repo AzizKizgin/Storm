@@ -24,7 +24,7 @@ struct RegisterView: View {
                         .underline()
                 }
                 .padding(.horizontal)
-                FormButton("Sign up", onPress: authenticationVM.register)
+                FormButton("Sign up", onPress: authenticationVM.register, isLoading: authenticationVM.isLoading)
             }
             .alert(authenticationVM.errorMessage, isPresented: $authenticationVM.showError){
                 Button("Okay", role: .cancel) {}
