@@ -39,6 +39,7 @@
 		E0D2AA552C13B6C40042535A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = E0D2AA542C13B6C40042535A /* FirebaseMessaging */; };
 		E0D2AA572C13B6C40042535A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E0D2AA562C13B6C40042535A /* FirebaseStorage */; };
 		E0DBF0732C25AC450014BDD8 /* LoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DBF0722C25AC450014BDD8 /* LoginInfo.swift */; };
+		E0DBF0752C25B49E0014BDD8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DBF0742C25B49E0014BDD8 /* LoginViewModel.swift */; };
 		E0DFE6AC2C22E60700F78184 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFE6AB2C22E60700F78184 /* DataManager.swift */; };
 		E0DFE6AE2C22E65300F78184 /* RequestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFE6AD2C22E65300F78184 /* RequestTypes.swift */; };
 		E0DFE6B02C22E8A800F78184 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFE6AF2C22E8A800F78184 /* Endpoints.swift */; };
@@ -93,6 +94,7 @@
 		E0D2AA382C13B5620042535A /* StormUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E0D2AA452C13B62F0042535A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E0DBF0722C25AC450014BDD8 /* LoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfo.swift; sourceTree = "<group>"; };
+		E0DBF0742C25B49E0014BDD8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E0DFE6AB2C22E60700F78184 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E0DFE6AD2C22E65300F78184 /* RequestTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTypes.swift; sourceTree = "<group>"; };
 		E0DFE6AF2C22E8A800F78184 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				E01493B42C15D1EB001A3C1C /* RegisterViewModel.swift */,
+				E0DBF0742C25B49E0014BDD8 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				E023D71C2C14F5F500F2C0EA /* RegisterView.swift in Sources */,
 				E01493AB2C15B588001A3C1C /* Checkbox.swift in Sources */,
 				E01493B52C15D1EB001A3C1C /* RegisterViewModel.swift in Sources */,
+				E0DBF0752C25B49E0014BDD8 /* LoginViewModel.swift in Sources */,
 				E0DFE6B02C22E8A800F78184 /* Endpoints.swift in Sources */,
 				E023D7202C14FF6400F2C0EA /* PasswordField.swift in Sources */,
 				E0DFE6AE2C22E65300F78184 /* RequestTypes.swift in Sources */,
