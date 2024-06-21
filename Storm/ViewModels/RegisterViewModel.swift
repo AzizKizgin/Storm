@@ -12,7 +12,6 @@ import SwiftData
 
 @MainActor
 @Observable class RegisterViewModel {
-    private let auth = FirebaseManager.shared.auth
     var registerInfo = RegisterInfo()
     var isChecked: Bool = false
     var errorMessage: LocalizedStringKey = ""
