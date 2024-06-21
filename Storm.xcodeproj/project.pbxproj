@@ -133,15 +133,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E023D70C2C14CFD200F2C0EA /* Start */ = {
-			isa = PBXGroup;
-			children = (
-				E023D7162C14EC7800F2C0EA /* Views */,
-				E023D70F2C14D00100F2C0EA /* StartView.swift */,
-			);
-			path = Start;
-			sourceTree = "<group>";
-		};
 		E023D7112C14D1DC00F2C0EA /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,20 +146,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		E023D7162C14EC7800F2C0EA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E01493AC2C15B82F001A3C1C /* LoginView.swift */,
-				E01493AE2C15BDBB001A3C1C /* ForgotPasswordView.swift */,
-				E023D71B2C14F5F500F2C0EA /* RegisterView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		E040F6D32C148E610023EEA1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E023D70C2C14CFD200F2C0EA /* Start */,
+				E023D70F2C14D00100F2C0EA /* StartView.swift */,
+				E01493AC2C15B82F001A3C1C /* LoginView.swift */,
+				E01493AE2C15BDBB001A3C1C /* ForgotPasswordView.swift */,
+				E023D71B2C14F5F500F2C0EA /* RegisterView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";

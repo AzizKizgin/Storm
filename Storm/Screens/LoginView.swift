@@ -13,7 +13,7 @@ struct LoginView: View {
     var body: some View {
         VStack {
             Spacer()
-            TopMessage(title: "Register", message: "Good to see you! Please log in.")
+            TopMessage(title: "Login", message: "Good to see you! Please log in.")
             Spacer()
             VStack(spacing: 75) {
                 VStack(spacing: 32){
