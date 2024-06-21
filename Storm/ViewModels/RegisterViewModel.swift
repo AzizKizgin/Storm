@@ -1,5 +1,5 @@
 //
-//  AuthenticationViewModel.swift
+//  RegisterViewModel.swift
 //  Storm
 //
 //  Created by Aziz Kızgın on 9.06.2024.
@@ -11,7 +11,7 @@ import SwiftUI
 import SwiftData
 
 @MainActor
-@Observable class AuthenticationViewModel {
+@Observable class RegisterViewModel {
     private let auth = FirebaseManager.shared.auth
     var registerInfo = RegisterInfo()
     var isChecked: Bool = false

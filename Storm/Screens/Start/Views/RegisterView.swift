@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 struct RegisterView: View {
-    @Bindable private var authenticationVM = AuthenticationViewModel()
+    @Bindable private var authenticationVM = RegisterViewModel()
     var body: some View {
         VStack {
             TopMessage(title: "Register", message: "Sign up and start connecting!")
