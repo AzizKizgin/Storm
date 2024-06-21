@@ -8,5 +8,5 @@
 import Foundation
 
 enum TabScreenType {
-    case ChatList, Contacts, Settings
+    case chatList, contacts, settings
 }
