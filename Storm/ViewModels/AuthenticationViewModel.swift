@@ -22,8 +22,7 @@ import SwiftData
     private var cancellable: AnyCancellable?
     
     func register() {
-        if !isChecked {
-            setError("Please agree with terms")
+        if !validateFields() {
             return
         }
         self.isLoading = true
@@ -34,12 +33,39 @@ import SwiftData
                 case .finished:
                     print("finished")
                 case .failure(let error):
-                    self.setError("Error: \(error.localizedDescription)")
+                    self.setError(error.localizedDescription)
                 }
             }, receiveValue: { (user: UserResponse) in
                 UserDataSource.shared.appendItem(user.toUser())
                 self.isLoading = false
             })
+    }
+    
+    private func validateFields() -> Bool {
+        if registerInfo.email.isEmpty
+            || registerInfo.username.isEmpty
+            || registerInfo.password.isEmpty
+            || registerInfo.confirmPassword.isEmpty{
+            setError("Please fill all fields")
+            return false
+        }
+        if !Utils.isValidEmail(for: registerInfo.email) {
+            setError("Your email is invalid")
+            return false
+        }
+        if !Utils.isPasswordValid(for: registerInfo.password){
+            setError("The password must contain at least 8 characters, 1 special character and 1 uppercase letter.")
+            return false
+        }
+        if registerInfo.password != registerInfo.confirmPassword {
+            setError("Passwords do not match")
+            return false
+        }
+        if !isChecked {
+            setError("Please agree with terms")
+            return false
+        }
+        return true
     }
     
     private func setError(_ error: String) {
