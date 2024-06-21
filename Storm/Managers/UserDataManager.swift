@@ -19,4 +19,12 @@ class UserDataManager {
             requestType: .post
         )
     }
+    
+    func login(info: LoginInfo) -> AnyPublisher<UserResponse, Error> {
+        return DataManager.shared.sendRequest(
+            for: Endpoints.getLoginURL(),
+            data: info,
+            requestType: .post
+        )
+    }
 }
