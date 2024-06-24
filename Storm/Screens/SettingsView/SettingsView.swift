@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @State private var username = "user name"
+    @State private var about = "user about"
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 20) {
             UserImage(userImage: userImagePlaceholder3)
                 .padding()
-            SettingsItem(icon: "person", title: "Name", label: "User name")
-            SettingsItem(icon: "info.circle", title: "About", label: "User about")
-            SettingsItem(icon: "moonphase.first.quarter", title: "Theme", label: "Light")
+            SettingsItem(label: $username, type: .username, onChange: {})
+            SettingsItem(label: $about, type: .about, onChange: {})
+            ThemeToggle()
             Spacer()
         }
         .padding()
