@@ -8,11 +8,35 @@
 import SwiftUI
 
 struct ExpandedUserImage: View {
+    var userImage: String = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if let uiImage = loadImage() {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 400, height: 400)
+                    .clipShape(Rectangle())
+            } else {
+                defaultImage
+            }
+        }
+    }
+    
+    private func loadImage() -> UIImage? {
+        guard !userImage.isEmpty else { return nil }
+        return ImageManager.shared.convertStringToImage(for: userImage)
+    }
+    
+    private var defaultImage: some View {
+        Image(systemName: "person.fill")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 400 / 1.6)
+            .foregroundStyle(.accent)
     }
 }
 
 #Preview {
-    ExpandedUserImage()
+    ExpandedUserImage(userImage: userImagePlaceholder3)
 }
