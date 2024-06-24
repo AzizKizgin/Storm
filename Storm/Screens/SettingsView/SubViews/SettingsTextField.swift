@@ -8,11 +8,43 @@
 import SwiftUI
 
 struct SettingsTextField: View {
+    @State private var textState: String = ""
+    let title: LocalizedStringKey
+    @Binding var text: String
+    let maxSize: Int
+    let onSave: () -> Void
+    let onCancel: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 16) {
+            Text(title)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundStyle(.accent)
+            FormInput(title, text: $textState)
+                .onChange(of: textState) { _ , newValue in
+                    if newValue.count > maxSize {
+                        textState = String(newValue.prefix(maxSize))
+                    }
+                }
+                .overlay(alignment: .trailing) {
+                    Text("\(maxSize-textState.count)")
+                }
+            HStack(spacing: 32) {
+                Button(action: onCancel, label: {
+                    Text("Cancel")
+                })
+                Button(action: onSave, label: {
+                    Text("Save")
+                })
+            }
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .onAppear {
+                textState = text
+            }
+        }
     }
 }
 
 #Preview {
-    SettingsTextField()
+    SettingsTextField(title: "Username", text: .constant("User name"), maxSize: 20, onSave: {}, onCancel: {})
 }
