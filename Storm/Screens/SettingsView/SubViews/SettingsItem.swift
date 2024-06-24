@@ -8,30 +8,41 @@
 import SwiftUI
 
 struct SettingsItem: View {
-    let icon: String
-    let title: LocalizedStringKey
-    let label: String
+    @State private var isPresented: Bool = false
+    @Binding var label: String
+    let type: SettingsItemType
+    let onChange: () -> Void
     var body: some View {
         HStack(spacing: 16) {
-            Image(systemName: icon)
+            Image(systemName: type.icon)
                 .foregroundStyle(.secondary)
                 .font(.title3)
             VStack {
-                Text(title)
+                Text(type.title)
                     .frame(maxWidth: .infinity,alignment: .leading)
                     .foregroundStyle(.secondary)
                 Text(label)
                     .frame(maxWidth: .infinity,alignment: .leading)
                     .foregroundStyle(.primary)
             }
-            .lineLimit(1)
+            .lineLimit(4)
             Image(systemName: "pencil")
                 .foregroundStyle(.accent)
                 .font(.title3)
         }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            isPresented.toggle()
+        }
+        .sheet(isPresented: $isPresented){
+            SettingsTextField(title: type.title, text: $label, maxSize: type.maxSize, onSave: onChange, onCancel: {isPresented.toggle()})
+            .padding()
+            .presentationDetents([.fraction(0.2)])
+        }
+ 
     }
 }
 
 #Preview {
-    SettingsItem(icon: "person", title: "Name", label: "User name")
+    SettingsItem(label: .constant("username"), type: .username, onChange: {})
 }
