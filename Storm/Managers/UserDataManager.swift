@@ -27,4 +27,35 @@ class UserDataManager {
             requestType: .post
         )
     }
+    
+    func changeUsername(data: UpdateUsernameData) -> AnyPublisher<SuccessMessage, Error> {
+        return DataManager.shared.sendRequest(
+            for: Endpoints.getUpdateUsernameURL(),
+            data: data,
+            requestType: .put
+        )
+    }
+    
+    func changeUserAbout(data: UpdateUserAboutData) -> AnyPublisher<SuccessMessage, Error> {
+        return DataManager.shared.sendRequest(
+            for: Endpoints.getUpdateUserAboutURL(),
+            data: data,
+            requestType: .put
+        )
+    }
+    
+    func changeUserImage(data: UpdateUserImageData) -> AnyPublisher<SuccessMessage, Error> {
+        return DataManager.shared.sendRequest(
+            for: Endpoints.getUpdateProfilePictureURL(),
+            data: data,
+            requestType: .put
+        )
+    }
+    
+    func updateUserLastSeen() -> AnyPublisher<SuccessMessage, Error> {
+        return DataManager.shared.sendRequest(
+            for: Endpoints.getUpdateLastSeenURL(),
+            requestType: .put
+        )
+    }
 }

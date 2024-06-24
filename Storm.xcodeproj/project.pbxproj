@@ -33,6 +33,9 @@
 		E05CC67E2C24BBA1009241C8 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC67D2C24BBA1009241C8 /* UserResponse.swift */; };
 		E05CC6802C24C2A5009241C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC67F2C24C2A5009241C8 /* User.swift */; };
 		E05CC6842C24CE30009241C8 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC6832C24CE30009241C8 /* UserDataSource.swift */; };
+		E0CAF99A2C2A097100C02C34 /* UpdateUsernameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF9992C2A097100C02C34 /* UpdateUsernameData.swift */; };
+		E0CAF99C2C2A0A8300C02C34 /* UpdateUserAboutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */; };
+		E0CAF99E2C2A0B5700C02C34 /* UpdateUserImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF99D2C2A0B5700C02C34 /* UpdateUserImageData.swift */; };
 		E0D2AA1C2C13B5610042535A /* StormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D2AA1B2C13B5610042535A /* StormApp.swift */; };
 		E0D2AA1E2C13B5610042535A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D2AA1D2C13B5610042535A /* ContentView.swift */; };
 		E0D2AA202C13B5620042535A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0D2AA1F2C13B5620042535A /* Assets.xcassets */; };
@@ -109,6 +112,9 @@
 		E05CC67D2C24BBA1009241C8 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		E05CC67F2C24C2A5009241C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E05CC6832C24CE30009241C8 /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
+		E0CAF9992C2A097100C02C34 /* UpdateUsernameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUsernameData.swift; sourceTree = "<group>"; };
+		E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserAboutData.swift; sourceTree = "<group>"; };
+		E0CAF99D2C2A0B5700C02C34 /* UpdateUserImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserImageData.swift; sourceTree = "<group>"; };
 		E0D2AA182C13B5610042535A /* Storm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D2AA1B2C13B5610042535A /* StormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormApp.swift; sourceTree = "<group>"; };
 		E0D2AA1D2C13B5610042535A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -253,6 +259,9 @@
 				E05CC67D2C24BBA1009241C8 /* UserResponse.swift */,
 				E05CC67F2C24C2A5009241C8 /* User.swift */,
 				E0DBF0722C25AC450014BDD8 /* LoginInfo.swift */,
+				E0CAF9992C2A097100C02C34 /* UpdateUsernameData.swift */,
+				E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */,
+				E0CAF99D2C2A0B5700C02C34 /* UpdateUserImageData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -547,15 +556,18 @@
 				E0568CCF2C26EF55003E9245 /* ImagePlaceholder.swift in Sources */,
 				E03748902C29E70F000DA010 /* ThemeToggle.swift in Sources */,
 				E05CC6842C24CE30009241C8 /* UserDataSource.swift in Sources */,
+				E0CAF99A2C2A097100C02C34 /* UpdateUsernameData.swift in Sources */,
 				E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */,
 				E03748802C29B6CD000DA010 /* ChangeUserImageView.swift in Sources */,
 				E03748942C29E75C000DA010 /* ThemeType.swift in Sources */,
+				E0CAF99E2C2A0B5700C02C34 /* UpdateUserImageData.swift in Sources */,
 				E0FD9DE82C241823008B3AC8 /* Utils.swift in Sources */,
 				E0FD9DED2C2423C4008B3AC8 /* UserDataManager.swift in Sources */,
 				E023D7152C14E7FC00F2C0EA /* FormButton.swift in Sources */,
 				E05CC67E2C24BBA1009241C8 /* UserResponse.swift in Sources */,
 				E05CC6802C24C2A5009241C8 /* User.swift in Sources */,
 				E0ECB3642C26101900D8CEB2 /* ContactsView.swift in Sources */,
+				E0CAF99C2C2A0A8300C02C34 /* UpdateUserAboutData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
