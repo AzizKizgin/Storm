@@ -26,6 +26,7 @@
 		E037488A2C29D4FC000DA010 /* SettingsItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03748892C29D4FC000DA010 /* SettingsItemType.swift */; };
 		E03748902C29E70F000DA010 /* ThemeToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037488F2C29E70F000DA010 /* ThemeToggle.swift */; };
 		E03748942C29E75C000DA010 /* ThemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03748932C29E75C000DA010 /* ThemeType.swift */; };
+		E03C6D522C2B4D5200DD7942 /* DefaultUserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03C6D512C2B4D5200DD7942 /* DefaultUserImage.swift */; };
 		E0568CCC2C26EE4B003E9245 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0568CCB2C26EE4B003E9245 /* UserImage.swift */; };
 		E0568CCF2C26EF55003E9245 /* ImagePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0568CCE2C26EF55003E9245 /* ImagePlaceholder.swift */; };
 		E0568CD12C26EFEA003E9245 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0568CD02C26EFEA003E9245 /* ImageManager.swift */; };
@@ -98,6 +99,7 @@
 		E03748892C29D4FC000DA010 /* SettingsItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemType.swift; sourceTree = "<group>"; };
 		E037488F2C29E70F000DA010 /* ThemeToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeToggle.swift; sourceTree = "<group>"; };
 		E03748932C29E75C000DA010 /* ThemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeType.swift; sourceTree = "<group>"; };
+		E03C6D512C2B4D5200DD7942 /* DefaultUserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserImage.swift; sourceTree = "<group>"; };
 		E0568CCB2C26EE4B003E9245 /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
 		E0568CCE2C26EF55003E9245 /* ImagePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceholder.swift; sourceTree = "<group>"; };
 		E0568CD02C26EFEA003E9245 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				E01493AA2C15B588001A3C1C /* Checkbox.swift */,
 				E0568CCB2C26EE4B003E9245 /* UserImage.swift */,
 				E037487D2C29B34C000DA010 /* ExpandedUserImage.swift */,
+				E03C6D512C2B4D5200DD7942 /* DefaultUserImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				E03748782C29A49D000DA010 /* SettingsItem.swift in Sources */,
 				E0568CD12C26EFEA003E9245 /* ImageManager.swift in Sources */,
 				E0FD9DEF2C24252C008B3AC8 /* SuccessMessage.swift in Sources */,
+				E03C6D522C2B4D5200DD7942 /* DefaultUserImage.swift in Sources */,
 				E0D2AA1C2C13B5610042535A /* StormApp.swift in Sources */,
 				E023D7182C14EC9E00F2C0EA /* TopMessage.swift in Sources */,
 				E0ECB3682C2610F200D8CEB2 /* ChatListView.swift in Sources */,

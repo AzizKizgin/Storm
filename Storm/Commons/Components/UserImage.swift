@@ -18,29 +18,16 @@ struct UserImage: View {
                 .fill(.main)
                 .frame(width: size)
             
-            if let uiImage = loadImage() {
+            if let uiImage = ImageManager.shared.convertStringToImage(for: userImage) {
                 Image(uiImage: uiImage)
                     .resizable()
                     .scaledToFill()
                     .frame(width: size, height: size)
                     .clipShape(Circle())
             } else {
-                defaultImage
+                DefaultUserImage(size: size)
             }
         }
-    }
-    
-    private func loadImage() -> UIImage? {
-        guard !userImage.isEmpty else { return nil }
-        return ImageManager.shared.convertStringToImage(for: userImage)
-    }
-    
-    private var defaultImage: some View {
-        Image(systemName: "person.fill")
-            .resizable()
-            .scaledToFit()
-            .frame(width: size / 1.6)
-            .foregroundStyle(.accent)
     }
 }
 
