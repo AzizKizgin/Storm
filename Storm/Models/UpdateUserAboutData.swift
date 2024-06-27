@@ -8,5 +8,5 @@
 import Foundation
 
 struct UpdateUserAboutData: Encodable {
-    let about: String
+    let about: String = ""
 }

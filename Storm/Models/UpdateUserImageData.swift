@@ -8,5 +8,5 @@
 import Foundation
 
 struct UpdateUserImageData: Encodable {
-    let profilePicture: String
+    let profilePicture: String = ""
 }
