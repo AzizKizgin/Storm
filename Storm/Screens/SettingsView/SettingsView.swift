@@ -12,8 +12,12 @@ struct SettingsView: View {
     @State private var about = "user about"
     var body: some View {
         VStack(spacing: 20) {
-            UserImage(userImage: userImagePlaceholder3)
-                .padding()
+            NavigationLink {
+                ChangeUserImageView(userImage: userImagePlaceholder3)
+            } label: {
+                UserImage(userImage: userImagePlaceholder3)
+                    .padding()
+            }
             SettingsItem(label: $username, type: .username, onChange: {})
             SettingsItem(label: $about, type: .about, onChange: {})
             ThemeToggle()
