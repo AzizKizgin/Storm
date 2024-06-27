@@ -38,6 +38,7 @@
 		E0CAF99C2C2A0A8300C02C34 /* UpdateUserAboutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */; };
 		E0CAF99E2C2A0B5700C02C34 /* UpdateUserImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF99D2C2A0B5700C02C34 /* UpdateUserImageData.swift */; };
 		E0CAF9A02C2A0C6D00C02C34 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF99F2C2A0C6D00C02C34 /* SettingsViewModel.swift */; };
+		E0CC41952C2DE190009D765F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC41942C2DE190009D765F /* ImagePicker.swift */; };
 		E0D2AA1C2C13B5610042535A /* StormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D2AA1B2C13B5610042535A /* StormApp.swift */; };
 		E0D2AA1E2C13B5610042535A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D2AA1D2C13B5610042535A /* ContentView.swift */; };
 		E0D2AA202C13B5620042535A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0D2AA1F2C13B5620042535A /* Assets.xcassets */; };
@@ -111,6 +112,7 @@
 		E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserAboutData.swift; sourceTree = "<group>"; };
 		E0CAF99D2C2A0B5700C02C34 /* UpdateUserImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserImageData.swift; sourceTree = "<group>"; };
 		E0CAF99F2C2A0C6D00C02C34 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		E0CC41942C2DE190009D765F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E0D2AA182C13B5610042535A /* Storm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D2AA1B2C13B5610042535A /* StormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormApp.swift; sourceTree = "<group>"; };
 		E0D2AA1D2C13B5610042535A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				E0568CCB2C26EE4B003E9245 /* UserImage.swift */,
 				E037487D2C29B34C000DA010 /* ExpandedUserImage.swift */,
 				E03C6D512C2B4D5200DD7942 /* DefaultUserImage.swift */,
+				E0CC41942C2DE190009D765F /* ImagePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				E023D7152C14E7FC00F2C0EA /* FormButton.swift in Sources */,
 				E05CC67E2C24BBA1009241C8 /* UserResponse.swift in Sources */,
 				E05CC6802C24C2A5009241C8 /* User.swift in Sources */,
+				E0CC41952C2DE190009D765F /* ImagePicker.swift in Sources */,
 				E0ECB3642C26101900D8CEB2 /* ContactsView.swift in Sources */,
 				E0CAF99C2C2A0A8300C02C34 /* UpdateUserAboutData.swift in Sources */,
 			);
