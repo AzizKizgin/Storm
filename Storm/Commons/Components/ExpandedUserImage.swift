@@ -14,8 +14,7 @@ struct ExpandedUserImage: View {
             if let uiImage = ImageManager.shared.convertStringToImage(for: userImage) {
                 Image(uiImage: uiImage)
                     .resizable()
-                    .scaledToFill()
-                    .frame(width: 400, height: 400)
+                    .scaledToFit()
                     .clipShape(Rectangle())
             } else {
                 DefaultUserImage(size: 400)
