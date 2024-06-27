@@ -8,14 +8,15 @@
 import Foundation
 import SwiftData
 
+@MainActor
 final class UserDataSource {
     private let modelContainer: ModelContainer
     private let modelContext: ModelContext
 
-    @MainActor
+
     static let shared = UserDataSource()
 
-    @MainActor
+   
     private init() {
         self.modelContainer = try! ModelContainer(for: User.self)
         self.modelContext = modelContainer.mainContext
