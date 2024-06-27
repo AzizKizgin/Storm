@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-@MainActor
 @Observable
 class LoginViewModel {
     var loginInfo = LoginInfo()
@@ -18,7 +17,13 @@ class LoginViewModel {
     var isLoading: Bool = false
     var isSuccess: Bool = false
     
+    @ObservationIgnored
     private var cancellable: AnyCancellable?
+    
+    deinit {
+        cancellable?.cancel()
+     }
+    
     
     func login() {
         if !validateFields() {
@@ -35,10 +40,12 @@ class LoginViewModel {
                     self.setError(error.localizedDescription)
                 }
             }, receiveValue: { (user: UserResponse) in
-                UserDataSource.shared.appendItem(user.toUser())
-                UserDefaults.standard.set(user.token, forKey: "token")
-                self.isSuccess = true
-                self.isLoading = false
+                Task {
+                    await UserDataSource.shared.appendItem(user.toUser())
+                    UserDefaults.standard.set(user.token, forKey: "token")
+                    self.isSuccess = true
+                    self.isLoading = false
+                }
             })
     }
     

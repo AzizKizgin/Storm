@@ -10,7 +10,7 @@ import Combine
 import SwiftUI
 import SwiftData
 
-@MainActor
+
 @Observable class RegisterViewModel {
     var registerInfo = RegisterInfo()
     var isChecked: Bool = false
@@ -19,6 +19,7 @@ import SwiftData
     var isLoading: Bool = false
     var isSuccess: Bool = false
     
+    @ObservationIgnored
     private var cancellable: AnyCancellable?
     
     func register() {
@@ -35,11 +36,13 @@ import SwiftData
                 case .failure(let error):
                     self.setError(error.localizedDescription)
                 }
-            }, receiveValue: { (user: UserResponse) in
-                UserDataSource.shared.appendItem(user.toUser())
-                UserDefaults.standard.set(user.token, forKey: "token")
-                self.isSuccess = true
-                self.isLoading = false
+            }, receiveValue: { user in
+                Task {
+                    await UserDataSource.shared.appendItem(user.toUser())
+                    UserDefaults.standard.set(user.token, forKey: "token")
+                    self.isSuccess = true
+                    self.isLoading = false
+                }
             })
     }
     
