@@ -39,7 +39,20 @@ final class UserDataSource {
         }
     }
 
-    func removeItem(_ user: User) {
-        modelContext.delete(user)
+    func removeItem() {
+        try! modelContext.delete(model: User.self)
+    }
+    
+    func updateProperty<T>(prop: WritableKeyPath<User, T>, newValue: T) {
+        do {
+            if var user = try modelContext.fetch(FetchDescriptor<User>()).first {
+                user[keyPath: prop] = newValue
+                try modelContext.save()
+            } else {
+                print("User not found")
+            }
+        } catch {
+            fatalError(error.localizedDescription)
+        }
     }
 }
