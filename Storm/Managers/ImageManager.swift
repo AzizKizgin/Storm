@@ -13,19 +13,12 @@ class ImageManager {
     static let shared = ImageManager()
     private init() {}
     
-    func convertImageToString(for img: UIImage, completion: @escaping (String?) -> Void) {
-        DispatchQueue.global().async {
-            guard let imageData = img.jpegData(compressionQuality: 1) else {
-                DispatchQueue.main.async {
-                    completion(nil)
-                }
-                return
-            }
-            let base64String = imageData.base64EncodedString()
-            DispatchQueue.main.async {
-                completion(base64String)
-            }
+    func convertImageToString(for img: UIImage) -> String? {
+        guard let imageData = img.jpegData(compressionQuality: 1) else {
+            return nil
         }
+        let base64String = imageData.base64EncodedString()
+        return base64String
     }
 
     func convertStringToImage(for imgString: String) -> UIImage? {
