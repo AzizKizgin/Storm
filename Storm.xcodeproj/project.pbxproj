@@ -34,6 +34,7 @@
 		E05CC67E2C24BBA1009241C8 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC67D2C24BBA1009241C8 /* UserResponse.swift */; };
 		E05CC6802C24C2A5009241C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC67F2C24C2A5009241C8 /* User.swift */; };
 		E05CC6842C24CE30009241C8 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC6832C24CE30009241C8 /* UserDataSource.swift */; };
+		E05DE5F72C2EAEC700EDA947 /* DummyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE5F62C2EAEC700EDA947 /* DummyUser.swift */; };
 		E0CAF99A2C2A097100C02C34 /* UpdateUsernameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF9992C2A097100C02C34 /* UpdateUsernameData.swift */; };
 		E0CAF99C2C2A0A8300C02C34 /* UpdateUserAboutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */; };
 		E0CAF99E2C2A0B5700C02C34 /* UpdateUserImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF99D2C2A0B5700C02C34 /* UpdateUserImageData.swift */; };
@@ -108,6 +109,7 @@
 		E05CC67D2C24BBA1009241C8 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		E05CC67F2C24C2A5009241C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E05CC6832C24CE30009241C8 /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
+		E05DE5F62C2EAEC700EDA947 /* DummyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyUser.swift; sourceTree = "<group>"; };
 		E0CAF9992C2A097100C02C34 /* UpdateUsernameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUsernameData.swift; sourceTree = "<group>"; };
 		E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserAboutData.swift; sourceTree = "<group>"; };
 		E0CAF99D2C2A0B5700C02C34 /* UpdateUserImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserImageData.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				E0568CCE2C26EF55003E9245 /* ImagePlaceholder.swift */,
+				E05DE5F62C2EAEC700EDA947 /* DummyUser.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				E037488A2C29D4FC000DA010 /* SettingsItemType.swift in Sources */,
 				E0DFE6B02C22E8A800F78184 /* Endpoints.swift in Sources */,
 				E0568CCC2C26EE4B003E9245 /* UserImage.swift in Sources */,
+				E05DE5F72C2EAEC700EDA947 /* DummyUser.swift in Sources */,
 				E0ECB36B2C26116D00D8CEB2 /* FormInputType.swift in Sources */,
 				E023D7202C14FF6400F2C0EA /* PasswordField.swift in Sources */,
 				E0DFE6AE2C22E65300F78184 /* RequestTypes.swift in Sources */,
