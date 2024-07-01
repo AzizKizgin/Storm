@@ -43,11 +43,16 @@ struct SettingsItem: View {
         .onTapGesture {
             isPresented.toggle()
         }
-        .sheet(isPresented: $isPresented, onDismiss: {text = label}){
+        .sheet(isPresented: $isPresented){
             SettingsTextField(type.title, text: $text, maxSize: type.maxSize, onSave: { text in
                 onChange(text)
                 isPresented.toggle()
-            }, onCancel: {isPresented.toggle()})
+            }, onCancel: {
+                isPresented.toggle()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+                    text = label
+                }}
+            )
             .padding()
             .presentationDetents([.fraction(0.2)])
         }
