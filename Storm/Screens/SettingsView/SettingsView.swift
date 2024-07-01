@@ -15,11 +15,6 @@ struct SettingsView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            if settingsVM.isLoading {
-                ProgressView()
-                    .controlSize(.extraLarge)
-                    .padding()
-            }
             if let user = users.first {
                 NavigationLink {
                     ChangeUserImageView(userImage: userImagePlaceholder3)
