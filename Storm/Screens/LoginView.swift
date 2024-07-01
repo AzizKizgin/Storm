@@ -10,6 +10,7 @@ import SwiftUI
 @MainActor
 struct LoginView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
     @Bindable private var loginVM = LoginViewModel()
     var body: some View {
         VStack {
@@ -23,7 +24,7 @@ struct LoginView: View {
                 }
                 .padding(.horizontal)
                 VStack(spacing: 16) {
-                    FormButton("Sign in", onPress: loginVM.login, isLoading: loginVM.isLoading)
+                    FormButton("Sign in", onPress: self.onLogin, isLoading: self.loginVM.isLoading)
                     NavigationLink("Forgot password?", destination: ForgotPasswordView())
                 }
             }
@@ -40,6 +41,16 @@ struct LoginView: View {
         }
         .alert(loginVM.errorMessage, isPresented: $loginVM.showError){
             Button("Okay", role: .cancel) {}
+        }
+    }
+}
+
+extension LoginView {
+    private func onLogin() {
+        loginVM.login { userResponse in
+            if let userResponse {
+                modelContext.insert(userResponse.toUser())
+            }
         }
     }
 }

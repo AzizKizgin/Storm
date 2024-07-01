@@ -25,7 +25,7 @@ class LoginViewModel {
      }
     
     
-    func login() {
+    func login(completion: @escaping (UserResponse?) -> Void) {
         if !validateFields() {
             return
         }
@@ -37,11 +37,12 @@ class LoginViewModel {
                 case .finished:
                     print("finished")
                 case .failure(let error):
+                    completion(nil)
                     self.setError(error.localizedDescription)
                 }
             }, receiveValue: { (user: UserResponse) in
                 Task {
-                    await UserDataSource.shared.appendItem(user.toUser())
+                    completion(user)
                     UserDefaults.standard.set(user.token, forKey: "token")
                     self.isSuccess = true
                     self.isLoading = false
