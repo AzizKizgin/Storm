@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E013516D2C332962009FC804 /* ContactDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E013516C2C332962009FC804 /* ContactDataManager.swift */; };
+		E013516F2C332FA5009FC804 /* SearchUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E013516E2C332FA5009FC804 /* SearchUsersResponse.swift */; };
+		E01351712C33303F009FC804 /* SearchUsersQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01351702C33303F009FC804 /* SearchUsersQuery.swift */; };
+		E01351732C333206009FC804 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01351722C333206009FC804 /* ContactsViewModel.swift */; };
 		E01493AB2C15B588001A3C1C /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493AA2C15B588001A3C1C /* Checkbox.swift */; };
 		E01493AD2C15B82F001A3C1C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493AC2C15B82F001A3C1C /* LoginView.swift */; };
 		E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493AE2C15BDBB001A3C1C /* ForgotPasswordView.swift */; };
@@ -81,6 +85,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E013516C2C332962009FC804 /* ContactDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDataManager.swift; sourceTree = "<group>"; };
+		E013516E2C332FA5009FC804 /* SearchUsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersResponse.swift; sourceTree = "<group>"; };
+		E01351702C33303F009FC804 /* SearchUsersQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersQuery.swift; sourceTree = "<group>"; };
+		E01351722C333206009FC804 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		E01493AA2C15B588001A3C1C /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		E01493AC2C15B82F001A3C1C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E01493AE2C15BDBB001A3C1C /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -221,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				E0FD9DE72C241823008B3AC8 /* Utils.swift */,
+				E01351702C33303F009FC804 /* SearchUsersQuery.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -254,6 +263,7 @@
 				E0CAF9992C2A097100C02C34 /* UpdateUsernameData.swift */,
 				E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */,
 				E0CAF99D2C2A0B5700C02C34 /* UpdateUserImageData.swift */,
+				E013516E2C332FA5009FC804 /* SearchUsersResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -338,6 +348,7 @@
 				E01493B42C15D1EB001A3C1C /* RegisterViewModel.swift */,
 				E0DBF0742C25B49E0014BDD8 /* LoginViewModel.swift */,
 				E0CAF99F2C2A0C6D00C02C34 /* SettingsViewModel.swift */,
+				E01351722C333206009FC804 /* ContactsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -368,6 +379,7 @@
 			children = (
 				E0FD9DEC2C2423C3008B3AC8 /* UserDataManager.swift */,
 				E0568CD02C26EFEA003E9245 /* ImageManager.swift */,
+				E013516C2C332962009FC804 /* ContactDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -519,8 +531,10 @@
 				E01493AB2C15B588001A3C1C /* Checkbox.swift in Sources */,
 				E0ECB36D2C2611AE00D8CEB2 /* TabScreenType.swift in Sources */,
 				E01493B52C15D1EB001A3C1C /* RegisterViewModel.swift in Sources */,
+				E01351712C33303F009FC804 /* SearchUsersQuery.swift in Sources */,
 				E0DBF0752C25B49E0014BDD8 /* LoginViewModel.swift in Sources */,
 				E037488A2C29D4FC000DA010 /* SettingsInfoType.swift in Sources */,
+				E013516D2C332962009FC804 /* ContactDataManager.swift in Sources */,
 				E0DFE6B02C22E8A800F78184 /* Endpoints.swift in Sources */,
 				E0568CCC2C26EE4B003E9245 /* UserImage.swift in Sources */,
 				E05DE5F72C2EAEC700EDA947 /* DummyUser.swift in Sources */,
@@ -543,6 +557,7 @@
 				E023D71E2C14FD1800F2C0EA /* FormInput.swift in Sources */,
 				E0568CCF2C26EF55003E9245 /* ImagePlaceholder.swift in Sources */,
 				E03748902C29E70F000DA010 /* ThemePicker.swift in Sources */,
+				E01351732C333206009FC804 /* ContactsViewModel.swift in Sources */,
 				E0CAF99A2C2A097100C02C34 /* UpdateUsernameData.swift in Sources */,
 				E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */,
 				E03748802C29B6CD000DA010 /* ChangeUserImageView.swift in Sources */,
@@ -556,6 +571,7 @@
 				E0CC41952C2DE190009D765F /* ImagePicker.swift in Sources */,
 				E0ECB3642C26101900D8CEB2 /* ContactsView.swift in Sources */,
 				E0CAF99C2C2A0A8300C02C34 /* UpdateUserAboutData.swift in Sources */,
+				E013516F2C332FA5009FC804 /* SearchUsersResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
