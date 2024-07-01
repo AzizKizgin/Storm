@@ -23,7 +23,7 @@
 		E037487E2C29B34C000DA010 /* ExpandedUserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037487D2C29B34C000DA010 /* ExpandedUserImage.swift */; };
 		E03748802C29B6CD000DA010 /* ChangeUserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037487F2C29B6CD000DA010 /* ChangeUserImageView.swift */; };
 		E03748842C29C76F000DA010 /* SettingsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03748832C29C76F000DA010 /* SettingsTextField.swift */; };
-		E037488A2C29D4FC000DA010 /* SettingsItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03748892C29D4FC000DA010 /* SettingsItemType.swift */; };
+		E037488A2C29D4FC000DA010 /* SettingsInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03748892C29D4FC000DA010 /* SettingsInfoType.swift */; };
 		E03748902C29E70F000DA010 /* ThemeToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037488F2C29E70F000DA010 /* ThemeToggle.swift */; };
 		E03748942C29E75C000DA010 /* ThemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03748932C29E75C000DA010 /* ThemeType.swift */; };
 		E03C6D522C2B4D5200DD7942 /* DefaultUserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03C6D512C2B4D5200DD7942 /* DefaultUserImage.swift */; };
@@ -33,7 +33,6 @@
 		E0568CD32C26F40A003E9245 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0568CD22C26F40A003E9245 /* SettingsView.swift */; };
 		E05CC67E2C24BBA1009241C8 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC67D2C24BBA1009241C8 /* UserResponse.swift */; };
 		E05CC6802C24C2A5009241C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC67F2C24C2A5009241C8 /* User.swift */; };
-		E05CC6842C24CE30009241C8 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC6832C24CE30009241C8 /* UserDataSource.swift */; };
 		E05DE5F72C2EAEC700EDA947 /* DummyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE5F62C2EAEC700EDA947 /* DummyUser.swift */; };
 		E0CAF99A2C2A097100C02C34 /* UpdateUsernameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF9992C2A097100C02C34 /* UpdateUsernameData.swift */; };
 		E0CAF99C2C2A0A8300C02C34 /* UpdateUserAboutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */; };
@@ -98,7 +97,7 @@
 		E037487D2C29B34C000DA010 /* ExpandedUserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedUserImage.swift; sourceTree = "<group>"; };
 		E037487F2C29B6CD000DA010 /* ChangeUserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserImageView.swift; sourceTree = "<group>"; };
 		E03748832C29C76F000DA010 /* SettingsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTextField.swift; sourceTree = "<group>"; };
-		E03748892C29D4FC000DA010 /* SettingsItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemType.swift; sourceTree = "<group>"; };
+		E03748892C29D4FC000DA010 /* SettingsInfoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoType.swift; sourceTree = "<group>"; };
 		E037488F2C29E70F000DA010 /* ThemeToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeToggle.swift; sourceTree = "<group>"; };
 		E03748932C29E75C000DA010 /* ThemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeType.swift; sourceTree = "<group>"; };
 		E03C6D512C2B4D5200DD7942 /* DefaultUserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserImage.swift; sourceTree = "<group>"; };
@@ -108,7 +107,6 @@
 		E0568CD22C26F40A003E9245 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E05CC67D2C24BBA1009241C8 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		E05CC67F2C24C2A5009241C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E05CC6832C24CE30009241C8 /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
 		E05DE5F62C2EAEC700EDA947 /* DummyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyUser.swift; sourceTree = "<group>"; };
 		E0CAF9992C2A097100C02C34 /* UpdateUsernameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUsernameData.swift; sourceTree = "<group>"; };
 		E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserAboutData.swift; sourceTree = "<group>"; };
@@ -359,7 +357,7 @@
 				E0DFE6AD2C22E65300F78184 /* RequestTypes.swift */,
 				E0ECB36A2C26116D00D8CEB2 /* FormInputType.swift */,
 				E0ECB36C2C2611AE00D8CEB2 /* TabScreenType.swift */,
-				E03748892C29D4FC000DA010 /* SettingsItemType.swift */,
+				E03748892C29D4FC000DA010 /* SettingsInfoType.swift */,
 				E03748932C29E75C000DA010 /* ThemeType.swift */,
 			);
 			path = Enums;
@@ -369,7 +367,6 @@
 			isa = PBXGroup;
 			children = (
 				E0FD9DEC2C2423C3008B3AC8 /* UserDataManager.swift */,
-				E05CC6832C24CE30009241C8 /* UserDataSource.swift */,
 				E0568CD02C26EFEA003E9245 /* ImageManager.swift */,
 			);
 			path = Managers;
@@ -523,7 +520,7 @@
 				E0ECB36D2C2611AE00D8CEB2 /* TabScreenType.swift in Sources */,
 				E01493B52C15D1EB001A3C1C /* RegisterViewModel.swift in Sources */,
 				E0DBF0752C25B49E0014BDD8 /* LoginViewModel.swift in Sources */,
-				E037488A2C29D4FC000DA010 /* SettingsItemType.swift in Sources */,
+				E037488A2C29D4FC000DA010 /* SettingsInfoType.swift in Sources */,
 				E0DFE6B02C22E8A800F78184 /* Endpoints.swift in Sources */,
 				E0568CCC2C26EE4B003E9245 /* UserImage.swift in Sources */,
 				E05DE5F72C2EAEC700EDA947 /* DummyUser.swift in Sources */,
@@ -546,7 +543,6 @@
 				E023D71E2C14FD1800F2C0EA /* FormInput.swift in Sources */,
 				E0568CCF2C26EF55003E9245 /* ImagePlaceholder.swift in Sources */,
 				E03748902C29E70F000DA010 /* ThemeToggle.swift in Sources */,
-				E05CC6842C24CE30009241C8 /* UserDataSource.swift in Sources */,
 				E0CAF99A2C2A097100C02C34 /* UpdateUsernameData.swift in Sources */,
 				E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */,
 				E03748802C29B6CD000DA010 /* ChangeUserImageView.swift in Sources */,
