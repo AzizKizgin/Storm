@@ -17,9 +17,9 @@ struct SettingsView: View {
         VStack(spacing: 20) {
             if let user = users.first {
                 NavigationLink {
-                    ChangeUserImageView(userImage: userImagePlaceholder3)
+                    ChangeUserImageView(userImage: user.profilePicture, onChange: self.changeImage)
                 } label: {
-                    UserImage(userImage: userImagePlaceholder3)
+                    UserImage(userImage: user.profilePicture)
                         .padding()
                 }
                 SettingsItem(label: user.username, type: .username, onChange: self.changeUsername)
@@ -64,6 +64,14 @@ extension SettingsView {
         settingsVM.changeAbout(about: about) { isSuccess in
             if isSuccess, let user = users.first {
                 user.about = about
+            }
+        }
+    }
+    
+    private func changeImage(_ image: String) {
+        settingsVM.changeImage(profilePicture: image) { isSuccess in
+            if isSuccess, let user = users.first {
+                user.profilePicture = image
             }
         }
     }

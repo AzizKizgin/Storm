@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct ChangeUserImageView: View {
+    @Environment(\.dismiss) private var dismiss
     var userImage: String = ""
+    let onChange: (String) -> Void
     @State private var showPicker: Bool = false
     @State private var selectedImage: UIImage?
     @State private var isLoading: Bool = false
+    @State private var showError: Bool = false
     var body: some View {
         VStack {
             if isLoading {
@@ -49,7 +52,13 @@ struct ChangeUserImageView: View {
                         .foregroundStyle(.accent)
                         .font(.title2)
                         .onTapGesture {
-                            // save function
+                            if let image = selectedImage, let imageString = ImageManager.shared.convertImageToString(for: image) {
+                                onChange(imageString)
+                                dismiss()
+                            }
+                            else {
+                                showError.toggle()
+                            }
                         }
                 }
                 else {
@@ -62,11 +71,14 @@ struct ChangeUserImageView: View {
                 }
             }
         }
+        .alert("An error occured while proccess", isPresented: $showError){
+            Button("Okay", role: .cancel) {}
+        }
     }
 }
 
 #Preview {
     NavigationStack {
-        ChangeUserImageView(userImage: userImagePlaceholder3)
+        ChangeUserImageView(userImage: userImagePlaceholder3, onChange: {_ in })
     }
 }
