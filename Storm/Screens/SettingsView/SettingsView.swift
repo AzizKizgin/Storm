@@ -6,31 +6,86 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SettingsView: View {
-    @State private var username = "user name"
-    @State private var about = "user about"
+    @Environment(\.modelContext) private var modelContext
+    @Query private var users: [User]
+    @Bindable private var settingsVM = SettingsViewModel()
+    
     var body: some View {
         VStack(spacing: 20) {
-            NavigationLink {
-                ChangeUserImageView(userImage: userImagePlaceholder3)
-            } label: {
-                UserImage(userImage: userImagePlaceholder3)
+            if settingsVM.isLoading {
+                ProgressView()
+                    .controlSize(.extraLarge)
                     .padding()
             }
-            SettingsItem(label: $username, type: .username, onChange: {})
-            SettingsItem(label: $about, type: .about, onChange: {})
-            ThemeToggle()
-            Spacer()
+            if let user = users.first {
+                NavigationLink {
+                    ChangeUserImageView(userImage: userImagePlaceholder3)
+                } label: {
+                    UserImage(userImage: userImagePlaceholder3)
+                        .padding()
+                }
+                SettingsItem(label: user.username, type: .username, onChange: self.changeUsername)
+                SettingsItem(label: user.about, type: .about, onChange: self.changeAbout)
+                ThemeToggle()
+                Spacer()
+                Button(action: self.logout, label: {
+                    Text("Logout")
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 5) 
+                })
+                .buttonStyle(BorderedProminentButtonStyle())
+            }
         }
         .padding()
         .background(.main)
+        .alert(settingsVM.errorMessage, isPresented: $settingsVM.showError){
+            Button("Okay", role: .cancel) {}
+        }
+        .alert(settingsVM.successMessage, isPresented: $settingsVM.isSuccess){
+            Button("Okay", role: .cancel) {}
+        }
+    }
+}
+
+extension SettingsView {
+    private func changeUsername(_ username: String) {
+        settingsVM.changeUsername(username: username) { isSuccess in
+            if isSuccess, let user = users.first {
+                user.username = username
+            }
+        }
+    }
+    
+    private func changeAbout(_ about: String) {
+        settingsVM.changeAbout(about: about) { isSuccess in
+            if isSuccess, let user = users.first {
+                user.about = about
+            }
+        }
+    }
+    
+    private func logout() {
+        settingsVM.logout() { isSuccess in
+            if isSuccess {
+                try! modelContext.delete(model: User.self)
+            }
+        }
     }
 }
 
 
 #Preview {
-    NavigationStack {
-        SettingsView()
+    MainActor.assumeIsolated {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try! ModelContainer(for: User.self, configurations: config)
+        container.mainContext.insert(dummyUser)
+        
+        return NavigationStack {
+            SettingsView()
+                .modelContainer(container)
+        }
     }
 }

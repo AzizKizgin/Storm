@@ -11,13 +11,12 @@ import Combine
 
 @Observable
 class SettingsViewModel {
-    var usernameInfo = UpdateUsernameData()
-    var aboutInfo = UpdateUserAboutData()
-    var imageInfo = UpdateUserImageData()
     var errorMessage: LocalizedStringKey = ""
     var showError: Bool = false
+    var successMessage: LocalizedStringKey = ""
     var isLoading: Bool = false
     var isSuccess: Bool = false
+    
     
     private var cancellable: AnyCancellable?
     
@@ -25,73 +24,101 @@ class SettingsViewModel {
         cancellable?.cancel()
      }
     
-    func changeUsername() {
-        if usernameInfo.username.isEmpty {
+    func changeUsername(username: String, completion: @escaping (Bool) -> Void) {
+        if username.isEmpty {
             setError("Username must have at least 1 character")
             return
         }
         self.isLoading = true
-        cancellable = UserDataManager.shared.changeUsername(data: usernameInfo)
+        cancellable = UserDataManager.shared.changeUsername(data: UpdateUsernameData(username: username))
             .sink(receiveCompletion: { result in
                 self.isLoading = false
                 switch result {
                 case .finished:
-                    print("finished")
+                    DispatchQueue.main.async {
+                        completion(true)
+                    }
                 case .failure(let error):
+                    DispatchQueue.main.async {
+                        completion(false)
+                    }
                     self.setError(error.localizedDescription)
                 }
-            }, receiveValue: { _ in
-                Task {
-                    await UserDataSource.shared.updateProperty(prop: \.username, newValue: self.usernameInfo.username)
-                    self.isSuccess = true
-                    self.isLoading = false
-                }
+            }, receiveValue: { message in
+                self.setSuccess(message.message)
             })
     }
     
-    func changeAbout() {
+    func changeAbout(about: String, completion: @escaping (Bool) -> Void) {
         self.isLoading = true
-        cancellable = UserDataManager.shared.changeUserAbout(data: aboutInfo)
+        cancellable = UserDataManager.shared.changeUserAbout(data: UpdateUserAboutData(about: about))
             .sink(receiveCompletion: { result in
                 self.isLoading = false
                 switch result {
                 case .finished:
-                    print("finished")
+                    DispatchQueue.main.async {
+                        completion(true)
+                    }
                 case .failure(let error):
+                    DispatchQueue.main.async {
+                        completion(false)
+                    }
                     self.setError(error.localizedDescription)
                 }
-            }, receiveValue: { _ in
-                Task {
-                    await UserDataSource.shared.updateProperty(prop: \.about, newValue: self.aboutInfo.about)
-                    self.isSuccess = true
-                    self.isLoading = false
-                }
+            }, receiveValue: { message in
+                self.setSuccess(message.message)
             })
     }
     
-    func changeImage() {
+    func changeImage(profilePicture: String, completion: @escaping (Bool) -> Void) {
         self.isLoading = true
-        cancellable = UserDataManager.shared.changeUserImage(data: imageInfo)
+        cancellable = UserDataManager.shared.changeUserImage(data: UpdateUserImageData(profilePicture: profilePicture))
             .sink(receiveCompletion: { result in
                 self.isLoading = false
                 switch result {
                 case .finished:
-                    print("finished")
+                    DispatchQueue.main.async {
+                        completion(true)
+                    }
                 case .failure(let error):
+                    DispatchQueue.main.async {
+                        completion(false)
+                    }
                     self.setError(error.localizedDescription)
                 }
-            }, receiveValue: { _ in
-                Task {
-                    await UserDataSource.shared.updateProperty(prop: \.profilePicture, newValue: self.imageInfo.profilePicture)
-                    self.isSuccess = true
-                    self.isLoading = false
-                }
+            }, receiveValue: { message in
+                self.setSuccess(message.message)
             })
     }
     
+    func logout(completion: @escaping (Bool) -> Void) {
+        self.isLoading = true
+        cancellable = UserDataManager.shared.logout()
+            .sink(receiveCompletion: { result in
+                self.isLoading = false
+                switch result {
+                case .finished:
+                    DispatchQueue.main.async {
+                        completion(true)
+                    }
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        completion(false)
+                    }
+                    self.setError(error.localizedDescription)
+                }
+            }, receiveValue: { message in
+                self.setSuccess(message.message)
+            })
+    }
     
     private func setError(_ error: String) {
         self.errorMessage = LocalizedStringKey(error)
         self.showError = true
+    }
+    
+    private func setSuccess(_ message: String) {
+        self.isSuccess = true
+        self.successMessage = LocalizedStringKey(message)
     }
 }
