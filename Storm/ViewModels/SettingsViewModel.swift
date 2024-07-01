@@ -16,7 +16,7 @@ class SettingsViewModel {
     var successMessage: LocalizedStringKey = ""
     var isLoading: Bool = false
     var isSuccess: Bool = false
-    
+    var showLogoutAlert: Bool = false
     
     private var cancellable: AnyCancellable?
     
@@ -45,7 +45,7 @@ class SettingsViewModel {
                     self.setError(error.localizedDescription)
                 }
             }, receiveValue: { message in
-                self.setSuccess(message.message)
+                print(message.message)
             })
     }
     
@@ -66,7 +66,7 @@ class SettingsViewModel {
                     self.setError(error.localizedDescription)
                 }
             }, receiveValue: { message in
-                self.setSuccess(message.message)
+                print(message.message)
             })
     }
     
@@ -87,7 +87,7 @@ class SettingsViewModel {
                     self.setError(error.localizedDescription)
                 }
             }, receiveValue: { message in
-                self.setSuccess(message.message)
+                print(message.message)
             })
     }
     
@@ -108,8 +108,12 @@ class SettingsViewModel {
                     self.setError(error.localizedDescription)
                 }
             }, receiveValue: { message in
-                self.setSuccess(message.message)
+                UserDefaults.standard.removeObject(forKey: "token")
             })
+    }
+    
+    func onLogoutPressed() {
+        self.showLogoutAlert.toggle()
     }
     
     private func setError(_ error: String) {

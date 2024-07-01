@@ -24,9 +24,9 @@ struct SettingsView: View {
                 }
                 SettingsItem(label: user.username, type: .username, onChange: self.changeUsername)
                 SettingsItem(label: user.about, type: .about, onChange: self.changeAbout)
-                ThemeToggle()
+                ThemePicker()
                 Spacer()
-                Button(action: self.logout, label: {
+                Button(action: self.settingsVM.onLogoutPressed, label: {
                     Text("Logout")
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 5) 
@@ -41,6 +41,12 @@ struct SettingsView: View {
         }
         .alert(settingsVM.successMessage, isPresented: $settingsVM.isSuccess){
             Button("Okay", role: .cancel) {}
+        }
+        .alert("Are you sure you want to logout?", isPresented: $settingsVM.showLogoutAlert){
+            Button("Yes", role: .destructive) {
+                self.logout()
+            }
+            Button("No", role: .cancel) {}
         }
     }
 }
