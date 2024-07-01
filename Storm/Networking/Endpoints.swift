@@ -59,4 +59,10 @@ enum Endpoints {
         let url = URL(string: urlString)!
         return url
     }
+    
+    public static func getSearchUsersURL(query: SearchUsersQuery?) -> URL {
+        var urlComponent = URLComponents(string: "\(userURL)/search-users")!
+        urlComponent.queryItems = query?.toQueryItems()
+        return urlComponent.url!
+    }
 }
