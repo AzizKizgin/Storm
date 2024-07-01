@@ -28,6 +28,13 @@ class UserDataManager {
         )
     }
     
+    func logout() -> AnyPublisher<SuccessMessage, Error> {
+        return DataManager.shared.sendRequest(
+            for: Endpoints.getLogoutURL(),
+            requestType: .post
+        )
+    }
+    
     func changeUsername(data: UpdateUsernameData) -> AnyPublisher<SuccessMessage, Error> {
         return DataManager.shared.sendRequest(
             for: Endpoints.getUpdateUsernameURL(),
