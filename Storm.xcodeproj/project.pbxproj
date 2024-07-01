@@ -24,7 +24,7 @@
 		E03748802C29B6CD000DA010 /* ChangeUserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037487F2C29B6CD000DA010 /* ChangeUserImageView.swift */; };
 		E03748842C29C76F000DA010 /* SettingsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03748832C29C76F000DA010 /* SettingsTextField.swift */; };
 		E037488A2C29D4FC000DA010 /* SettingsInfoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03748892C29D4FC000DA010 /* SettingsInfoType.swift */; };
-		E03748902C29E70F000DA010 /* ThemeToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037488F2C29E70F000DA010 /* ThemeToggle.swift */; };
+		E03748902C29E70F000DA010 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037488F2C29E70F000DA010 /* ThemePicker.swift */; };
 		E03748942C29E75C000DA010 /* ThemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03748932C29E75C000DA010 /* ThemeType.swift */; };
 		E03C6D522C2B4D5200DD7942 /* DefaultUserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03C6D512C2B4D5200DD7942 /* DefaultUserImage.swift */; };
 		E0568CCC2C26EE4B003E9245 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0568CCB2C26EE4B003E9245 /* UserImage.swift */; };
@@ -98,7 +98,7 @@
 		E037487F2C29B6CD000DA010 /* ChangeUserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserImageView.swift; sourceTree = "<group>"; };
 		E03748832C29C76F000DA010 /* SettingsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTextField.swift; sourceTree = "<group>"; };
 		E03748892C29D4FC000DA010 /* SettingsInfoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoType.swift; sourceTree = "<group>"; };
-		E037488F2C29E70F000DA010 /* ThemeToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeToggle.swift; sourceTree = "<group>"; };
+		E037488F2C29E70F000DA010 /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		E03748932C29E75C000DA010 /* ThemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeType.swift; sourceTree = "<group>"; };
 		E03C6D512C2B4D5200DD7942 /* DefaultUserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserImage.swift; sourceTree = "<group>"; };
 		E0568CCB2C26EE4B003E9245 /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 				E03748772C29A49D000DA010 /* SettingsItem.swift */,
 				E037487F2C29B6CD000DA010 /* ChangeUserImageView.swift */,
 				E03748832C29C76F000DA010 /* SettingsTextField.swift */,
-				E037488F2C29E70F000DA010 /* ThemeToggle.swift */,
+				E037488F2C29E70F000DA010 /* ThemePicker.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -542,7 +542,7 @@
 				E03748842C29C76F000DA010 /* SettingsTextField.swift in Sources */,
 				E023D71E2C14FD1800F2C0EA /* FormInput.swift in Sources */,
 				E0568CCF2C26EF55003E9245 /* ImagePlaceholder.swift in Sources */,
-				E03748902C29E70F000DA010 /* ThemeToggle.swift in Sources */,
+				E03748902C29E70F000DA010 /* ThemePicker.swift in Sources */,
 				E0CAF99A2C2A097100C02C34 /* UpdateUsernameData.swift in Sources */,
 				E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */,
 				E03748802C29B6CD000DA010 /* ChangeUserImageView.swift in Sources */,

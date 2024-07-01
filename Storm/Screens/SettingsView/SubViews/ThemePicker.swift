@@ -7,13 +7,22 @@
 
 import SwiftUI
 
-struct ThemeToggle: View {
+struct ThemePicker: View {
     @AppStorage("isDark") private var isDark: Bool = false
 
     var body: some View {
-        Toggle(isOn: $isDark, label: {
-            customLabel
-        })
+        HStack {
+            Picker(selection: $isDark) {
+                Text("Light")
+                    .tag(false)
+                Text("Dark")
+                    .tag(true)
+            } label: {
+                customLabel
+            }
+            .pickerStyle(.navigationLink)
+            .foregroundStyle(.primary)
+        }
     
     }
     
@@ -25,15 +34,13 @@ struct ThemeToggle: View {
             VStack {
                 Text("Theme")
                     .frame(maxWidth: .infinity,alignment: .leading)
-                    .foregroundStyle(.secondary)
-                Text(isDark ? "Dark": "Light")
-                    .frame(maxWidth: .infinity,alignment: .leading)
-                    .foregroundStyle(.primary)
             }
         }
     }
 }
 
 #Preview {
-    ThemeToggle()
+    NavigationStack {
+        ThemePicker()
+    }
 }
