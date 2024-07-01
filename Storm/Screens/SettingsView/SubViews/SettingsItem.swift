@@ -9,9 +9,18 @@ import SwiftUI
 
 struct SettingsItem: View {
     @State private var isPresented: Bool = false
-    @Binding var label: String
-    let type: SettingsItemType
-    let onChange: () -> Void
+    @State private var text = ""
+    let label: String
+    let type: SettingsInfoType
+    let onChange: (String) -> Void
+    
+    init(label: String, type: SettingsInfoType, onChange: @escaping (String) -> Void) {
+        self.text = label
+        self.label = label
+        self.type = type
+        self.onChange = onChange
+    }
+    
     var body: some View {
         HStack(spacing: 16) {
             Image(systemName: type.icon)
@@ -34,15 +43,18 @@ struct SettingsItem: View {
         .onTapGesture {
             isPresented.toggle()
         }
-        .sheet(isPresented: $isPresented){
-            SettingsTextField(title: type.title, text: $label, maxSize: type.maxSize, onSave: onChange, onCancel: {isPresented.toggle()})
+        .sheet(isPresented: $isPresented, onDismiss: {text = label}){
+            SettingsTextField(type.title, text: $text, maxSize: type.maxSize, onSave: { text in
+                onChange(text)
+                isPresented.toggle()
+            }, onCancel: {isPresented.toggle()})
             .padding()
             .presentationDetents([.fraction(0.2)])
         }
- 
+        
     }
 }
 
 #Preview {
-    SettingsItem(label: .constant("username"), type: .username, onChange: {})
+    SettingsItem(label: "username", type: .username, onChange: {_ in })
 }

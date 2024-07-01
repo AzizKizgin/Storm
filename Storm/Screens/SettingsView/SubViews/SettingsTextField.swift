@@ -8,43 +8,47 @@
 import SwiftUI
 
 struct SettingsTextField: View {
-    @State private var textState: String = ""
-    let title: LocalizedStringKey
     @Binding var text: String
+    let title: LocalizedStringKey
     let maxSize: Int
-    let onSave: () -> Void
+    let onSave: (String) -> Void
     let onCancel: () -> Void
+    
+    init(_ title: LocalizedStringKey, text: Binding<String>, maxSize: Int, onSave: @escaping (String) -> Void, onCancel: @escaping () -> Void) {
+        self._text = text
+        self.title = title
+        self.maxSize = maxSize
+        self.onSave = onSave
+        self.onCancel = onCancel
+    }
     
     var body: some View {
         VStack(spacing: 16) {
             Text(title)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundStyle(.accent)
-            FormInput(title, text: $textState)
-                .onChange(of: textState) { _ , newValue in
+            FormInput(title, text: $text)
+                .onChange(of: text) { _ , newValue in
                     if newValue.count > maxSize {
-                        textState = String(newValue.prefix(maxSize))
+                        text = String(newValue.prefix(maxSize))
                     }
                 }
                 .overlay(alignment: .trailing) {
-                    Text("\(maxSize-textState.count)")
+                    Text("\(maxSize-text.count)")
                 }
             HStack(spacing: 32) {
                 Button(action: onCancel, label: {
                     Text("Cancel")
                 })
-                Button(action: onSave, label: {
+                Button(action: {onSave(text)}, label: {
                     Text("Save")
                 })
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
-            .onAppear {
-                textState = text
-            }
         }
     }
 }
 
 #Preview {
-    SettingsTextField(title: "Username", text: .constant("User name"), maxSize: 20, onSave: {}, onCancel: {})
+    SettingsTextField("username", text: .constant("User name"), maxSize: 25, onSave: {_ in }, onCancel: { })
 }
