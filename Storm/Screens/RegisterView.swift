@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
-@MainActor
 struct RegisterView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
     @Bindable private var registerVM = RegisterViewModel()
     var body: some View {
         VStack {
@@ -25,7 +26,7 @@ struct RegisterView: View {
                         .underline()
                 }
                 .padding(.horizontal)
-                FormButton("Sign up", onPress: registerVM.register, isLoading: registerVM.isLoading)
+                FormButton("Sign up", onPress: self.onRegister, isLoading: self.registerVM.isLoading)
             }
             .alert(registerVM.errorMessage, isPresented: $registerVM.showError){
                 Button("Okay", role: .cancel) {}
@@ -38,6 +39,16 @@ struct RegisterView: View {
         .onChange(of: registerVM.isSuccess) { _ , _ in
             if registerVM.isSuccess {
                 dismiss()
+            }
+        }
+    }
+}
+
+extension RegisterView {
+    private func onRegister() {
+        registerVM.register { userResponse in
+            if let userResponse {
+                modelContext.insert(userResponse.toUser())
             }
         }
     }

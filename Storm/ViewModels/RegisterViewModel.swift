@@ -22,7 +22,7 @@ import SwiftData
     @ObservationIgnored
     private var cancellable: AnyCancellable?
     
-    func register() {
+    func register(completion: @escaping (UserResponse?) -> Void) {
         if !validateFields() {
             return
         }
@@ -34,11 +34,12 @@ import SwiftData
                 case .finished:
                     print("finished")
                 case .failure(let error):
+                    completion(nil)
                     self.setError(error.localizedDescription)
                 }
             }, receiveValue: { user in
                 Task {
-                    await UserDataSource.shared.appendItem(user.toUser())
+                    completion(user)
                     UserDefaults.standard.set(user.token, forKey: "token")
                     self.isSuccess = true
                     self.isLoading = false
