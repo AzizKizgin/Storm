@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
     @State private var selectedTab: TabScreenType = .chatList
@@ -31,5 +32,14 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    MainActor.assumeIsolated {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try! ModelContainer(for: User.self, configurations: config)
+        container.mainContext.insert(dummyUser)
+        
+        return HomeView()
+            .modelContainer(container)
+        
+    }
+    
 }
