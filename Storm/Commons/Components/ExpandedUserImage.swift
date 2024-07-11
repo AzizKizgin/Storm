@@ -9,20 +9,23 @@ import SwiftUI
 
 struct ExpandedUserImage: View {
     var userImage: String = ""
+    var size: CGFloat? = nil
     var body: some View {
         VStack {
             if let uiImage = ImageManager.shared.convertStringToImage(for: userImage) {
                 Image(uiImage: uiImage)
                     .resizable()
-                    .scaledToFit()
+                    .aspectRatio(contentMode: size != nil ? .fill : .fit)
+                    .frame(width: size != nil ? size! : nil)
+                    .frame(height: size != nil ? size! : nil)
                     .clipShape(Rectangle())
             } else {
-                DefaultUserImage(size: 400)
+                DefaultUserImage(size: size)
             }
         }
     }
 }
 
 #Preview {
-    ExpandedUserImage(userImage: userImagePlaceholder3)
+    ExpandedUserImage(userImage: userImagePlaceholder3,size: 250)
 }
