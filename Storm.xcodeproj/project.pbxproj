@@ -16,6 +16,7 @@
 		E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493AE2C15BDBB001A3C1C /* ForgotPasswordView.swift */; };
 		E01493B12C15C466001A3C1C /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493B02C15C466001A3C1C /* FirebaseManager.swift */; };
 		E01493B52C15D1EB001A3C1C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493B42C15D1EB001A3C1C /* RegisterViewModel.swift */; };
+		E015134A2C3F181800A9D217 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01513492C3F181800A9D217 /* Modal.swift */; };
 		E023D7102C14D00100F2C0EA /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D70F2C14D00100F2C0EA /* StartView.swift */; };
 		E023D7152C14E7FC00F2C0EA /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D7142C14E7FC00F2C0EA /* FormButton.swift */; };
 		E023D7182C14EC9E00F2C0EA /* TopMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D7172C14EC9E00F2C0EA /* TopMessage.swift */; };
@@ -38,6 +39,8 @@
 		E05CC67E2C24BBA1009241C8 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC67D2C24BBA1009241C8 /* UserResponse.swift */; };
 		E05CC6802C24C2A5009241C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC67F2C24C2A5009241C8 /* User.swift */; };
 		E05DE5F72C2EAEC700EDA947 /* DummyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE5F62C2EAEC700EDA947 /* DummyUser.swift */; };
+		E0623BC22C3FEF36008380B5 /* ContactModalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0623BC12C3FEF36008380B5 /* ContactModalItem.swift */; };
+		E0802F102C3ED39500A69EA5 /* ContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0802F0F2C3ED39500A69EA5 /* ContactItem.swift */; };
 		E0CAF99A2C2A097100C02C34 /* UpdateUsernameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF9992C2A097100C02C34 /* UpdateUsernameData.swift */; };
 		E0CAF99C2C2A0A8300C02C34 /* UpdateUserAboutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */; };
 		E0CAF99E2C2A0B5700C02C34 /* UpdateUserImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF99D2C2A0B5700C02C34 /* UpdateUserImageData.swift */; };
@@ -94,6 +97,7 @@
 		E01493AE2C15BDBB001A3C1C /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		E01493B02C15C466001A3C1C /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		E01493B42C15D1EB001A3C1C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		E01513492C3F181800A9D217 /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		E023D70F2C14D00100F2C0EA /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		E023D7142C14E7FC00F2C0EA /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
 		E023D7172C14EC9E00F2C0EA /* TopMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMessage.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 		E05CC67D2C24BBA1009241C8 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		E05CC67F2C24C2A5009241C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E05DE5F62C2EAEC700EDA947 /* DummyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyUser.swift; sourceTree = "<group>"; };
+		E0623BC12C3FEF36008380B5 /* ContactModalItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModalItem.swift; sourceTree = "<group>"; };
+		E0802F0F2C3ED39500A69EA5 /* ContactItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
 		E0CAF9992C2A097100C02C34 /* UpdateUsernameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUsernameData.swift; sourceTree = "<group>"; };
 		E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserAboutData.swift; sourceTree = "<group>"; };
 		E0CAF99D2C2A0B5700C02C34 /* UpdateUserImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserImageData.swift; sourceTree = "<group>"; };
@@ -186,6 +192,9 @@
 				E037487D2C29B34C000DA010 /* ExpandedUserImage.swift */,
 				E03C6D512C2B4D5200DD7942 /* DefaultUserImage.swift */,
 				E0CC41942C2DE190009D765F /* ImagePicker.swift */,
+				E0802F0F2C3ED39500A69EA5 /* ContactItem.swift */,
+				E01513492C3F181800A9D217 /* Modal.swift */,
+				E0623BC12C3FEF36008380B5 /* ContactModalItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -538,12 +547,14 @@
 				E0DFE6B02C22E8A800F78184 /* Endpoints.swift in Sources */,
 				E0568CCC2C26EE4B003E9245 /* UserImage.swift in Sources */,
 				E05DE5F72C2EAEC700EDA947 /* DummyUser.swift in Sources */,
+				E0802F102C3ED39500A69EA5 /* ContactItem.swift in Sources */,
 				E0ECB36B2C26116D00D8CEB2 /* FormInputType.swift in Sources */,
 				E023D7202C14FF6400F2C0EA /* PasswordField.swift in Sources */,
 				E0DFE6AE2C22E65300F78184 /* RequestTypes.swift in Sources */,
 				E0ECB3662C26104F00D8CEB2 /* HomeView.swift in Sources */,
 				E037487E2C29B34C000DA010 /* ExpandedUserImage.swift in Sources */,
 				E03748782C29A49D000DA010 /* SettingsItem.swift in Sources */,
+				E015134A2C3F181800A9D217 /* Modal.swift in Sources */,
 				E0568CD12C26EFEA003E9245 /* ImageManager.swift in Sources */,
 				E0FD9DEF2C24252C008B3AC8 /* SuccessMessage.swift in Sources */,
 				E03C6D522C2B4D5200DD7942 /* DefaultUserImage.swift in Sources */,
@@ -563,6 +574,7 @@
 				E03748802C29B6CD000DA010 /* ChangeUserImageView.swift in Sources */,
 				E03748942C29E75C000DA010 /* ThemeType.swift in Sources */,
 				E0CAF99E2C2A0B5700C02C34 /* UpdateUserImageData.swift in Sources */,
+				E0623BC22C3FEF36008380B5 /* ContactModalItem.swift in Sources */,
 				E0FD9DE82C241823008B3AC8 /* Utils.swift in Sources */,
 				E0FD9DED2C2423C4008B3AC8 /* UserDataManager.swift in Sources */,
 				E023D7152C14E7FC00F2C0EA /* FormButton.swift in Sources */,
