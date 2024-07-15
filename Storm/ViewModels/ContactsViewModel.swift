@@ -25,11 +25,14 @@ import Combine
         cancellable?.cancel()
      }
     
-    func searchUsers() {
-//        if !self.queryObject.username.isEmpty {
-//            return
-//        }
-        print("sss222s")
+    func search() {
+        let debouncer = Debouncer(delay: 0.5)
+        debouncer.debounce {
+            self.searchUsers()
+        }
+    }
+    
+    private func searchUsers() {
         self.isLoading = true
         cancellable = ContactDataManager.shared.searchUsers(query: self.queryObject)
             .sink(receiveCompletion: { completionResult in
