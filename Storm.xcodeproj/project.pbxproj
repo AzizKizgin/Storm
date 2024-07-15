@@ -17,6 +17,7 @@
 		E01493B12C15C466001A3C1C /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493B02C15C466001A3C1C /* FirebaseManager.swift */; };
 		E01493B52C15D1EB001A3C1C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493B42C15D1EB001A3C1C /* RegisterViewModel.swift */; };
 		E015134A2C3F181800A9D217 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01513492C3F181800A9D217 /* Modal.swift */; };
+		E017A1B82C413B130070968F /* EmptyListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E017A1B72C413B130070968F /* EmptyListMessage.swift */; };
 		E023D7102C14D00100F2C0EA /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D70F2C14D00100F2C0EA /* StartView.swift */; };
 		E023D7152C14E7FC00F2C0EA /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D7142C14E7FC00F2C0EA /* FormButton.swift */; };
 		E023D7182C14EC9E00F2C0EA /* TopMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D7172C14EC9E00F2C0EA /* TopMessage.swift */; };
@@ -56,6 +57,11 @@
 		E0D2AA462C13B62F0042535A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0D2AA452C13B62F0042535A /* GoogleService-Info.plist */; };
 		E0DBF0732C25AC450014BDD8 /* LoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DBF0722C25AC450014BDD8 /* LoginInfo.swift */; };
 		E0DBF0752C25B49E0014BDD8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DBF0742C25B49E0014BDD8 /* LoginViewModel.swift */; };
+		E0DDE6392C407BAE002E3CA5 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDE6382C407BAE002E3CA5 /* Debouncer.swift */; };
+		E0DDE63B2C40824C002E3CA5 /* ContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDE63A2C40824C002E3CA5 /* ContactList.swift */; };
+		E0DDE63D2C408346002E3CA5 /* AddContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDE63C2C408346002E3CA5 /* AddContactsView.swift */; };
+		E0DDE63F2C408367002E3CA5 /* AddContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDE63E2C408367002E3CA5 /* AddContactsViewModel.swift */; };
+		E0DDE6432C408782002E3CA5 /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDE6422C408782002E3CA5 /* FloatingActionButton.swift */; };
 		E0DFE6AC2C22E60700F78184 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFE6AB2C22E60700F78184 /* DataManager.swift */; };
 		E0DFE6AE2C22E65300F78184 /* RequestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFE6AD2C22E65300F78184 /* RequestTypes.swift */; };
 		E0DFE6B02C22E8A800F78184 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DFE6AF2C22E8A800F78184 /* Endpoints.swift */; };
@@ -98,6 +104,7 @@
 		E01493B02C15C466001A3C1C /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		E01493B42C15D1EB001A3C1C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		E01513492C3F181800A9D217 /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
+		E017A1B72C413B130070968F /* EmptyListMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListMessage.swift; sourceTree = "<group>"; };
 		E023D70F2C14D00100F2C0EA /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		E023D7142C14E7FC00F2C0EA /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
 		E023D7172C14EC9E00F2C0EA /* TopMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMessage.swift; sourceTree = "<group>"; };
@@ -140,6 +147,11 @@
 		E0D2AA452C13B62F0042535A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E0DBF0722C25AC450014BDD8 /* LoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfo.swift; sourceTree = "<group>"; };
 		E0DBF0742C25B49E0014BDD8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E0DDE6382C407BAE002E3CA5 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
+		E0DDE63A2C40824C002E3CA5 /* ContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactList.swift; sourceTree = "<group>"; };
+		E0DDE63C2C408346002E3CA5 /* AddContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactsView.swift; sourceTree = "<group>"; };
+		E0DDE63E2C408367002E3CA5 /* AddContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactsViewModel.swift; sourceTree = "<group>"; };
+		E0DDE6422C408782002E3CA5 /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		E0DFE6AB2C22E60700F78184 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E0DFE6AD2C22E65300F78184 /* RequestTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTypes.swift; sourceTree = "<group>"; };
 		E0DFE6AF2C22E8A800F78184 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
@@ -195,6 +207,9 @@
 				E0802F0F2C3ED39500A69EA5 /* ContactItem.swift */,
 				E01513492C3F181800A9D217 /* Modal.swift */,
 				E0623BC12C3FEF36008380B5 /* ContactModalItem.swift */,
+				E0DDE63A2C40824C002E3CA5 /* ContactList.swift */,
+				E0DDE6422C408782002E3CA5 /* FloatingActionButton.swift */,
+				E017A1B72C413B130070968F /* EmptyListMessage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -230,6 +245,7 @@
 				E0ECB3632C26101900D8CEB2 /* ContactsView.swift */,
 				E0ECB3652C26104F00D8CEB2 /* HomeView.swift */,
 				E0ECB3672C2610F200D8CEB2 /* ChatListView.swift */,
+				E0DDE63C2C408346002E3CA5 /* AddContactsView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -239,6 +255,7 @@
 			children = (
 				E0FD9DE72C241823008B3AC8 /* Utils.swift */,
 				E01351702C33303F009FC804 /* SearchUsersQuery.swift */,
+				E0DDE6382C407BAE002E3CA5 /* Debouncer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -358,6 +375,7 @@
 				E0DBF0742C25B49E0014BDD8 /* LoginViewModel.swift */,
 				E0CAF99F2C2A0C6D00C02C34 /* SettingsViewModel.swift */,
 				E01351722C333206009FC804 /* ContactsViewModel.swift */,
+				E0DDE63E2C408367002E3CA5 /* AddContactsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -536,8 +554,11 @@
 				E023D7102C14D00100F2C0EA /* StartView.swift in Sources */,
 				E0D2AA1E2C13B5610042535A /* ContentView.swift in Sources */,
 				E023D71A2C14EF6D00F2C0EA /* StartImage.swift in Sources */,
+				E0DDE6432C408782002E3CA5 /* FloatingActionButton.swift in Sources */,
+				E0DDE63D2C408346002E3CA5 /* AddContactsView.swift in Sources */,
 				E023D71C2C14F5F500F2C0EA /* RegisterView.swift in Sources */,
 				E01493AB2C15B588001A3C1C /* Checkbox.swift in Sources */,
+				E0DDE6392C407BAE002E3CA5 /* Debouncer.swift in Sources */,
 				E0ECB36D2C2611AE00D8CEB2 /* TabScreenType.swift in Sources */,
 				E01493B52C15D1EB001A3C1C /* RegisterViewModel.swift in Sources */,
 				E01351712C33303F009FC804 /* SearchUsersQuery.swift in Sources */,
@@ -555,9 +576,11 @@
 				E037487E2C29B34C000DA010 /* ExpandedUserImage.swift in Sources */,
 				E03748782C29A49D000DA010 /* SettingsItem.swift in Sources */,
 				E015134A2C3F181800A9D217 /* Modal.swift in Sources */,
+				E017A1B82C413B130070968F /* EmptyListMessage.swift in Sources */,
 				E0568CD12C26EFEA003E9245 /* ImageManager.swift in Sources */,
 				E0FD9DEF2C24252C008B3AC8 /* SuccessMessage.swift in Sources */,
 				E03C6D522C2B4D5200DD7942 /* DefaultUserImage.swift in Sources */,
+				E0DDE63B2C40824C002E3CA5 /* ContactList.swift in Sources */,
 				E0D2AA1C2C13B5610042535A /* StormApp.swift in Sources */,
 				E023D7182C14EC9E00F2C0EA /* TopMessage.swift in Sources */,
 				E0ECB3682C2610F200D8CEB2 /* ChatListView.swift in Sources */,
@@ -578,6 +601,7 @@
 				E0FD9DE82C241823008B3AC8 /* Utils.swift in Sources */,
 				E0FD9DED2C2423C4008B3AC8 /* UserDataManager.swift in Sources */,
 				E023D7152C14E7FC00F2C0EA /* FormButton.swift in Sources */,
+				E0DDE63F2C408367002E3CA5 /* AddContactsViewModel.swift in Sources */,
 				E05CC67E2C24BBA1009241C8 /* UserResponse.swift in Sources */,
 				E05CC6802C24C2A5009241C8 /* User.swift in Sources */,
 				E0CC41952C2DE190009D765F /* ImagePicker.swift in Sources */,
