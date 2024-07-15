@@ -12,6 +12,7 @@ struct ContactItem: View {
     let onItemPress: () -> Void
     let onImagePress: () -> Void
     var onAddPress: () -> Void = {}
+    var isCurrentUser: Bool = false
     var body: some View {
         HStack(spacing: 0){
             UserImage(userImage: user.profilePicture ?? "", size: 50)
@@ -20,19 +21,23 @@ struct ContactItem: View {
                     onImagePress()
                 }
             VStack {
-                Text(user.username)
+                Text(isCurrentUser ? "You" : user.username)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(isCurrentUser ? .accent : .primary)
+                    .bold(isCurrentUser)
                 Text(user.about)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundStyle(.secondary)
             }
-            Button(action: {}, label: {
-                Image(systemName: "person.fill.badge.plus")
-                    .foregroundStyle(.accent)
-            })
-            .buttonStyle(PlainButtonStyle())
             .lineLimit(1)
+            if !isCurrentUser {
+                Button(action: {}, label: {
+                    Image(systemName: "person.fill.badge.plus")
+                        .foregroundStyle(.accent)
+                })
+                .buttonStyle(PlainButtonStyle())
+            }
+
         }
         .padding(.horizontal)
         .background(.main)
@@ -40,5 +45,5 @@ struct ContactItem: View {
 }
 
 #Preview {
-    ContactItem(user: dummyUserResponse, onItemPress: {}, onImagePress: {})
+    ContactItem(user: dummyUserResponse, onItemPress: {}, onImagePress: {}, isCurrentUser: true)
 }
