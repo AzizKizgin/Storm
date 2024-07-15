@@ -8,7 +8,7 @@
 import Foundation
 
 struct SearchUsersQuery: Encodable, Equatable {
-    var username: String = "U"
+    var username: String = ""
     var page: Int = 1
     var pageSize: Int = 15
     
