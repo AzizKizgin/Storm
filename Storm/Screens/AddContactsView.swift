@@ -11,8 +11,7 @@ struct AddContactsView: View {
     @Bindable private var addContactsVM = AddContactsViewModel()
     var body: some View {
         VStack {
-            ContactList(users: addContactsVM.searchResult?.users)
-                .emptyListMessage("Enter a name to begin your search.", icon: "magnifyingglass.circle.fill")
+      
         }
         .navigationTitle("Add Contact")
         .onAppear {
