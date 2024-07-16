@@ -45,6 +45,7 @@ struct ContactModalItem: View {
         .background(.main)
         .frame(width: 270)
         .clipShape(RoundedRectangle(cornerRadius: 16))
+        .contentShape(.rect)
     }
 }
 
