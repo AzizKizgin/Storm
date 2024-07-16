@@ -16,7 +16,6 @@
 		E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493AE2C15BDBB001A3C1C /* ForgotPasswordView.swift */; };
 		E01493B12C15C466001A3C1C /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493B02C15C466001A3C1C /* FirebaseManager.swift */; };
 		E01493B52C15D1EB001A3C1C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493B42C15D1EB001A3C1C /* RegisterViewModel.swift */; };
-		E015134A2C3F181800A9D217 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01513492C3F181800A9D217 /* Modal.swift */; };
 		E017A1B82C413B130070968F /* EmptyListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E017A1B72C413B130070968F /* EmptyListMessage.swift */; };
 		E023D7102C14D00100F2C0EA /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D70F2C14D00100F2C0EA /* StartView.swift */; };
 		E023D7152C14E7FC00F2C0EA /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D7142C14E7FC00F2C0EA /* FormButton.swift */; };
@@ -58,7 +57,6 @@
 		E0DBF0732C25AC450014BDD8 /* LoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DBF0722C25AC450014BDD8 /* LoginInfo.swift */; };
 		E0DBF0752C25B49E0014BDD8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DBF0742C25B49E0014BDD8 /* LoginViewModel.swift */; };
 		E0DDE6392C407BAE002E3CA5 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDE6382C407BAE002E3CA5 /* Debouncer.swift */; };
-		E0DDE63B2C40824C002E3CA5 /* ContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDE63A2C40824C002E3CA5 /* ContactList.swift */; };
 		E0DDE63D2C408346002E3CA5 /* AddContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDE63C2C408346002E3CA5 /* AddContactsView.swift */; };
 		E0DDE63F2C408367002E3CA5 /* AddContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDE63E2C408367002E3CA5 /* AddContactsViewModel.swift */; };
 		E0DDE6432C408782002E3CA5 /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DDE6422C408782002E3CA5 /* FloatingActionButton.swift */; };
@@ -103,7 +101,6 @@
 		E01493AE2C15BDBB001A3C1C /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		E01493B02C15C466001A3C1C /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		E01493B42C15D1EB001A3C1C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
-		E01513492C3F181800A9D217 /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		E017A1B72C413B130070968F /* EmptyListMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListMessage.swift; sourceTree = "<group>"; };
 		E023D70F2C14D00100F2C0EA /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		E023D7142C14E7FC00F2C0EA /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
@@ -148,7 +145,6 @@
 		E0DBF0722C25AC450014BDD8 /* LoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfo.swift; sourceTree = "<group>"; };
 		E0DBF0742C25B49E0014BDD8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E0DDE6382C407BAE002E3CA5 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
-		E0DDE63A2C40824C002E3CA5 /* ContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactList.swift; sourceTree = "<group>"; };
 		E0DDE63C2C408346002E3CA5 /* AddContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactsView.swift; sourceTree = "<group>"; };
 		E0DDE63E2C408367002E3CA5 /* AddContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactsViewModel.swift; sourceTree = "<group>"; };
 		E0DDE6422C408782002E3CA5 /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
@@ -205,9 +201,7 @@
 				E03C6D512C2B4D5200DD7942 /* DefaultUserImage.swift */,
 				E0CC41942C2DE190009D765F /* ImagePicker.swift */,
 				E0802F0F2C3ED39500A69EA5 /* ContactItem.swift */,
-				E01513492C3F181800A9D217 /* Modal.swift */,
 				E0623BC12C3FEF36008380B5 /* ContactModalItem.swift */,
-				E0DDE63A2C40824C002E3CA5 /* ContactList.swift */,
 				E0DDE6422C408782002E3CA5 /* FloatingActionButton.swift */,
 				E017A1B72C413B130070968F /* EmptyListMessage.swift */,
 			);
@@ -575,12 +569,10 @@
 				E0ECB3662C26104F00D8CEB2 /* HomeView.swift in Sources */,
 				E037487E2C29B34C000DA010 /* ExpandedUserImage.swift in Sources */,
 				E03748782C29A49D000DA010 /* SettingsItem.swift in Sources */,
-				E015134A2C3F181800A9D217 /* Modal.swift in Sources */,
 				E017A1B82C413B130070968F /* EmptyListMessage.swift in Sources */,
 				E0568CD12C26EFEA003E9245 /* ImageManager.swift in Sources */,
 				E0FD9DEF2C24252C008B3AC8 /* SuccessMessage.swift in Sources */,
 				E03C6D522C2B4D5200DD7942 /* DefaultUserImage.swift in Sources */,
-				E0DDE63B2C40824C002E3CA5 /* ContactList.swift in Sources */,
 				E0D2AA1C2C13B5610042535A /* StormApp.swift in Sources */,
 				E023D7182C14EC9E00F2C0EA /* TopMessage.swift in Sources */,
 				E0ECB3682C2610F200D8CEB2 /* ChatListView.swift in Sources */,
