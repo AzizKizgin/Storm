@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserResponse: Decodable {
+struct UserResponse: Decodable, Hashable {
     var id: String
     var email: String
     var username: String
@@ -15,9 +15,17 @@ struct UserResponse: Decodable {
     var createdAt: String
     var profilePicture: String?
     var token: String?
+    var contactList: [String] = []
     
     // user response to local User
     func toUser() -> User {
         return User(id: self.id, email: self.email, username: self.username, about: self.about, createdAt: self.createdAt, profilePicture: self.profilePicture ?? "")
+    }
+    
+    func isContactOf(userId: String?) -> Bool {
+        if let userId, contactList.contains(userId) {
+            return true
+        }
+        return false
     }
 }
