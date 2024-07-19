@@ -8,10 +8,10 @@
 import Foundation
 
 struct SearchUsersResponse: Decodable {
-    var users: [UserResponse]
-    let page: Int
-    let pageSize: Int
-    let totalPages: Int
+    var users: [UserResponse] = []
+    var page: Int = 1
+    var pageSize: Int = 20
+    var totalPages: Int = 1
 }
 
 let dummySearchUsersResponse = SearchUsersResponse(users: [dummyUserResponse, dummyUserResponse2, dummyUserResponse3], page: 1, pageSize: 1, totalPages: 1)
