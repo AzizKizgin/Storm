@@ -15,17 +15,11 @@ struct UserResponse: Decodable, Hashable {
     var createdAt: String
     var profilePicture: String?
     var token: String?
-    var contactList: [String] = []
+    var isContactOfCurrentUser: Bool = false
     
     // user response to local User
     func toUser() -> User {
         return User(id: self.id, email: self.email, username: self.username, about: self.about, createdAt: self.createdAt, profilePicture: self.profilePicture ?? "")
     }
-    
-    func isContactOf(userId: String?) -> Bool {
-        if let userId, contactList.contains(userId) {
-            return true
-        }
-        return false
-    }
+
 }
