@@ -45,6 +45,8 @@
 		E0CAF99C2C2A0A8300C02C34 /* UpdateUserAboutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */; };
 		E0CAF99E2C2A0B5700C02C34 /* UpdateUserImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF99D2C2A0B5700C02C34 /* UpdateUserImageData.swift */; };
 		E0CAF9A02C2A0C6D00C02C34 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF99F2C2A0C6D00C02C34 /* SettingsViewModel.swift */; };
+		E0CBB6C52C485645004337ED /* CreateContactDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CBB6C42C485645004337ED /* CreateContactDto.swift */; };
+		E0CBB6C72C485796004337ED /* ContactResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CBB6C62C485796004337ED /* ContactResponse.swift */; };
 		E0CC41952C2DE190009D765F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CC41942C2DE190009D765F /* ImagePicker.swift */; };
 		E0D2AA1C2C13B5610042535A /* StormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D2AA1B2C13B5610042535A /* StormApp.swift */; };
 		E0D2AA1E2C13B5610042535A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D2AA1D2C13B5610042535A /* ContentView.swift */; };
@@ -130,6 +132,8 @@
 		E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserAboutData.swift; sourceTree = "<group>"; };
 		E0CAF99D2C2A0B5700C02C34 /* UpdateUserImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserImageData.swift; sourceTree = "<group>"; };
 		E0CAF99F2C2A0C6D00C02C34 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		E0CBB6C42C485645004337ED /* CreateContactDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateContactDto.swift; sourceTree = "<group>"; };
+		E0CBB6C62C485796004337ED /* ContactResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactResponse.swift; sourceTree = "<group>"; };
 		E0CC41942C2DE190009D765F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E0D2AA182C13B5610042535A /* Storm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D2AA1B2C13B5610042535A /* StormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StormApp.swift; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 				E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */,
 				E0CAF99D2C2A0B5700C02C34 /* UpdateUserImageData.swift */,
 				E013516E2C332FA5009FC804 /* SearchUsersResponse.swift */,
+				E0CBB6C42C485645004337ED /* CreateContactDto.swift */,
+				E0CBB6C62C485796004337ED /* ContactResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -549,6 +555,7 @@
 				E0D2AA1E2C13B5610042535A /* ContentView.swift in Sources */,
 				E023D71A2C14EF6D00F2C0EA /* StartImage.swift in Sources */,
 				E0DDE6432C408782002E3CA5 /* FloatingActionButton.swift in Sources */,
+				E0CBB6C52C485645004337ED /* CreateContactDto.swift in Sources */,
 				E0DDE63D2C408346002E3CA5 /* AddContactsView.swift in Sources */,
 				E023D71C2C14F5F500F2C0EA /* RegisterView.swift in Sources */,
 				E01493AB2C15B588001A3C1C /* Checkbox.swift in Sources */,
@@ -565,6 +572,7 @@
 				E0802F102C3ED39500A69EA5 /* ContactItem.swift in Sources */,
 				E0ECB36B2C26116D00D8CEB2 /* FormInputType.swift in Sources */,
 				E023D7202C14FF6400F2C0EA /* PasswordField.swift in Sources */,
+				E0CBB6C72C485796004337ED /* ContactResponse.swift in Sources */,
 				E0DFE6AE2C22E65300F78184 /* RequestTypes.swift in Sources */,
 				E0ECB3662C26104F00D8CEB2 /* HomeView.swift in Sources */,
 				E037487E2C29B34C000DA010 /* ExpandedUserImage.swift in Sources */,
