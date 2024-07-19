@@ -14,7 +14,6 @@ struct ContactItem: View {
     var onAddContact: () -> Void = {}
     var onRemoveContact: () -> Void = {}
     var isCurrentUser: Bool = false
-    var isContact: Bool = false
     
     init(user: UserResponse) {
         self.user = user
@@ -39,15 +38,15 @@ struct ContactItem: View {
             .lineLimit(1)
             Group {
                 if !isCurrentUser {
-                    if isContact {
-                        Button(action: {}, label: {
+                    if user.isContactOfCurrentUser {
+                        Button(action: onRemoveContact, label: {
                             Image(systemName: "person.fill.badge.minus")
                                 .foregroundStyle(.accent)
                         })
                         .buttonStyle(PlainButtonStyle())
                     }
                     else {
-                        Button(action: {}, label: {
+                        Button(action: onAddContact, label: {
                             Image(systemName: "person.fill.badge.plus")
                                 .foregroundStyle(.accent)
                         })
@@ -62,6 +61,7 @@ struct ContactItem: View {
             onItemPress()
         }
         .padding(.horizontal)
+        .padding(.vertical, 5)
         .background(.main)
         .fullScreenCover(isPresented: $showModal) {
             ZStack {
@@ -106,16 +106,9 @@ extension ContactItem {
         return copy
     }
     
-    func isContact(_ isContact: Bool) -> ContactItem {
-        var copy = self
-        copy.isContact = isContact
-        return copy
-    }
-    
 }
 
 #Preview {
     ContactItem(user: dummyUserResponse)
         .onPress {}
-        .isContact(true)
 }

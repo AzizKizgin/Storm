@@ -22,7 +22,6 @@ struct ContactsView: View {
                             .onPress {
                                 selectedUser = user
                             }
-                            .isContact(user.isContactOf(userId: appUser.first?.id))
                             .isCurrentUser(appUser.first?.id == user.id)
                             .listRowInsets(EdgeInsets(top: 20, leading: 10, bottom: 0, trailing: 10))
                             .listRowBackground(Color.main)
