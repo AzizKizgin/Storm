@@ -10,13 +10,16 @@ import SwiftUI
 import Combine
 
 @Observable class AddContactsViewModel {
-    var searchResult: SearchUsersResponse?
+    var searchResult: SearchUsersResponse = SearchUsersResponse()
     var searchObject: SearchUsersQuery = SearchUsersQuery()
+    var selectedUser: UserResponse?
     var isChecked: Bool = false
     var errorMessage: LocalizedStringKey = ""
     var showError: Bool = false
     var isLoading: Bool = false
     var isSuccess: Bool = false
+    var showRemoveAlert: Bool = false
+    var removingContact: UserResponse?
     
     @ObservationIgnored
     private var cancellable: AnyCancellable?
@@ -39,11 +42,67 @@ import Combine
                 }
             }, receiveValue: { result in
                 Task {
+                    print("result")
+                    print(result)
                     self.searchResult = result
                     self.isSuccess = true
                     self.isLoading = false
                 }
             })
+    }
+    
+    func addContact(id: String) {
+        self.isLoading = true
+        cancellable = ContactDataManager.shared.addContact(createContactInfo: CreateContactDto(contactUserId: id))
+            .sink(receiveCompletion: { completionResult in
+                self.isLoading = false
+                switch completionResult {
+                case .finished:
+                    if let index = self.searchResult.users.firstIndex(where: { $0.id == id }) {
+                        self.searchResult.users[index].isContactOfCurrentUser = true
+                    }
+                case .failure(let error):
+                    self.setError(error.localizedDescription)
+                }
+            }, receiveValue: { result in
+                Task {
+                    self.isSuccess = true
+                    self.isLoading = false
+                }
+            })
+    }
+    
+    func removeContact() {
+        if let id = removingContact?.id {
+            self.isLoading = true
+            cancellable = ContactDataManager.shared.removeContact(contactId: id)
+                .sink(receiveCompletion: { completionResult in
+                    self.isLoading = false
+                    switch completionResult {
+                    case .finished:
+                        if let index = self.searchResult.users.firstIndex(where: { $0.id == id }) {
+                            self.searchResult.users[index].isContactOfCurrentUser = false
+                        }
+                    case .failure(let error):
+                        self.setError(error.localizedDescription)
+                    }
+                }, receiveValue: { result in
+                    Task {
+                        self.isSuccess = true
+                        self.isLoading = false
+                    }
+                })
+        }
+    }
+    
+    func showRemoveContactAlert(contact: UserResponse) {
+        self.removingContact = contact
+        self.showRemoveAlert.toggle()
+    }
+    
+    func cancelRemove() {
+        self.removingContact = nil
+        self.showRemoveAlert.toggle()
     }
     
     private func setError(_ error: String) {
