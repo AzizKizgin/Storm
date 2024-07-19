@@ -17,6 +17,7 @@ import Combine
     var errorMessage: LocalizedStringKey = ""
     var showError: Bool = false
     var isLoading: Bool = false
+    var isListLoading: Bool = false
     var isSuccess: Bool = false
     var showRemoveAlert: Bool = false
     var removingContact: UserResponse?
@@ -29,10 +30,10 @@ import Combine
      }
     
     func searchUsers() {
-        self.isLoading = true
+        self.isListLoading = true
         cancellable = ContactDataManager.shared.searchUsers(query: self.searchObject)
             .sink(receiveCompletion: { completionResult in
-                self.isLoading = false
+                self.isListLoading = false
                 switch completionResult {
                 case .finished:
                     print("finished")
@@ -41,13 +42,9 @@ import Combine
                     self.setError(error.localizedDescription)
                 }
             }, receiveValue: { result in
-                Task {
-                    print("result")
-                    print(result)
-                    self.searchResult = result
-                    self.isSuccess = true
-                    self.isLoading = false
-                }
+                self.searchResult = result
+                self.isSuccess = true
+                self.isListLoading = false
             })
     }
     
@@ -65,10 +62,7 @@ import Combine
                     self.setError(error.localizedDescription)
                 }
             }, receiveValue: { result in
-                Task {
-                    self.isSuccess = true
-                    self.isLoading = false
-                }
+                self.isLoading = false
             })
     }
     
@@ -87,10 +81,7 @@ import Combine
                         self.setError(error.localizedDescription)
                     }
                 }, receiveValue: { result in
-                    Task {
-                        self.isSuccess = true
-                        self.isLoading = false
-                    }
+                    self.isLoading = false
                 })
         }
     }
