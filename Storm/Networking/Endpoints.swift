@@ -10,6 +10,7 @@ import Foundation
 enum Endpoints {
     private static let baseURL = "http://localhost:5117/api"
     private static let userURL = "\(baseURL)/user"
+    private static let contactURL = "\(baseURL)/contact"
     
     // MARK: - User URLs
     public static func getRegisterURL() -> URL {
@@ -65,4 +66,37 @@ enum Endpoints {
         urlComponent.queryItems = query?.toQueryItems()
         return urlComponent.url!
     }
+    
+    public static func getUserById(id: String) -> URL {
+        let urlString = "\(userURL)/get-user/\(id)"
+        let url = URL(string: urlString)!
+        return url
+    }
+    
+    // MARK: - Contact URLs
+    
+    public static func addContact() -> URL {
+        let urlString = "\(contactURL)/create"
+        let url = URL(string: urlString)!
+        return url
+    }
+    
+    public static func getAllContact() -> URL {
+        let urlString = "\(contactURL)/get-all"
+        let url = URL(string: urlString)!
+        return url
+    }
+    
+    public static func removeContact(contactId: Int) -> URL {
+        let urlString = "\(contactURL)/remove/\(contactId)"
+        let url = URL(string: urlString)!
+        return url
+    }
+    
+    public static func removeContact(contactUserId: String) -> URL {
+        let urlString = "\(contactURL)/removeByUserId/\(contactUserId)"
+        let url = URL(string: urlString)!
+        return url
+    }
+    
 }
