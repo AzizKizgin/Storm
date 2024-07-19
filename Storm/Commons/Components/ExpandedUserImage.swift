@@ -16,13 +16,21 @@ struct ExpandedUserImage: View {
                 Image(uiImage: uiImage)
                     .resizable()
                     .aspectRatio(contentMode: size != nil ? .fill : .fit)
-                    .frame(width: size != nil ? size! : nil)
-                    .frame(height: size != nil ? size! : nil)
+                    .frame(width: size)
+                    .frame(height: size)
                     .clipShape(Rectangle())
             } else {
-                DefaultUserImage(size: size)
+                Image(systemName: "person.fill")
+                    .resizable()
+                    .frame(width: size)
+                    .frame(height: size)
+                    .aspectRatio(contentMode: size != nil ? .fill : .fit)
+                    .clipShape(Rectangle())
+                    .foregroundStyle(.accent)
+                   
             }
         }
+        .background(.main)
     }
 }
 
