@@ -65,4 +65,11 @@ class UserDataManager {
             requestType: .put
         )
     }
+    
+    func getUser(id: String) -> AnyPublisher<UserResponse, Error> {
+        return DataManager.shared.sendRequest(
+            for: Endpoints.getUserById(id: id),
+            requestType: .get
+        )
+    }
 }
