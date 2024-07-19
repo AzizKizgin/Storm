@@ -14,7 +14,12 @@ struct AddContactsView: View {
     
     var body: some View {
         VStack {
-            if !addContactsVM.searchResult.users.isEmpty {
+            if addContactsVM.isListLoading {
+                ProgressView()
+                    .controlSize(.extraLarge)
+                    .tint(.accent)
+            }
+            else if !addContactsVM.searchResult.users.isEmpty {
                 List {
                     ForEach(addContactsVM.searchResult.users, id: \.id){ user in
                         ContactItem(user: user)
