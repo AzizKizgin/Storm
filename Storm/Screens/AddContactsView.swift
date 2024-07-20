@@ -51,6 +51,9 @@ struct AddContactsView: View {
                 }
             }
         }
+        .alert(self.addContactsVM.errorMessage, isPresented: self.$addContactsVM.showError) {
+            Button("Ok") {}
+        }
         .alert("Remove Contact", isPresented: $addContactsVM.showRemoveAlert) {
             Button("Cancel", role: .cancel) { }
             Button("Remove", role: .destructive) {
