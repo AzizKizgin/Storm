@@ -13,7 +13,6 @@ import Combine
     var users: [UserResponse] = []
     var searchObject: SearchUsersQuery = SearchUsersQuery()
     var selectedUser: UserResponse?
-    var isChecked: Bool = false
     var errorMessage: LocalizedStringKey = ""
     var showError: Bool = false
     var isLoading: Bool = false
