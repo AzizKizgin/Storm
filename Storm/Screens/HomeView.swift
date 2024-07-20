@@ -12,30 +12,24 @@ struct HomeView: View {
     @State private var selectedTab: TabScreenType = .chatList
     var body: some View {
         TabView(selection: $selectedTab) {
-            NavigationStack{
-                ChatListView()
-            }
+            ChatListView()
                 .tag(TabScreenType.chatList)
                 .tabItem {
                     Label("Chats", systemImage: "text.bubble")
                 }
-            NavigationStack{
-                ContactsView()
-            }
+            ContactsView()
                 .tag(TabScreenType.contacts)
                 .tabItem {
                     Label("Contacts", systemImage: "person.3")
                 }
-            NavigationStack{
-                SettingsView()
-            }
+          
+            SettingsView()
                 .tag(TabScreenType.settings)
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }
                 
         }
-        .navigationTitle(selectedTab.title)
     }
 }
 

@@ -11,13 +11,11 @@ import SwiftData
 struct ContentView: View {
     @Query private var user: [User]
     var body: some View {
-        NavigationStack {
-            if !user.isEmpty {
-                HomeView()
-            }
-            else {
-                StartView()
-            }
+        if !user.isEmpty {
+            HomeView()
+        }
+        else {
+            StartView()
         }
     }
 }
