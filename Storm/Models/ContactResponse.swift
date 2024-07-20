@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct ContactResponse: Decodable {
-    let id: String
+struct ContactResponse: Decodable, Hashable {
+    let id: Int
     let contactUser: UserResponse
     let addedAt: String
 }
