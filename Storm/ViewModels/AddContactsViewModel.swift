@@ -21,6 +21,7 @@ import Combine
     var isSuccess: Bool = false
     var showRemoveAlert: Bool = false
     var removingContact: UserResponse?
+    var totalPages: Int = 0
     
     @ObservationIgnored
     private var cancellable: AnyCancellable?
@@ -29,20 +30,46 @@ import Combine
         cancellable?.cancel()
      }
     
+    func reset() {
+        self.totalPages = 0
+        self.users.removeAll()
+    }
+    
+    func refresh() {
+        self.searchObject.page = 0
+        self.totalPages = 0
+        self.users.removeAll()
+        self.searchUsers()
+    }
+    
+    func loadMoreContent(item: UserResponse){
+        let thresholdIndex = users.last?.id
+        if thresholdIndex == item.id, (searchObject.page + 1) <= totalPages {
+            searchObject.page += 1
+            searchUsers()
+        }
+    }
+    
     func searchUsers() {
+        if self.searchObject.username.isEmpty {
+            self.searchObject = SearchUsersQuery()
+            self.totalPages = 0
+            self.users.removeAll()
+        }
         self.isListLoading = true
         cancellable = ContactDataManager.shared.searchUsers(query: self.searchObject)
             .sink(receiveCompletion: { completionResult in
                 self.isListLoading = false
                 switch completionResult {
                 case .finished:
-                    print("finished")
+                    print("")
                 case .failure(let error):
                     print(error.localizedDescription)
                     self.setError(error.localizedDescription)
                 }
             }, receiveValue: { result in
-                self.users = result.users
+                self.totalPages = result.totalPages
+                self.users.append(contentsOf: result.users)
                 self.isSuccess = true
                 self.isListLoading = false
             })

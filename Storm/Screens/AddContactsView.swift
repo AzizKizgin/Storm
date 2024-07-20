@@ -14,14 +14,8 @@ struct AddContactsView: View {
     
     var body: some View {
         VStack {
-            if addContactsVM.isListLoading {
-                ProgressView()
-                    .controlSize(.extraLarge)
-                    .tint(.accent)
-            }
-            else if !addContactsVM.users.isEmpty {
-                List {
-                    ForEach(addContactsVM.users, id: \.id){ user in
+            if !addContactsVM.users.isEmpty {
+                List(addContactsVM.users, id: \.id){ user in
                         ContactItem(user: user)
                             .onPress {
                                 addContactsVM.selectedUser = user
@@ -33,15 +27,22 @@ struct AddContactsView: View {
                                 addContactsVM.showRemoveContactAlert(contact: user)
                             }
                             .isCurrentUser(appUser.first?.id == user.id)
+                            .id(user.id)
+                            .onAppear {
+                                self.addContactsVM.loadMoreContent(item: user)
+                            }
                             .listRowInsets(EdgeInsets(top: 20, leading: 10, bottom: 0, trailing: 10))
                             .listRowBackground(Color.main)
                             .listRowSeparator(.hidden)
-                    }
+                  
+                }
+                .refreshable {
+                    self.addContactsVM.refresh()
                 }
                 .listStyle(.inset)
                 .scrollContentBackground(.hidden)
             }
-            else {
+            else if !self.addContactsVM.isListLoading {
                 if addContactsVM.searchObject.username.isEmpty {
                     EmptyListMessage(message: "Start searching for contacts", icon: "magnifyingglass.circle.fill")
                 }
@@ -61,8 +62,9 @@ struct AddContactsView: View {
             }
         }
         .searchable(text: $addContactsVM.searchObject.username)
-        .onChange(of: addContactsVM.searchObject.username, { oldValue, newValue in
-            addContactsVM.searchUsers()
+        .onChange(of: addContactsVM.searchObject.username, { _ , _ in
+            self.addContactsVM.reset()
+            self.addContactsVM.searchUsers()
         })
         .navigationTitle("Add Contact")
         .navigationDestination(item: $addContactsVM.selectedUser){ user in
