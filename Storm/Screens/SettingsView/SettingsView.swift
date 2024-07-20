@@ -14,39 +14,42 @@ struct SettingsView: View {
     @Bindable private var settingsVM = SettingsViewModel()
     
     var body: some View {
-        VStack(spacing: 20) {
-            if let user = users.first {
-                NavigationLink {
-                    ChangeUserImageView(userImage: user.profilePicture, onChange: self.changeImage)
-                } label: {
-                    UserImage(userImage: user.profilePicture)
-                        .padding()
+        NavigationStack {
+            VStack(spacing: 20) {
+                if let user = users.first {
+                    NavigationLink {
+                        ChangeUserImageView(userImage: user.profilePicture, onChange: self.changeImage)
+                    } label: {
+                        UserImage(userImage: user.profilePicture)
+                            .padding()
+                    }
+                    SettingsItem(label: user.username, type: .username, onChange: self.changeUsername)
+                    SettingsItem(label: user.about, type: .about, onChange: self.changeAbout)
+                    ThemePicker()
+                    Spacer()
+                    Button(action: self.settingsVM.onLogoutPressed, label: {
+                        Text("Logout")
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 5)
+                    })
+                    .buttonStyle(BorderedProminentButtonStyle())
                 }
-                SettingsItem(label: user.username, type: .username, onChange: self.changeUsername)
-                SettingsItem(label: user.about, type: .about, onChange: self.changeAbout)
-                ThemePicker()
-                Spacer()
-                Button(action: self.settingsVM.onLogoutPressed, label: {
-                    Text("Logout")
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 5) 
-                })
-                .buttonStyle(BorderedProminentButtonStyle())
             }
-        }
-        .padding()
-        .background(.main)
-        .alert(settingsVM.errorMessage, isPresented: $settingsVM.showError){
-            Button("Okay", role: .cancel) {}
-        }
-        .alert(settingsVM.successMessage, isPresented: $settingsVM.isSuccess){
-            Button("Okay", role: .cancel) {}
-        }
-        .alert("Are you sure you want to logout?", isPresented: $settingsVM.showLogoutAlert){
-            Button("Yes", role: .destructive) {
-                self.logout()
+            .padding()
+            .background(.main)
+            .navigationTitle("Settings")
+            .alert(settingsVM.errorMessage, isPresented: $settingsVM.showError){
+                Button("Okay", role: .cancel) {}
             }
-            Button("No", role: .cancel) {}
+            .alert(settingsVM.successMessage, isPresented: $settingsVM.isSuccess){
+                Button("Okay", role: .cancel) {}
+            }
+            .alert("Are you sure you want to logout?", isPresented: $settingsVM.showLogoutAlert){
+                Button("Yes", role: .destructive) {
+                    self.logout()
+                }
+                Button("No", role: .cancel) {}
+            }
         }
     }
 }
