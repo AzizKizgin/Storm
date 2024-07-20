@@ -38,12 +38,10 @@ import SwiftData
                     self.setError(error.localizedDescription)
                 }
             }, receiveValue: { user in
-                Task {
-                    completion(user)
-                    UserDefaults.standard.set(user.token, forKey: "token")
-                    self.isSuccess = true
-                    self.isLoading = false
-                }
+                completion(user)
+                UserDefaults.standard.set(user.token, forKey: "token")
+                self.isSuccess = true
+                self.isLoading = false
             })
     }
     
