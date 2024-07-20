@@ -10,46 +10,74 @@ import SwiftData
 
 struct ContactsView: View {
     @Query private var appUser: [User]
-    @State private var showAddContacts: Bool = false
-    @State private var users: [UserResponse]?
-    @State private var selectedUser: UserResponse?
+    @Bindable private var contactsVM = ContactsViewModel()
+    
     var body: some View {
-        VStack {
-            if let users = users, !users.isEmpty {
-                List {
-                    ForEach(users, id: \.id){ user in
-                        ContactItem(user: user)
+        NavigationStack {
+            VStack {
+                if contactsVM.isListLoading {
+                    ProgressView()
+                        .controlSize(.extraLarge)
+                        .tint(.accent)
+                }
+                else if !contactsVM.contacts.isEmpty {
+                    List(contactsVM.searchText.isEmpty ? contactsVM.contacts : contactsVM.filteredContacts, id: \.id){ contact in
+                        ContactItem(user: contact.contactUser)
                             .onPress {
-                                selectedUser = user
+                                contactsVM.selectedContact = contact
                             }
-                            .isCurrentUser(appUser.first?.id == user.id)
+                            .onRemoveContact {
+                                contactsVM.showRemoveContactAlert(contact: contact)
+                            }
+                            .isCurrentUser(appUser.first?.id == contact.contactUser.id)
+                            .id(contact.id)
                             .listRowInsets(EdgeInsets(top: 20, leading: 10, bottom: 0, trailing: 10))
                             .listRowBackground(Color.main)
                             .listRowSeparator(.hidden)
+                        
+                    }
+                    .refreshable {
+                        self.contactsVM.getContacts()
+                    }
+                    .listStyle(.inset)
+                    .scrollContentBackground(.hidden)
+                    .navigationDestination(item: $contactsVM.selectedContact){ contact in
+                        Text("\(contact.contactUser.id)")
                     }
                 }
-                .listStyle(.inset)
-                .scrollContentBackground(.hidden)
+                else if !self.contactsVM.isListLoading {
+                    EmptyListMessage(message: "Add your first contact", icon: "person.crop.circle.fill.badge.plus")
+                        .onAppear {
+                            self.contactsVM.getContacts()
+                        }
+                }
             }
-            else {
-                EmptyListMessage(message: "You have no contact yet", icon: "person.crop.circle.fill.badge.plus")
+            .searchable(text: $contactsVM.searchText)
+            .onChange(of: contactsVM.searchText, { _ , _ in
+                contactsVM.search()
+            })
+            .alert(self.contactsVM.errorMessage, isPresented: self.$contactsVM.showError) {
+                Button("Ok") {}
             }
-        }
-        .onAppear {
-            users = [dummyUserResponse, dummyUserResponse2, dummyUserResponse3]
-        }
-        .background(.main)
-        .navigationTitle("Contacts")
-        .navigationDestination(item: $selectedUser){ user in
-            Text(user.id)
-        }
-        .navigationDestination(isPresented: $showAddContacts) {
-            AddContactsView()
-        }
-        .background(.main)
-        .overlay(alignment: .bottomTrailing) {
-            FloatingActionButton(onPress: {showAddContacts.toggle()})
-                .safeAreaPadding()
+            .alert("Remove Contact", isPresented: $contactsVM.showRemoveAlert) {
+                Button("Cancel", role: .cancel) { }
+                Button("Remove", role: .destructive) {
+                    self.contactsVM.removeContact()
+                }
+            } message: {
+                if let username = self.contactsVM.removingContact?.contactUser.username {
+                    Text("Are you sure to remove \(username) from contacts")
+                }
+            }
+            .navigationTitle("Contacts")
+            .navigationDestination(isPresented: $contactsVM.showAddContactScreen) {
+                AddContactsView()
+            }
+            .overlay(alignment: .bottomTrailing) {
+                FloatingActionButton(onPress: {contactsVM.showAddContactScreen.toggle()})
+                    .safeAreaPadding()
+            }
+            .background(.main)
         }
     }
 }
