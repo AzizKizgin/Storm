@@ -19,9 +19,9 @@ struct AddContactsView: View {
                     .controlSize(.extraLarge)
                     .tint(.accent)
             }
-            else if !addContactsVM.searchResult.users.isEmpty {
+            else if !addContactsVM.users.isEmpty {
                 List {
-                    ForEach(addContactsVM.searchResult.users, id: \.id){ user in
+                    ForEach(addContactsVM.users, id: \.id){ user in
                         ContactItem(user: user)
                             .onPress {
                                 addContactsVM.selectedUser = user

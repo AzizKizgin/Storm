@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 
 @Observable class AddContactsViewModel {
-    var searchResult: SearchUsersResponse = SearchUsersResponse()
+    var users: [UserResponse] = []
     var searchObject: SearchUsersQuery = SearchUsersQuery()
     var selectedUser: UserResponse?
     var isChecked: Bool = false
@@ -42,7 +42,7 @@ import Combine
                     self.setError(error.localizedDescription)
                 }
             }, receiveValue: { result in
-                self.searchResult = result
+                self.users = result.users
                 self.isSuccess = true
                 self.isListLoading = false
             })
@@ -55,8 +55,8 @@ import Combine
                 self.isLoading = false
                 switch completionResult {
                 case .finished:
-                    if let index = self.searchResult.users.firstIndex(where: { $0.id == id }) {
-                        self.searchResult.users[index].isContactOfCurrentUser = true
+                    if let index = self.users.firstIndex(where: { $0.id == id }) {
+                        self.users[index].isContactOfCurrentUser = true
                     }
                 case .failure(let error):
                     self.setError(error.localizedDescription)
@@ -74,8 +74,8 @@ import Combine
                     self.isLoading = false
                     switch completionResult {
                     case .finished:
-                        if let index = self.searchResult.users.firstIndex(where: { $0.id == id }) {
-                            self.searchResult.users[index].isContactOfCurrentUser = false
+                        if let index = self.users.firstIndex(where: { $0.id == id }) {
+                            self.users[index].isContactOfCurrentUser = false
                         }
                     case .failure(let error):
                         self.setError(error.localizedDescription)
