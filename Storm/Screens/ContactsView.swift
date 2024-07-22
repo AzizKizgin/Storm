@@ -47,10 +47,10 @@ struct ContactsView: View {
                 }
                 else if !self.contactsVM.isListLoading {
                     EmptyListMessage(message: "Add your first contact", icon: "person.crop.circle.fill.badge.plus")
-                        .onAppear {
-                            self.contactsVM.getContacts()
-                        }
                 }
+            }
+            .onAppear {
+                self.contactsVM.getContacts()
             }
             .searchable(text: $contactsVM.searchText)
             .onChange(of: contactsVM.searchText, { _ , _ in
