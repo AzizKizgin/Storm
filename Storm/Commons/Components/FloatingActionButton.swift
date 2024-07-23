@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FloatingActionButton: View {
+    var icon: String = ""
     let onPress: () -> Void
     var body: some View {
         Button {
@@ -16,7 +17,7 @@ struct FloatingActionButton: View {
             Circle()
                 .frame(width: 60)
                 .overlay {
-                    Image(systemName: "plus")
+                    Image(systemName: icon.isEmpty ? "plus": icon)
                         .font(.title)
                         .foregroundStyle(.main)
                 }
