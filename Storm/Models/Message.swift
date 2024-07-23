@@ -11,18 +11,18 @@ import Foundation
 //    public MessageType Type { get; set; }
 //}
 
-struct Message: Decodable {
+struct Message: Decodable, Hashable {
     var id: Int
     var sender: UserResponse
-    var chatId: Int?
+    var chatId: String?
     var groupId: Int?
     var content: String
     var createdAt: String
     var editedAt: String?
     var media: [String]
     var readBy: [String]
-    var reactions: [String]
-    var type: MessageType
+    var reactions: [EmojiReaction]
+    var type: MessageType?
 }
 
 enum MessageType: Decodable {
