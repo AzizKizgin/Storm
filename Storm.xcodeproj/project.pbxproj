@@ -24,6 +24,11 @@
 		E023D71C2C14F5F500F2C0EA /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D71B2C14F5F500F2C0EA /* RegisterView.swift */; };
 		E023D71E2C14FD1800F2C0EA /* FormInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D71D2C14FD1800F2C0EA /* FormInput.swift */; };
 		E023D7202C14FF6400F2C0EA /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D71F2C14FF6400F2C0EA /* PasswordField.swift */; };
+		E02608D02C4FD5D700C9FE0D /* ChatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02608CF2C4FD5D700C9FE0D /* ChatItem.swift */; };
+		E02B22DC2C5013E300E1F6F3 /* DummyChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02B22DB2C5013E300E1F6F3 /* DummyChat.swift */; };
+		E02B22DE2C50147000E1F6F3 /* DummyChatMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02B22DD2C50147000E1F6F3 /* DummyChatMember.swift */; };
+		E02B22E02C5014E000E1F6F3 /* DummyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02B22DF2C5014E000E1F6F3 /* DummyMessage.swift */; };
+		E02B22E22C503EA400E1F6F3 /* ChatListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02B22E12C503EA400E1F6F3 /* ChatListHeader.swift */; };
 		E03748782C29A49D000DA010 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03748772C29A49D000DA010 /* SettingsItem.swift */; };
 		E037487E2C29B34C000DA010 /* ExpandedUserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037487D2C29B34C000DA010 /* ExpandedUserImage.swift */; };
 		E03748802C29B6CD000DA010 /* ChangeUserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037487F2C29B6CD000DA010 /* ChangeUserImageView.swift */; };
@@ -119,6 +124,11 @@
 		E023D71B2C14F5F500F2C0EA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		E023D71D2C14FD1800F2C0EA /* FormInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInput.swift; sourceTree = "<group>"; };
 		E023D71F2C14FF6400F2C0EA /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
+		E02608CF2C4FD5D700C9FE0D /* ChatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItem.swift; sourceTree = "<group>"; };
+		E02B22DB2C5013E300E1F6F3 /* DummyChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyChat.swift; sourceTree = "<group>"; };
+		E02B22DD2C50147000E1F6F3 /* DummyChatMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyChatMember.swift; sourceTree = "<group>"; };
+		E02B22DF2C5014E000E1F6F3 /* DummyMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyMessage.swift; sourceTree = "<group>"; };
+		E02B22E12C503EA400E1F6F3 /* ChatListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListHeader.swift; sourceTree = "<group>"; };
 		E03748772C29A49D000DA010 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		E037487D2C29B34C000DA010 /* ExpandedUserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedUserImage.swift; sourceTree = "<group>"; };
 		E037487F2C29B6CD000DA010 /* ChangeUserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserImageView.swift; sourceTree = "<group>"; };
@@ -224,6 +234,8 @@
 				E0623BC12C3FEF36008380B5 /* ContactModalItem.swift */,
 				E0DDE6422C408782002E3CA5 /* FloatingActionButton.swift */,
 				E017A1B72C413B130070968F /* EmptyListMessage.swift */,
+				E02608CF2C4FD5D700C9FE0D /* ChatItem.swift */,
+				E02B22E12C503EA400E1F6F3 /* ChatListHeader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -323,6 +335,9 @@
 			children = (
 				E0568CCE2C26EF55003E9245 /* ImagePlaceholder.swift */,
 				E05DE5F62C2EAEC700EDA947 /* DummyUser.swift */,
+				E02B22DB2C5013E300E1F6F3 /* DummyChat.swift */,
+				E02B22DD2C50147000E1F6F3 /* DummyChatMember.swift */,
+				E02B22DF2C5014E000E1F6F3 /* DummyMessage.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -592,6 +607,7 @@
 				E0DBF0752C25B49E0014BDD8 /* LoginViewModel.swift in Sources */,
 				E04B0A932C4F01BE005ED03F /* UpsertEmojiReactionData.swift in Sources */,
 				E037488A2C29D4FC000DA010 /* SettingsInfoType.swift in Sources */,
+				E02B22E02C5014E000E1F6F3 /* DummyMessage.swift in Sources */,
 				E04B0A8C2C4F0085005ED03F /* CreateChatData.swift in Sources */,
 				E013516D2C332962009FC804 /* ContactDataManager.swift in Sources */,
 				E0DFE6B02C22E8A800F78184 /* Endpoints.swift in Sources */,
@@ -601,6 +617,7 @@
 				E0ECB36B2C26116D00D8CEB2 /* FormInputType.swift in Sources */,
 				E023D7202C14FF6400F2C0EA /* PasswordField.swift in Sources */,
 				E0CBB6C72C485796004337ED /* ContactResponse.swift in Sources */,
+				E02608D02C4FD5D700C9FE0D /* ChatItem.swift in Sources */,
 				E0DFE6AE2C22E65300F78184 /* RequestTypes.swift in Sources */,
 				E0ECB3662C26104F00D8CEB2 /* HomeView.swift in Sources */,
 				E037487E2C29B34C000DA010 /* ExpandedUserImage.swift in Sources */,
@@ -614,6 +631,8 @@
 				E0ECB3682C2610F200D8CEB2 /* ChatListView.swift in Sources */,
 				E04B0A8A2C4F002C005ED03F /* Chat.swift in Sources */,
 				E0DBF0732C25AC450014BDD8 /* LoginInfo.swift in Sources */,
+				E02B22DE2C50147000E1F6F3 /* DummyChatMember.swift in Sources */,
+				E02B22E22C503EA400E1F6F3 /* ChatListHeader.swift in Sources */,
 				E01493AD2C15B82F001A3C1C /* LoginView.swift in Sources */,
 				E0FD9DE42C2411D2008B3AC8 /* RegisterInfo.swift in Sources */,
 				E03748842C29C76F000DA010 /* SettingsTextField.swift in Sources */,
@@ -624,6 +643,7 @@
 				E01351732C333206009FC804 /* ContactsViewModel.swift in Sources */,
 				E0CAF99A2C2A097100C02C34 /* UpdateUsernameData.swift in Sources */,
 				E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */,
+				E02B22DC2C5013E300E1F6F3 /* DummyChat.swift in Sources */,
 				E04B0A882C4EFEF6005ED03F /* Message.swift in Sources */,
 				E03748802C29B6CD000DA010 /* ChangeUserImageView.swift in Sources */,
 				E03748942C29E75C000DA010 /* ThemeType.swift in Sources */,
