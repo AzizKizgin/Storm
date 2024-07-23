@@ -7,13 +7,12 @@
 
 import Foundation
    
-struct ChatMember: Decodable {
+struct ChatMember: Decodable, Hashable {
     var user: UserResponse
-    var chatId: Int
+    var chatId: String
     var joinedAt: String
-    var isDeleted: Bool
+    var isDeleted: Bool = false
     var isMuted: Bool
     var isPinned: Bool
     var isArchived: Bool
 }
- 

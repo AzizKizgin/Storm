@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct EmojiReaction: Decodable {
+struct EmojiReaction: Decodable, Hashable {
     var id: Int
     var emoji: String
     var messageId: Int
