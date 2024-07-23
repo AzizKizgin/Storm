@@ -10,46 +10,63 @@ import SwiftUI
 struct ChatListView: View {
     @State var selectedChat: String?
     @State var selectedChats: [String] = []
+    @State var showAddMessage: Bool = false
     var body: some View {
         NavigationStack {
-            List(dummyChatList,id: \.id) { chat in
-                let index = selectedChats.firstIndex(of: chat.id)
-                ChatItem(chat: chat, appUserId: "userId")
-                    .onPress {
-                        withAnimation(.bouncy) {
-                            if let index {
-                                selectedChats.remove(at: index)
+            VStack {
+                if dummyChatList.isEmpty {
+                    EmptyListMessage(message: "No message yet", icon: "text.bubble.fill")
+                }
+                else {
+                    List(dummyChatList,id: \.id) { chat in
+                        let index = selectedChats.firstIndex(of: chat.id)
+                        ChatItem(chat: chat, appUserId: "userId")
+                            .onPress {
+                                withAnimation(.bouncy) {
+                                    if let index {
+                                        selectedChats.remove(at: index)
+                                    }
+                                    else if !selectedChats.isEmpty {
+                                        selectedChats.append(chat.id)
+                                    }
+                                    else {
+                                        selectedChat = chat.id
+                                    }
+                                }
                             }
-                            else if !selectedChats.isEmpty {
-                                selectedChats.append(chat.id)
+                            .onLongPress {
+                                withAnimation(.bouncy) {
+                                    selectedChats.append(chat.id)
+                                }
                             }
-                            else {
-                                selectedChat = chat.id
-                            }
-                        }
+                            .isSelected(index != nil)
+                            .id(chat.id)
+                            .listRowInsets(EdgeInsets(top: 5, leading: 15, bottom: 5, trailing: 15))
+                            .listRowBackground(selectedChats.contains(chat.id) ? Color.accent.opacity(0.5) : Color.main)
+                            .listRowSeparator(.hidden)
                     }
-                    .onLongPress {
-                        withAnimation(.bouncy) {
-                            selectedChats.append(chat.id)
-                        }
+                    .refreshable {
+                        
                     }
-                    .isSelected(index != nil)
-                    .id(chat.id)
-                    .listRowInsets(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
-                    .listRowBackground(selectedChats.contains(chat.id) ? Color.accent.opacity(0.5) : Color.main)
-                    .listRowSeparator(.hidden)
+                    .listStyle(.inset)
+                    .scrollContentBackground(.hidden)
+                    .navigationDestination(item: $selectedChat){ chat in
+                        Text("\(chat)")
+                    }
+                }
             }
             .safeAreaInset(edge: .top, content: {
                 ChatListHeader(selectedChats: $selectedChats)
                     
             })
-            .refreshable {
-                
+            .navigationDestination(isPresented: $showAddMessage) {
+                Text("Add message")
             }
-            .listStyle(.inset)
-            .scrollContentBackground(.hidden)
-            .navigationDestination(item: $selectedChat){ chat in
-                Text("\(chat)")
+            .overlay(alignment: .bottomTrailing) {
+                FloatingActionButton(icon: "text.bubble.fill"){
+                    showAddMessage.toggle()
+                }
+                .safeAreaPadding()
             }
             .background(.main)
         }
@@ -57,5 +74,7 @@ struct ChatListView: View {
 }
 
 #Preview {
-    ChatListView()
+    NavigationStack {
+        ChatListView()
+    }
 }
