@@ -6,8 +6,8 @@
 //
 
 import Foundation
-struct Chat: Decodable {
-    var id: Int
+struct Chat: Decodable, Hashable {
+    var id: String
     var members: [ChatMember]
     var messages: [Message]
 }
