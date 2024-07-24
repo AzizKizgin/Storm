@@ -40,10 +40,11 @@
 		E0405FE82C51235A00E9B26B /* SelectContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0405FE72C51235A00E9B26B /* SelectContactItem.swift */; };
 		E0405FEA2C51248D00E9B26B /* SelectContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0405FE92C51248D00E9B26B /* SelectContactView.swift */; };
 		E0405FEC2C51253A00E9B26B /* SelectContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0405FEB2C51253A00E9B26B /* SelectContactViewModel.swift */; };
+		E0405FEE2C5145DF00E9B26B /* ChatDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0405FED2C5145DF00E9B26B /* ChatDataManager.swift */; };
+		E0405FF02C514D5C00E9B26B /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0405FEF2C514D5C00E9B26B /* ChatListViewModel.swift */; };
 		E04B0A862C4EFE33005ED03F /* ChatMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B0A852C4EFE33005ED03F /* ChatMember.swift */; };
 		E04B0A882C4EFEF6005ED03F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B0A872C4EFEF6005ED03F /* Message.swift */; };
 		E04B0A8A2C4F002C005ED03F /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B0A892C4F002C005ED03F /* Chat.swift */; };
-		E04B0A8C2C4F0085005ED03F /* CreateChatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B0A8B2C4F0085005ED03F /* CreateChatData.swift */; };
 		E04B0A8E2C4F00CD005ED03F /* CreateMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B0A8D2C4F00CD005ED03F /* CreateMessageData.swift */; };
 		E04B0A902C4F013E005ED03F /* EmojiReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B0A8F2C4F013E005ED03F /* EmojiReaction.swift */; };
 		E04B0A932C4F01BE005ED03F /* UpsertEmojiReactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B0A922C4F01BE005ED03F /* UpsertEmojiReactionData.swift */; };
@@ -143,10 +144,11 @@
 		E0405FE72C51235A00E9B26B /* SelectContactItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactItem.swift; sourceTree = "<group>"; };
 		E0405FE92C51248D00E9B26B /* SelectContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactView.swift; sourceTree = "<group>"; };
 		E0405FEB2C51253A00E9B26B /* SelectContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactViewModel.swift; sourceTree = "<group>"; };
+		E0405FED2C5145DF00E9B26B /* ChatDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataManager.swift; sourceTree = "<group>"; };
+		E0405FEF2C514D5C00E9B26B /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		E04B0A852C4EFE33005ED03F /* ChatMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMember.swift; sourceTree = "<group>"; };
 		E04B0A872C4EFEF6005ED03F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E04B0A892C4F002C005ED03F /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
-		E04B0A8B2C4F0085005ED03F /* CreateChatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChatData.swift; sourceTree = "<group>"; };
 		E04B0A8D2C4F00CD005ED03F /* CreateMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMessageData.swift; sourceTree = "<group>"; };
 		E04B0A8F2C4F013E005ED03F /* EmojiReaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiReaction.swift; sourceTree = "<group>"; };
 		E04B0A922C4F01BE005ED03F /* UpsertEmojiReactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsertEmojiReactionData.swift; sourceTree = "<group>"; };
@@ -329,7 +331,6 @@
 				E04B0A852C4EFE33005ED03F /* ChatMember.swift */,
 				E04B0A872C4EFEF6005ED03F /* Message.swift */,
 				E04B0A892C4F002C005ED03F /* Chat.swift */,
-				E04B0A8B2C4F0085005ED03F /* CreateChatData.swift */,
 				E04B0A8D2C4F00CD005ED03F /* CreateMessageData.swift */,
 				E04B0A8F2C4F013E005ED03F /* EmojiReaction.swift */,
 				E04B0A922C4F01BE005ED03F /* UpsertEmojiReactionData.swift */,
@@ -424,6 +425,7 @@
 				E01351722C333206009FC804 /* ContactsViewModel.swift */,
 				E0DDE63E2C408367002E3CA5 /* AddContactsViewModel.swift */,
 				E0405FEB2C51253A00E9B26B /* SelectContactViewModel.swift */,
+				E0405FEF2C514D5C00E9B26B /* ChatListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -455,6 +457,7 @@
 				E0FD9DEC2C2423C3008B3AC8 /* UserDataManager.swift */,
 				E0568CD02C26EFEA003E9245 /* ImageManager.swift */,
 				E013516C2C332962009FC804 /* ContactDataManager.swift */,
+				E0405FED2C5145DF00E9B26B /* ChatDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0568CD32C26F40A003E9245 /* SettingsView.swift in Sources */,
+				E0405FEE2C5145DF00E9B26B /* ChatDataManager.swift in Sources */,
 				E0CAF9A02C2A0C6D00C02C34 /* SettingsViewModel.swift in Sources */,
 				E01493B12C15C466001A3C1C /* FirebaseManager.swift in Sources */,
 				E0DFE6AC2C22E60700F78184 /* DataManager.swift in Sources */,
@@ -618,7 +622,6 @@
 				E04B0A932C4F01BE005ED03F /* UpsertEmojiReactionData.swift in Sources */,
 				E037488A2C29D4FC000DA010 /* SettingsInfoType.swift in Sources */,
 				E02B22E02C5014E000E1F6F3 /* DummyMessage.swift in Sources */,
-				E04B0A8C2C4F0085005ED03F /* CreateChatData.swift in Sources */,
 				E013516D2C332962009FC804 /* ContactDataManager.swift in Sources */,
 				E0DFE6B02C22E8A800F78184 /* Endpoints.swift in Sources */,
 				E0568CCC2C26EE4B003E9245 /* UserImage.swift in Sources */,
@@ -637,6 +640,7 @@
 				E0FD9DEF2C24252C008B3AC8 /* SuccessMessage.swift in Sources */,
 				E03C6D522C2B4D5200DD7942 /* DefaultUserImage.swift in Sources */,
 				E0D2AA1C2C13B5610042535A /* StormApp.swift in Sources */,
+				E0405FF02C514D5C00E9B26B /* ChatListViewModel.swift in Sources */,
 				E023D7182C14EC9E00F2C0EA /* TopMessage.swift in Sources */,
 				E0ECB3682C2610F200D8CEB2 /* ChatListView.swift in Sources */,
 				E04B0A8A2C4F002C005ED03F /* Chat.swift in Sources */,
