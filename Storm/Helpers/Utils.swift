@@ -22,4 +22,77 @@ struct Utils {
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         return emailPredicate.evaluate(with: email)
     }
+    
+    // MARK: - Date to Date String  
+    static func dateToString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        return dateFormatter.string(from: date)
+    }
+    
+    // MARK: - Date String to Date
+    static func stringtoDate(dateString: String) -> Date? {
+        guard !dateString.isEmpty else {
+            return nil
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        if let date = dateFormatter.date(from: dateString) {
+            return date
+        }
+        return nil
+    }
+    
+    static func getDateTitle(_ dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+        
+        if let date = dateFormatter.date(from: dateString) {
+            let formatter = DateFormatter()
+            let calendar = Calendar.current
+            if calendar.isDateInToday(date) {
+                return "Today"
+            } else if calendar.isDateInThisYear(date) {
+                formatter.setLocalizedDateFormatFromTemplate("dd MMMM")
+            } else {
+                formatter.setLocalizedDateFormatFromTemplate("dd MMMM yyyy")
+            }
+            
+            return formatter.string(from: date)
+        }
+        return ""
+    }
+    
+    static func getDayDate(_ dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+        if let date = dateFormatter.date(from: dateString) {
+            let formatter = DateFormatter()
+            formatter.setLocalizedDateFormatFromTemplate("dd MMMM")
+            return formatter.string(from: date)
+        }
+        return ""
+    }
+    
+    static func formatDate(_ dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+        
+        if let date = dateFormatter.date(from: dateString) {
+            let formatter = DateFormatter()
+            formatter.setLocalizedDateFormatFromTemplate("HH:mm")
+            return formatter.string(from: date)
+        }
+        return ""
+    }
+    
+}
+
+extension Calendar {
+    private var currentDate: Date { return Date() }
+    
+    func isDateInThisYear(_ date: Date) -> Bool {
+        return isDate(date, equalTo: currentDate, toGranularity: .year)
+    }
+    
 }
