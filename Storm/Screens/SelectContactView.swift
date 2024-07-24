@@ -44,7 +44,6 @@ struct SelectContactView: View {
             }
         }
         .onAppear {
-            print("ssss")
             self.selectContactVM.getContacts()
         }
         .searchable(text: $selectContactVM.searchText)
