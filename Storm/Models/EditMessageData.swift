@@ -6,6 +6,6 @@
 //
 
 import Foundation
-struct EditMessageData {
+struct EditMessageData: Encodable {
     var content: String
 }
