@@ -8,41 +8,39 @@
 import SwiftUI
 
 struct ChatListView: View {
-    @State var selectedChat: String?
-    @State var selectedChats: [String] = []
-    @State var showSelectContact: Bool = false
+    @Bindable private var chatListVM = ChatListViewModel()
     var body: some View {
         NavigationStack {
             VStack {
-                if dummyChatList.isEmpty {
+                if chatListVM.chats.isEmpty {
                     EmptyListMessage(message: "No message yet", icon: "text.bubble.fill")
                 }
                 else {
-                    List(dummyChatList,id: \.id) { chat in
-                        let index = selectedChats.firstIndex(of: chat.id)
+                    List(chatListVM.searchText.isEmpty ? chatListVM.chats : chatListVM.filteredChats,id: \.id) { chat in
+                        let index = chatListVM.selectedChats.firstIndex(of: chat.id)
                         ChatItem(chat: chat, appUserId: "userId")
                             .onPress {
                                 withAnimation(.bouncy) {
                                     if let index {
-                                        selectedChats.remove(at: index)
+                                        chatListVM.selectedChats.remove(at: index)
                                     }
-                                    else if !selectedChats.isEmpty {
-                                        selectedChats.append(chat.id)
+                                    else if !chatListVM.selectedChats.isEmpty {
+                                        chatListVM.selectedChats.append(chat.id)
                                     }
                                     else {
-                                        selectedChat = chat.id
+                                        chatListVM.chatForNavigation = chat.id
                                     }
                                 }
                             }
                             .onLongPress {
                                 withAnimation(.bouncy) {
-                                    selectedChats.append(chat.id)
+                                    chatListVM.selectedChats.append(chat.id)
                                 }
                             }
                             .isSelected(index != nil)
                             .id(chat.id)
                             .listRowInsets(EdgeInsets(top: 5, leading: 15, bottom: 5, trailing: 15))
-                            .listRowBackground(selectedChats.contains(chat.id) ? Color.accent.opacity(0.5) : Color.main)
+                            .listRowBackground(chatListVM.selectedChats.contains(chat.id) ? Color.accent.opacity(0.5) : Color.main)
                             .listRowSeparator(.hidden)
                     }
                     .refreshable {
@@ -50,21 +48,24 @@ struct ChatListView: View {
                     }
                     .listStyle(.inset)
                     .scrollContentBackground(.hidden)
-                    .navigationDestination(item: $selectedChat){ chat in
+                    .navigationDestination(item: $chatListVM.chatForNavigation){ chat in
                         Text("\(chat)")
                     }
                 }
             }
+            .alert(self.chatListVM.errorMessage, isPresented: self.$chatListVM.showError) {
+                Button("Ok") {}
+            }
             .safeAreaInset(edge: .top, content: {
-                ChatListHeader(selectedChats: $selectedChats)
+                ChatListHeader(selectedChats: $chatListVM.selectedChats)
                     
             })
-            .navigationDestination(isPresented: $showSelectContact) {
+            .navigationDestination(isPresented: $chatListVM.showSelectContact) {
                 SelectContactView()
             }
             .overlay(alignment: .bottomTrailing) {
                 FloatingActionButton(icon: "text.bubble.fill"){
-                    showSelectContact.toggle()
+                    chatListVM.showSelectContact.toggle()
                 }
                 .safeAreaPadding()
             }
