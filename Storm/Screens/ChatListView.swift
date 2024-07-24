@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ChatListView: View {
+    @Query private var user: [User]
     @Bindable private var chatListVM = ChatListViewModel()
     var body: some View {
         NavigationStack {
@@ -52,6 +54,10 @@ struct ChatListView: View {
                         Text("\(chat)")
                     }
                 }
+            }
+            .onAppear {
+                chatListVM.appUserId = user.first?.id ?? ""
+                chatListVM.getAllChats()
             }
             .alert(self.chatListVM.errorMessage, isPresented: self.$chatListVM.showError) {
                 Button("Ok") {}
