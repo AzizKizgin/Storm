@@ -10,7 +10,7 @@ import SwiftUI
 struct ChatListView: View {
     @State var selectedChat: String?
     @State var selectedChats: [String] = []
-    @State var showAddMessage: Bool = false
+    @State var showSelectContact: Bool = false
     var body: some View {
         NavigationStack {
             VStack {
@@ -59,12 +59,12 @@ struct ChatListView: View {
                 ChatListHeader(selectedChats: $selectedChats)
                     
             })
-            .navigationDestination(isPresented: $showAddMessage) {
-                Text("Add message")
+            .navigationDestination(isPresented: $showSelectContact) {
+                SelectContactView()
             }
             .overlay(alignment: .bottomTrailing) {
                 FloatingActionButton(icon: "text.bubble.fill"){
-                    showAddMessage.toggle()
+                    showSelectContact.toggle()
                 }
                 .safeAreaPadding()
             }
