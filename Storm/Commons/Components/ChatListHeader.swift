@@ -76,7 +76,7 @@ struct ChatListHeader: View {
         }
         .padding(.bottom)
         .padding(.horizontal)
-        .background(.main)
+        .background(.lightMain)
     }
 }
 
