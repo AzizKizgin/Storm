@@ -11,6 +11,7 @@ enum Endpoints {
     private static let baseURL = "http://localhost:5117/api"
     private static let userURL = "\(baseURL)/user"
     private static let contactURL = "\(baseURL)/contact"
+    private static let chatURL = "\(baseURL)/chat"
     
     // MARK: - User URLs
     public static func getRegisterURL() -> URL {
@@ -95,6 +96,55 @@ enum Endpoints {
     
     public static func removeContact(contactUserId: String) -> URL {
         let urlString = "\(contactURL)/removeByUserId/\(contactUserId)"
+        let url = URL(string: urlString)!
+        return url
+    }
+    
+    // MARK: - Chat URLs
+    public static func getAllChats() -> URL {
+        let urlString = "\(chatURL)/get-all"
+        let url = URL(string: urlString)!
+        return url
+    }
+    
+    public static func getChat(id: String) -> URL {
+        let urlString = "\(chatURL)/get/\(id)"
+        let url = URL(string: urlString)!
+        return url
+    }
+    
+    public static func readChat(id: String) -> URL {
+        let urlString = "\(chatURL)/read/\(id)"
+        let url = URL(string: urlString)!
+        return url
+    }
+    
+    public static func sendMessage() -> URL {
+        let urlString = "\(chatURL)/send"
+        let url = URL(string: urlString)!
+        return url
+    }
+    
+    public static func deleteMessage(id: Int) -> URL {
+        let urlString = "\(chatURL)/delete/\(id)"
+        let url = URL(string: urlString)!
+        return url
+    }
+    
+    public static func editMessage(id: Int) -> URL {
+        let urlString = "\(chatURL)/edit/\(id)"
+        let url = URL(string: urlString)!
+        return url
+    }
+    
+    public static func reactMessage(id: Int) -> URL {
+        let urlString = "\(chatURL)/react/\(id)"
+        let url = URL(string: urlString)!
+        return url
+    }
+    
+    public static func unReactMessage(id: Int) -> URL {
+        let urlString = "\(chatURL)/unreact/\(id)"
         let url = URL(string: urlString)!
         return url
     }
