@@ -22,11 +22,13 @@ struct ExpandedUserImage: View {
             } else {
                 Image(systemName: "person.fill")
                     .resizable()
+                    .padding()
                     .frame(width: size)
                     .frame(height: size)
                     .aspectRatio(contentMode: size != nil ? .fill : .fit)
                     .clipShape(Rectangle())
                     .foregroundStyle(.accent)
+                    .background(.lightMain)
                    
             }
         }
@@ -35,5 +37,5 @@ struct ExpandedUserImage: View {
 }
 
 #Preview {
-    ExpandedUserImage(userImage: userImagePlaceholder3,size: 250)
+    ExpandedUserImage(userImage: "userImagePlaceholder3",size: 250)
 }
