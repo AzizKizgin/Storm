@@ -15,9 +15,21 @@ struct MessageItem: View {
         VStack(alignment: .trailing ,spacing: 0) {
             Text(message.content)
                 .frame(minWidth: 70, alignment: .leading)
-            Text(Utils.formatDate(message.createdAt))
-                .font(.caption)
-                .frame(minWidth: 70, alignment: .trailing)
+            HStack {
+                Text(Utils.getMessageTime(message.createdAt))
+                    .font(.caption)
+                    .frame(minWidth: 70, alignment: .trailing)
+                if message.sender.id == currentUserId {
+                    Image("check")
+                        .renderingMode(.template)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20)
+                        .foregroundStyle(
+                            message.readBy.count == 2 ? .check: .gray
+                        )
+                }
+            }
         }
         .padding(.horizontal,10)
         .padding(.vertical,4)
