@@ -23,7 +23,7 @@ struct ChatView: View {
                                 DateTitle(date: message.createdAt)
                             }
                             else if let index = chat.messages.firstIndex(of: message),
-                                    Utils.getDayDate(chat.messages[index - 1].createdAt) != Utils.getDayDate(message.createdAt)
+                                    Utils.isDatesEqual(chat.messages[index - 1].createdAt,message.createdAt)
                             {
                                 DateTitle(date: message.createdAt)
                             }
