@@ -61,7 +61,7 @@ struct ChatItem: View {
                         .font(.title3)
                         .fontWeight(.semibold)
                         .lineLimit(1)
-                    Text(chat.messages.last?.createdAt ?? "")
+                    Text(Utils.getChatDate(chat.messages.last?.createdAt ?? ""))
                         .font(.caption)
                 }
                 HStack {
@@ -161,7 +161,7 @@ extension ChatItem {
 }
 
 #Preview {
-    ChatItem(chat: dummyChatList[1], appUserId: "userId")
+    ChatItem(chat: dummyChatList[0], appUserId: "userId")
         .onPress {
             print("press")
         }
