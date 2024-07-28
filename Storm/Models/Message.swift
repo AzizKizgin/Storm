@@ -6,12 +6,7 @@
 //
 
 import Foundation
-//public class MessageDto
-//{
-//    public MessageType Type { get; set; }
-//}
-
-struct Message: Decodable, Hashable {
+struct Message: Codable, Hashable {
     var id: Int
     var sender: UserResponse
     var chatId: String?
@@ -22,11 +17,11 @@ struct Message: Decodable, Hashable {
     var media: [String]
     var readBy: [String]
     var reactions: [EmojiReaction]
-    var type: MessageType?
+    var type: Int? = 0
 }
 
 enum MessageType: Decodable {
-    case add, delete, edit, read, reaction
+    case add, delete, edit, reaction
 }
 
 
