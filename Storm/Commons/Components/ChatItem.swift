@@ -11,7 +11,7 @@ struct ChatItem: View {
     @State private var showModal: Bool = false
     @State private var showIcon: Bool = false
     private let chat: Chat
-    private let user: ChatMember
+    private let user: ChatMember?
     let contact: UserResponse
     var onItemPress: () -> Void = {}
     var onLongPress: () -> Void = {}
@@ -20,7 +20,7 @@ struct ChatItem: View {
     init(chat: Chat, appUserId: String) {
         self.chat = chat
         self.contact = chat.members.first{$0.user.id != appUserId}!.user
-        self.user = chat.members.first{$0.user.id == appUserId}!
+        self.user = chat.members.first{$0.user.id == appUserId}
     }
     var body: some View {
         HStack(alignment: .top, spacing: 15) {
@@ -67,7 +67,7 @@ struct ChatItem: View {
                 HStack {
                     if let message = chat.messages.last {
                         HStack(spacing: 3) {
-                            if message.sender.id == user.user.id {
+                            if message.sender.id == user?.user.id {
                                 Image("check")
                                     .renderingMode(.template)
                                     .resizable()
@@ -82,33 +82,34 @@ struct ChatItem: View {
                    
                         }
                         .opacity(
-                            !message.readBy.contains(user.user.id)
+                            !message.readBy.contains(user?.user.id ?? "")
                             ? 1: 0.6)
                         .lineLimit(1)
                     }
                     Spacer()
-                    HStack {
-                        let unReadMessageCount = chat.messages.filter{!$0.readBy.contains(user.user.id)}.count
-                        if unReadMessageCount > 0 {
-                            Text("\(unReadMessageCount)")
-                                .foregroundStyle(.white)
-                                .frame(width: 20)
-                                .bold()
-                                .background {
-                                    Circle()
-                                        .fill(.accent)
-                                }
-                        }
-                        if user.isMuted {
-                            Image(systemName: "bell.slash.fill")
-                                .foregroundStyle(.accent)
-                        }
-                        if user.isPinned {
-                            Image(systemName: "pin.fill")
-                                .foregroundStyle(.accent)
+                    if let user {
+                        HStack {
+                            let unReadMessageCount = chat.messages.filter{!$0.readBy.contains(user.user.id)}.count
+                            if unReadMessageCount > 0 {
+                                Text("\(unReadMessageCount)")
+                                    .foregroundStyle(.white)
+                                    .frame(width: 20)
+                                    .bold()
+                                    .background {
+                                        Circle()
+                                            .fill(.accent)
+                                    }
+                            }
+                            if user.isMuted {
+                                Image(systemName: "bell.slash.fill")
+                                    .foregroundStyle(.accent)
+                            }
+                            if user.isPinned {
+                                Image(systemName: "pin.fill")
+                                    .foregroundStyle(.accent)
+                            }
                         }
                     }
-                    
                 }
             }
             
