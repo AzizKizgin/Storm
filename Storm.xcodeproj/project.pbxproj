@@ -17,6 +17,8 @@
 		E01493B12C15C466001A3C1C /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493B02C15C466001A3C1C /* FirebaseManager.swift */; };
 		E01493B52C15D1EB001A3C1C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01493B42C15D1EB001A3C1C /* RegisterViewModel.swift */; };
 		E017A1B82C413B130070968F /* EmptyListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E017A1B72C413B130070968F /* EmptyListMessage.swift */; };
+		E023CA032C52F4200061AF0E /* SignalRClient in Frameworks */ = {isa = PBXBuildFile; productRef = E023CA022C52F4200061AF0E /* SignalRClient */; };
+		E023CA052C52F4350061AF0E /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023CA042C52F4350061AF0E /* ChatViewModel.swift */; };
 		E023D7102C14D00100F2C0EA /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D70F2C14D00100F2C0EA /* StartView.swift */; };
 		E023D7152C14E7FC00F2C0EA /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D7142C14E7FC00F2C0EA /* FormButton.swift */; };
 		E023D7182C14EC9E00F2C0EA /* TopMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E023D7172C14EC9E00F2C0EA /* TopMessage.swift */; };
@@ -125,6 +127,7 @@
 		E01493B02C15C466001A3C1C /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		E01493B42C15D1EB001A3C1C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		E017A1B72C413B130070968F /* EmptyListMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListMessage.swift; sourceTree = "<group>"; };
+		E023CA042C52F4350061AF0E /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		E023D70F2C14D00100F2C0EA /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		E023D7142C14E7FC00F2C0EA /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
 		E023D7172C14EC9E00F2C0EA /* TopMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMessage.swift; sourceTree = "<group>"; };
@@ -213,6 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E023CA032C52F4200061AF0E /* SignalRClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +442,7 @@
 				E0DDE63E2C408367002E3CA5 /* AddContactsViewModel.swift */,
 				E0405FEB2C51253A00E9B26B /* SelectContactViewModel.swift */,
 				E0405FEF2C514D5C00E9B26B /* ChatListViewModel.swift */,
+				E023CA042C52F4350061AF0E /* ChatViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -491,6 +496,7 @@
 			);
 			name = Storm;
 			packageProductDependencies = (
+				E023CA022C52F4200061AF0E /* SignalRClient */,
 			);
 			productName = Storm;
 			productReference = E0D2AA182C13B5610042535A /* Storm.app */;
@@ -566,6 +572,7 @@
 			mainGroup = E0D2AA0F2C13B5610042535A;
 			packageReferences = (
 				E0D2AA472C13B6C30042535A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E023CA012C52F41F0061AF0E /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */,
 			);
 			productRefGroup = E0D2AA192C13B5610042535A /* Products */;
 			projectDirPath = "";
@@ -672,6 +679,7 @@
 				E03748902C29E70F000DA010 /* ThemePicker.swift in Sources */,
 				E01351732C333206009FC804 /* ContactsViewModel.swift in Sources */,
 				E0CAF99A2C2A097100C02C34 /* UpdateUsernameData.swift in Sources */,
+				E023CA052C52F4350061AF0E /* ChatViewModel.swift in Sources */,
 				E01493AF2C15BDBB001A3C1C /* ForgotPasswordView.swift in Sources */,
 				E02B22DC2C5013E300E1F6F3 /* DummyChat.swift in Sources */,
 				E04B0A882C4EFEF6005ED03F /* Message.swift in Sources */,
@@ -1023,6 +1031,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E023CA012C52F41F0061AF0E /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/moozzyk/SignalR-Client-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 		E0D2AA472C13B6C30042535A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1032,6 +1048,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E023CA022C52F4200061AF0E /* SignalRClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E023CA012C52F41F0061AF0E /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */;
+			productName = SignalRClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E0D2AA102C13B5610042535A /* Project object */;
 }
