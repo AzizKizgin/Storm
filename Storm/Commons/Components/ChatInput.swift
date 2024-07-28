@@ -23,15 +23,16 @@ struct ChatInput: View {
                 
             Button {
                 onSubmit()
+                text = ""
             } label: {
                 Image(systemName: "paperplane.fill")
                     .rotationEffect(.degrees(45))
-                    .frame(width: 40, height: 40)
-                    .foregroundColor(Color.accent)
-                    .background(Color.lightMain)
-                    .clipShape(Circle())
+                    .padding(4)
             }
-
+            .buttonStyle(BorderedProminentButtonStyle())
+            .clipShape(Circle())
+            .tint(.accent)
+            .disabled(text.isEmpty)
         }
         .padding(.horizontal)
     }
