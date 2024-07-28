@@ -124,10 +124,10 @@ import SignalRClient
                     print(error.localizedDescription)
                     self.setError(error.localizedDescription)
                 }
-            }, receiveValue: { [self] result in
+            }, receiveValue: { result in
                 self.contact = result.members.first{$0.user.id != self.appUserId}?.user
                 self.messages = result.messages
-                self.chatId = chatId
+                self.chatId = result.id
             })
     }
     
@@ -163,6 +163,7 @@ import SignalRClient
             receiverId: contact?.id,
             chatId: chatId
         )
+        print(data)
         cancellable = ChatDataManager.shared.sendMessage(data: data)
             .sink(receiveCompletion: { completionResult in
                 self.isLoading = false
