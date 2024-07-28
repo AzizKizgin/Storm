@@ -45,7 +45,7 @@ struct Utils {
     
     static func getDateTitle(_ dateString: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
         
         if let date = dateFormatter.date(from: dateString) {
             let formatter = DateFormatter()
@@ -65,7 +65,26 @@ struct Utils {
     
     static func getChatDate(_ dateString: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
+        if let date = dateFormatter.date(from: dateString) {
+            let formatter = DateFormatter()
+            let calendar = Calendar.current
+            if calendar.isDateInToday(date) {
+                formatter.setLocalizedDateFormatFromTemplate("HH:mm")
+            } else if calendar.isDateInThisYear(date) {
+                formatter.setLocalizedDateFormatFromTemplate("dd MMMM")
+            } else {
+                formatter.setLocalizedDateFormatFromTemplate("dd MMMM yyyy")
+            }
+            
+            return formatter.string(from: date)
+        }
+        return getChatDate2(dateString)
+    }
+    
+    private static func getChatDate2(_ dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZZZZZ"
         if let date = dateFormatter.date(from: dateString) {
             let formatter = DateFormatter()
             let calendar = Calendar.current
@@ -84,7 +103,7 @@ struct Utils {
     
     static func isDatesEqual(_ dateString1: String, _ dateString2: String) -> Bool {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
         if let date1 = dateFormatter.date(from: dateString1), let date2 = dateFormatter.date(from: dateString2){
             let formatter = DateFormatter()
             formatter.setLocalizedDateFormatFromTemplate("dd MMMM")
@@ -95,7 +114,7 @@ struct Utils {
     
     static func getMessageTime(_ dateString: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
         
         if let date = dateFormatter.date(from: dateString) {
             let formatter = DateFormatter()
