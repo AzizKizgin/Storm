@@ -9,10 +9,8 @@ import Foundation
 
 struct CreateMessageData: Encodable {
     var content: String
-    var receiverId: String
-    var chatId: String
-    var groupId: String
+    var receiverId: String?
+    var chatId: String?
+    var groupId: String?
     var media: [String]?
-    var createAt: String
-    var editedAt: String?
 }

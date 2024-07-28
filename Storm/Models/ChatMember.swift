@@ -12,7 +12,7 @@ struct ChatMember: Decodable, Hashable {
     var chatId: String
     var joinedAt: String
     var isDeleted: Bool = false
-    var isMuted: Bool
-    var isPinned: Bool
-    var isArchived: Bool
+    var isMuted: Bool = false
+    var isPinned: Bool = false
+    var isArchived: Bool = false
 }
