@@ -49,7 +49,7 @@ import SignalRClient
     }
 
     private func startConnection() {
-        let url = URL(string: "http://localhost:5117/chatHub")!
+        let url = Endpoints.getWebsocketURL()
         connection = HubConnectionBuilder(url: url)
             .build()
 
@@ -71,15 +71,12 @@ import SignalRClient
         
         connection?.on(method: "RecieveRead", callback: { (userId: String) in
             self.updateReadBy(for: &self.messages, with: userId)
-            print("a")
         })
 
         connection?.start()
     }
 
-    func sendMessageToHub(message: Message, type: MessageType) {
-        var message = message
-        message.type = type.hashValue
+    func sendMessageToHub(message: Message) {
         let data = try! JSONEncoder().encode(message)
         connection?.invoke(method: "SendMessage", chatId, data) { error  in
             if let error = error {
@@ -178,7 +175,7 @@ import SignalRClient
                 }
             }, receiveValue: { result in
                 self.handleMessage(result: result)
-                self.sendMessageToHub(message: result, type: .add)
+                self.sendMessageToHub(message: result)
             })
     }
     
@@ -201,7 +198,7 @@ import SignalRClient
             }, receiveValue: { result in
                 if let index = self.messages.firstIndex(of: result) {
                     self.messages.remove(at: index)
-                    self.sendMessageToHub(message: result, type: .delete)
+                    self.sendMessageToHub(message: result)
                 }
             })
     }
@@ -226,7 +223,7 @@ import SignalRClient
             }, receiveValue: { result in
                 if let index = self.messages.firstIndex(of: result) {
                     self.messages[index] = result
-                    self.sendMessageToHub(message: result, type: .edit)
+                    self.sendMessageToHub(message: result)
                 }
             })
     }
