@@ -12,7 +12,7 @@ import Combine
 @Observable class SelectContactViewModel {
     var searchText: String = ""
     var contacts: [ContactResponse] = []
-    var selectedContact: String?
+    var selectedContact: UserResponse?
     var filteredContacts: [ContactResponse] = []
     var errorMessage: LocalizedStringKey = ""
     var showError: Bool = false

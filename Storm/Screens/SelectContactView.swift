@@ -22,7 +22,7 @@ struct SelectContactView: View {
                 List(selectContactVM.searchText.isEmpty ? selectContactVM.contacts : selectContactVM.filteredContacts, id: \.id){ contact in
                     SelectContactItem(user: contact.contactUser)
                         .onPress {
-                            selectContactVM.selectedContact = contact.contactUser.id
+                            selectContactVM.selectedContact = contact.contactUser
                         }
                         .id(contact.id)
                         .listRowInsets(EdgeInsets(top: 20, leading: 10, bottom: 0, trailing: 10))
@@ -36,7 +36,7 @@ struct SelectContactView: View {
                 .listStyle(.inset)
                 .scrollContentBackground(.hidden)
                 .navigationDestination(item: $selectContactVM.selectedContact){ user in
-                    Text(user)
+                    ChatView(contact: user)
                 }
             }
             else if !self.selectContactVM.isLoading {
