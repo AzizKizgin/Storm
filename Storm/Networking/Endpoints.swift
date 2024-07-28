@@ -13,6 +13,13 @@ enum Endpoints {
     private static let contactURL = "\(baseURL)/contact"
     private static let chatURL = "\(baseURL)/chat"
     
+    public static let websocketURL = "http://localhost:5117/chatHub"
+    
+    public static func getWebsocketURL() -> URL {
+        let url = URL(string: websocketURL)!
+        return url
+    }
+    
     // MARK: - User URLs
     public static func getRegisterURL() -> URL {
         let urlString = "\(userURL)/register"
