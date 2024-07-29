@@ -50,11 +50,11 @@ import Combine
             filteredChats = chats
         }
         else {
-            filteredChats = filteredChats
+            filteredChats = searchChats()
         }
     }
     
-    private func filterChats() -> [Chat] {
+    private func searchChats() -> [Chat] {
         return chats.filter { chat in
             chat.members.contains { (member:ChatMember) in
                 member.user.id != appUserId && member.user.username.lowercased().contains(searchText.lowercased())
