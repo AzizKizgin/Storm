@@ -29,7 +29,7 @@ import Combine
     
     init (){
       
-        socketManager.onMessageReceived = { message in
+        socketManager.onMessageReceivedInChatList = { message in
             self.handleMessage(result: message)
         }
     }
@@ -58,7 +58,8 @@ import Combine
             }, receiveValue: { result in
                 self.chats = result
                 Task {
-                    let chatIds = result.map { $0.id }
+                    var chatIds = result.map { $0.id }
+                    chatIds.append(self.appUserId)
                     await self.socketManager.joinRooms(chatIds: chatIds)
                 }
             })
@@ -92,7 +93,7 @@ import Combine
                 if result.type == MessageType.delete.rawValue {
                     chats[index].messages.remove(at: messageIndex)
                 }
-                else {
+                else if result.type != MessageType.add.rawValue {
                     chats[index].messages[messageIndex] = result
                 }
             }
@@ -101,7 +102,14 @@ import Combine
             }
         }
         else if let chatId = result.chatId {
-            let newChat = Chat(id: chatId, members: [ChatMember(user: result.sender, chatId: chatId, joinedAt: "")], messages: [result])
+            let newChat = Chat(
+                id: chatId, 
+                members: [
+                    ChatMember(user: result.sender, chatId: chatId, joinedAt: ""),
+                    ChatMember(user: UserResponse(id: appUserId, email: "", username: "", about: "", createdAt: ""), chatId: chatId, joinedAt: "")
+                ],
+                messages: [result]
+            )
             self.chats.append(newChat)
         }
     }
