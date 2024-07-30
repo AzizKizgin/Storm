@@ -1,4 +1,4 @@
-# Roommate
+# Storm
 
 Storm is a real-time messaging application built using SwiftUI for the frontend and ASP.NET for the backend. Users can send text messages and add contacts.
 
