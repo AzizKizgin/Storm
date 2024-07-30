@@ -63,6 +63,7 @@
 		E05CC6802C24C2A5009241C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CC67F2C24C2A5009241C8 /* User.swift */; };
 		E05DE5F72C2EAEC700EDA947 /* DummyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DE5F62C2EAEC700EDA947 /* DummyUser.swift */; };
 		E0623BC22C3FEF36008380B5 /* ContactModalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0623BC12C3FEF36008380B5 /* ContactModalItem.swift */; };
+		E077D1392C59612200DAC2BD /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E077D1382C59612200DAC2BD /* SplashScreen.swift */; };
 		E0802F102C3ED39500A69EA5 /* ContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0802F0F2C3ED39500A69EA5 /* ContactItem.swift */; };
 		E0CAF99A2C2A097100C02C34 /* UpdateUsernameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF9992C2A097100C02C34 /* UpdateUsernameData.swift */; };
 		E0CAF99C2C2A0A8300C02C34 /* UpdateUserAboutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */; };
@@ -173,6 +174,7 @@
 		E05CC67F2C24C2A5009241C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E05DE5F62C2EAEC700EDA947 /* DummyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyUser.swift; sourceTree = "<group>"; };
 		E0623BC12C3FEF36008380B5 /* ContactModalItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModalItem.swift; sourceTree = "<group>"; };
+		E077D1382C59612200DAC2BD /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		E0802F0F2C3ED39500A69EA5 /* ContactItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
 		E0CAF9992C2A097100C02C34 /* UpdateUsernameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUsernameData.swift; sourceTree = "<group>"; };
 		E0CAF99B2C2A0A8300C02C34 /* UpdateUserAboutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserAboutData.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				E0DDE63C2C408346002E3CA5 /* AddContactsView.swift */,
 				E0405FE92C51248D00E9B26B /* SelectContactView.swift */,
 				E0405FF12C51599E00E9B26B /* ChatView.swift */,
+				E077D1382C59612200DAC2BD /* SplashScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				E0568CCF2C26EF55003E9245 /* ImagePlaceholder.swift in Sources */,
 				E05687C42C58403300B23CFB /* SocketManager.swift in Sources */,
 				E04B0A862C4EFE33005ED03F /* ChatMember.swift in Sources */,
+				E077D1392C59612200DAC2BD /* SplashScreen.swift in Sources */,
 				E03748902C29E70F000DA010 /* ThemePicker.swift in Sources */,
 				E01351732C333206009FC804 /* ContactsViewModel.swift in Sources */,
 				E0CAF99A2C2A097100C02C34 /* UpdateUsernameData.swift in Sources */,

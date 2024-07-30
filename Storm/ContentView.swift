@@ -10,12 +10,28 @@ import SwiftData
 
 struct ContentView: View {
     @Query private var user: [User]
+    @State private var showSplash: Bool = true
+    @AppStorage("isDark") private var isDark: Bool = false
     var body: some View {
-        if !user.isEmpty {
-            HomeView()
+        Group {
+            if showSplash {
+                SplashScreen()
+                    .transition(.scale)
+            }
+            else if !user.isEmpty {
+                HomeView()
+            }
+            else {
+                StartView()
+            }
         }
-        else {
-            StartView()
+        .preferredColorScheme(isDark ? .dark: .light)
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                withAnimation(.default) {
+                    showSplash.toggle()
+                }
+            }
         }
     }
 }
