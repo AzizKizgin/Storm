@@ -20,6 +20,8 @@ class SettingsViewModel {
     
     private var cancellable: AnyCancellable?
     
+    private var socketManager = SocketManager.shared
+    
     deinit {
         cancellable?.cancel()
      }
@@ -100,6 +102,7 @@ class SettingsViewModel {
                 case .finished:
                     DispatchQueue.main.async {
                         completion(true)
+                        self.socketManager.closeConnection()
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {

@@ -121,4 +121,8 @@ class SocketManager {
             }
         }
     }
+    
+    func closeConnection() {
+        self.connection?.stop()
+    }
 }
