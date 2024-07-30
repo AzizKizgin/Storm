@@ -25,13 +25,13 @@ class SocketManager {
         connection = HubConnectionBuilder(url: url)
             .build()
 
-        self.recieveMessages()
-        self.recieveReads()
+        self.receiveMessages()
+        self.receiveReads()
 
         connection?.start()
     }
     
-    private func recieveMessages() {
+    private func receiveMessages() {
         connection?.on(method: "ReceiveMessage", callback: { (message: String) in
             if let decodedData = Data(base64Encoded: message),
                let jsonString = String(data: decodedData, encoding: .utf8),
@@ -48,8 +48,8 @@ class SocketManager {
         })
     }
     
-    private func recieveReads() {
-        connection?.on(method: "RecieveRead", callback: { (userId: String) in
+    private func receiveReads() {
+        connection?.on(method: "ReceiveRead", callback: { (userId: String) in
             self.onReadReceived?(userId)
         })
     }
