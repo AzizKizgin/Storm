@@ -21,7 +21,7 @@ struct Message: Codable, Hashable {
 }
 
 enum MessageType: Int {
-    case add, delete, edit, reaction
+    case add = 0, delete, edit, reaction
 }
 
 
