@@ -49,11 +49,22 @@ import SignalRClient
         self.appUserId = appUserId
         Task {
             await self.getChat()
+            if self.messages.isEmpty {
+                var ids: [String] = []
+                if let contactId = contact?.id {
+                    ids.append(contactId)
+                }
+                if let chatId {
+                    ids.append(chatId)
+                }
+                await self.socketManager.joinRooms(chatIds: ids)
+            }
         }
     }
 
     func sendMessageToHub(message: Message) {
-        socketManager.sendMessageToHub(message: message, chatId: chatId)
+            socketManager.sendMessageToHub(message: message, chatId: contact?.id)
+            socketManager.sendMessageToHub(message: message, chatId: chatId)
     }
     
     func sendReadInfoToHub() {
@@ -79,6 +90,7 @@ import SignalRClient
                 self.contact = result.members.first{$0.user.id != self.appUserId}?.user
                 self.messages = result.messages
                 self.chatId = result.id
+         
             })
     }
     

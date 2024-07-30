@@ -44,10 +44,14 @@ import Combine
 
     
     func closeConnection() {
-        Task {
+        if cancellable != nil {
             cancellable?.cancel()
-            let chatIds = self.chats.map { $0.id }
-            await self.socketManager.leaveRooms(chatIds: chatIds)
+        }
+        Task {
+            if !chats.isEmpty {
+                let chatIds = self.chats.map { $0.id }
+                await self.socketManager.leaveRooms(chatIds: chatIds)
+            }
         }
     }
     
