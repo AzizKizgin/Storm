@@ -57,9 +57,13 @@ struct ChatListView: View {
             }
             .onAppear {
                 Task {
+                    chatListVM.onAppear()
                     chatListVM.appUserId = user.first?.id ?? ""
                     await chatListVM.getAllChats()
                 }
+            }
+            .onDisappear {
+                chatListVM.disAppear()
             }
             .alert(self.chatListVM.errorMessage, isPresented: self.$chatListVM.showError) {
                 Button("Ok") {}

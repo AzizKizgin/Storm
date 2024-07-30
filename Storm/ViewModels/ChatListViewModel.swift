@@ -27,11 +27,19 @@ import Combine
     @ObservationIgnored
     private var socketManager = SocketManager.shared
     
-    init (){
-      
+    deinit {
+        cancellable?.cancel()
+        closeConnection()
+    }
+    
+    func onAppear() {
         socketManager.onMessageReceivedInChatList = { message in
             self.handleMessage(result: message)
         }
+    }
+    
+    func disAppear() {
+        socketManager.onMessageReceivedInChatList = nil
     }
 
     
