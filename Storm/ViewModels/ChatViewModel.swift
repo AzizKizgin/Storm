@@ -27,86 +27,37 @@ import SignalRClient
     @ObservationIgnored
     private var cancellable: AnyCancellable?
     @ObservationIgnored
-    private var connection: HubConnection?
+    private var socketManager = SocketManager.shared
     
     deinit {
         cancellable?.cancel()
-        self.leaveRoom()
-    }
-  
-
-    init() {
-        self.startConnection()
-       
     }
     
-    func onAppear(contact: UserResponse?, chatId: String?, appUserId: String?) async {
+    init (){
+        socketManager.onMessageReceived = { message in
+            self.handleMessage(result: message)
+        }
+        
+        socketManager.onReadReceived = { userId in
+            self.updateReadBy(for: &self.messages, with: userId)
+        }
+    }
+    
+    func onAppear(contact: UserResponse?, chatId: String?, appUserId: String?)  {
         self.contact = contact
         self.chatId = chatId
         self.appUserId = appUserId
-        await self.getChat()
-        self.joinRoom()
-    }
-
-    private func startConnection() {
-        let url = Endpoints.getWebsocketURL()
-        connection = HubConnectionBuilder(url: url)
-            .build()
-
-        connection?.on(method: "ReceiveMessage", callback: { (message: String) in
-            if let decodedData = Data(base64Encoded: message),
-               let jsonString = String(data: decodedData, encoding: .utf8),
-               let jsonData = jsonString.data(using: .utf8) {
-                do {
-                    let message = try JSONDecoder().decode(Message.self, from: jsonData)
-                    self.handleMessage(result: message)
-                   
-                } catch {
-                    print("Failed to decode JSON: \(error)")
-                }
-            } else {
-                print("Failed to decode Base64 string.")
-            }
-        })
-        
-        connection?.on(method: "RecieveRead", callback: { (userId: String) in
-            self.updateReadBy(for: &self.messages, with: userId)
-        })
-
-        connection?.start()
+        Task {
+            await self.getChat()
+        }
     }
 
     func sendMessageToHub(message: Message) {
-        let data = try! JSONEncoder().encode(message)
-        connection?.invoke(method: "SendMessage", chatId, data) { error  in
-            if let error = error {
-                print("Error sending message: \(error)")
-            }
-        }
+        socketManager.sendMessageToHub(message: message, chatId: chatId)
     }
     
     func sendReadInfoToHub() {
-        connection?.invoke(method: "ReadMessage", chatId ,appUserId ){ error in
-            if let error = error {
-                print("Error reading message: \(error)")
-            }
-        }
-    }
-
-    func joinRoom() {
-        connection?.invoke(method: "JoinRoom", chatId) { error in
-            if let error = error {
-                print("Error joining room: \(error)")
-            }
-        }
-    }
-
-    func leaveRoom() {
-        connection?.invoke(method: "LeaveRoom", chatId) { error in
-            if let error = error {
-                print("Error leaving room: \(error)")
-            }
-        }
+        socketManager.sendReadInfoToHub(chatId: chatId, userId: appUserId)
     }
     
     func getChat() async {
@@ -156,14 +107,12 @@ import SignalRClient
         guard !content.isEmpty else {
             return
         }
-        
         self.isLoading = true
         let data = CreateMessageData(
             content: content,
             receiverId: contact?.id,
             chatId: chatId
         )
-        print(data)
         cancellable = ChatDataManager.shared.sendMessage(data: data)
             .sink(receiveCompletion: { completionResult in
                 self.isLoading = false
@@ -252,11 +201,11 @@ import SignalRClient
     private func handleMessage(result: Message) {
         if let index = self.messages.firstIndex(where: {$0.id == result.id}) {
             switch result.type {
-            case MessageType.delete.hashValue:
+            case MessageType.delete.rawValue:
                 self.messages.remove(at: index)
-            case MessageType.edit.hashValue:
+            case MessageType.edit.rawValue:
                 self.messages[index] = result
-            case MessageType.reaction.hashValue:
+            case MessageType.reaction.rawValue:
                 self.messages[index] = result
             default:
                 self.messages[index] = result

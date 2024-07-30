@@ -20,7 +20,7 @@ struct Message: Codable, Hashable {
     var type: Int? = 0
 }
 
-enum MessageType: Decodable {
+enum MessageType: Int {
     case add, delete, edit, reaction
 }
 

@@ -58,9 +58,7 @@ struct ChatView: View {
             }
         }
         .onAppear {
-            Task {
-                await chatVM.onAppear(contact: contact, chatId: chatId, appUserId: user.first?.id)
-            }
+            chatVM.onAppear(contact: contact, chatId: chatId, appUserId: user.first?.id)
         }
         .background(.main)
         .safeAreaInset(edge: .top) {

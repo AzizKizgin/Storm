@@ -20,7 +20,7 @@ struct ChatListView: View {
                 else {
                     List(chatListVM.searchText.isEmpty ? chatListVM.chats : chatListVM.filteredChats,id: \.id) { chat in
                         let index = chatListVM.selectedChats.firstIndex(of: chat.id)
-                        ChatItem(chat: chat, appUserId: "userId")
+                        ChatItem(chat: chat, appUserId: user.first?.id ?? "")
                             .onPress {
                                 withAnimation(.bouncy) {
                                     if let index {
@@ -50,14 +50,16 @@ struct ChatListView: View {
                     }
                     .listStyle(.inset)
                     .scrollContentBackground(.hidden)
-                    .navigationDestination(item: $chatListVM.chatForNavigation){ chat in
-                        Text("\(chat)")
+                    .navigationDestination(item: $chatListVM.chatForNavigation){ chatId in
+                        ChatView(chatId: chatId)
                     }
                 }
             }
             .onAppear {
-                chatListVM.appUserId = user.first?.id ?? ""
-                chatListVM.getAllChats()
+                Task {
+                    chatListVM.appUserId = user.first?.id ?? ""
+                    await chatListVM.getAllChats()
+                }
             }
             .alert(self.chatListVM.errorMessage, isPresented: self.$chatListVM.showError) {
                 Button("Ok") {}

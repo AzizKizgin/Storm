@@ -54,6 +54,7 @@
 		E04B0A902C4F013E005ED03F /* EmojiReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B0A8F2C4F013E005ED03F /* EmojiReaction.swift */; };
 		E04B0A932C4F01BE005ED03F /* UpsertEmojiReactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B0A922C4F01BE005ED03F /* UpsertEmojiReactionData.swift */; };
 		E04B0A952C4F0206005ED03F /* EditMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B0A942C4F0206005ED03F /* EditMessageData.swift */; };
+		E05687C42C58403300B23CFB /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05687C32C58403300B23CFB /* SocketManager.swift */; };
 		E0568CCC2C26EE4B003E9245 /* UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0568CCB2C26EE4B003E9245 /* UserImage.swift */; };
 		E0568CCF2C26EF55003E9245 /* ImagePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0568CCE2C26EF55003E9245 /* ImagePlaceholder.swift */; };
 		E0568CD12C26EFEA003E9245 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0568CD02C26EFEA003E9245 /* ImageManager.swift */; };
@@ -163,6 +164,7 @@
 		E04B0A8F2C4F013E005ED03F /* EmojiReaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiReaction.swift; sourceTree = "<group>"; };
 		E04B0A922C4F01BE005ED03F /* UpsertEmojiReactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpsertEmojiReactionData.swift; sourceTree = "<group>"; };
 		E04B0A942C4F0206005ED03F /* EditMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMessageData.swift; sourceTree = "<group>"; };
+		E05687C32C58403300B23CFB /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		E0568CCB2C26EE4B003E9245 /* UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImage.swift; sourceTree = "<group>"; };
 		E0568CCE2C26EF55003E9245 /* ImagePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceholder.swift; sourceTree = "<group>"; };
 		E0568CD02C26EFEA003E9245 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				E0568CD02C26EFEA003E9245 /* ImageManager.swift */,
 				E013516C2C332962009FC804 /* ContactDataManager.swift */,
 				E0405FED2C5145DF00E9B26B /* ChatDataManager.swift */,
+				E05687C32C58403300B23CFB /* SocketManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				E03748842C29C76F000DA010 /* SettingsTextField.swift in Sources */,
 				E023D71E2C14FD1800F2C0EA /* FormInput.swift in Sources */,
 				E0568CCF2C26EF55003E9245 /* ImagePlaceholder.swift in Sources */,
+				E05687C42C58403300B23CFB /* SocketManager.swift in Sources */,
 				E04B0A862C4EFE33005ED03F /* ChatMember.swift in Sources */,
 				E03748902C29E70F000DA010 /* ThemePicker.swift in Sources */,
 				E01351732C333206009FC804 /* ContactsViewModel.swift in Sources */,

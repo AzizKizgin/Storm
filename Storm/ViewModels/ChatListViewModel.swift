@@ -24,11 +24,26 @@ import Combine
     @ObservationIgnored
     private var cancellable: AnyCancellable?
     
-    deinit {
-        cancellable?.cancel()
-     }
+    @ObservationIgnored
+    private var socketManager = SocketManager.shared
     
-    func getAllChats() {
+    init (){
+      
+        socketManager.onMessageReceived = { message in
+            self.handleMessage(result: message)
+        }
+    }
+
+    
+    func closeConnection() {
+        Task {
+            cancellable?.cancel()
+            let chatIds = self.chats.map { $0.id }
+            await self.socketManager.leaveRooms(chatIds: chatIds)
+        }
+    }
+    
+    func getAllChats() async{
         self.isLoading = true
         cancellable = ChatDataManager.shared.getAllChats()
             .sink(receiveCompletion: { completionResult in
@@ -42,6 +57,10 @@ import Combine
                 }
             }, receiveValue: { result in
                 self.chats = result
+                Task {
+                    let chatIds = result.map { $0.id }
+                    await self.socketManager.joinRooms(chatIds: chatIds)
+                }
             })
     }
     
@@ -65,5 +84,25 @@ import Combine
     private func setError(_ error: String) {
         self.errorMessage = LocalizedStringKey(error)
         self.showError = true
+    }
+    
+    private func handleMessage(result: Message) {
+        if let index = self.chats.firstIndex(where: {$0.id == result.chatId}) {
+            if let messageIndex = chats[index].messages.firstIndex(of: result) {
+                if result.type == MessageType.delete.rawValue {
+                    chats[index].messages.remove(at: messageIndex)
+                }
+                else {
+                    chats[index].messages[messageIndex] = result
+                }
+            }
+            else if result.type == MessageType.add.rawValue {
+                chats[index].messages.append(result)
+            }
+        }
+        else if let chatId = result.chatId {
+            let newChat = Chat(id: chatId, members: [ChatMember(user: result.sender, chatId: chatId, joinedAt: "")], messages: [result])
+            self.chats.append(newChat)
+        }
     }
 }
