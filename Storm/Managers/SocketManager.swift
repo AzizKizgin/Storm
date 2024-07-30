@@ -83,7 +83,9 @@ class SocketManager {
     
     func sendMessageToHub(message: Message, chatId: String?) {
         do {
-            let encodedMessage = try JSONEncoder().encode(message)
+            var copyMessage = message
+            copyMessage.sender.profilePicture = ""
+            let encodedMessage = try JSONEncoder().encode(copyMessage)
             connection?.invoke(method: "SendMessage", chatId, encodedMessage) { error  in
                 if let error = error {
                     print("Error sending message: \(error)")
