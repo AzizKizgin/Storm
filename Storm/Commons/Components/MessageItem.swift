@@ -18,7 +18,7 @@ struct MessageItem: View {
             }
             VStack(alignment: .trailing ,spacing: 0) {
                 Text(message.content)
-                    .frame(minWidth: 50)
+                    .frame(minWidth: 50, alignment: .leading)
             }
             .padding(.horizontal,10)
             .padding(.vertical,6)
