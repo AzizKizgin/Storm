@@ -69,6 +69,10 @@ import SwiftData
             setError("Please agree with terms")
             return false
         }
+        if registerInfo.username.contains(" ") {
+            setError("Username could not contain space")
+            return false
+        }
         return true
     }
     
