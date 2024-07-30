@@ -23,20 +23,7 @@ struct ChatListView: View {
                         ChatItem(chat: chat, appUserId: user.first?.id ?? "")
                             .onPress {
                                 withAnimation(.bouncy) {
-                                    if let index {
-                                        chatListVM.selectedChats.remove(at: index)
-                                    }
-                                    else if !chatListVM.selectedChats.isEmpty {
-                                        chatListVM.selectedChats.append(chat.id)
-                                    }
-                                    else {
-                                        chatListVM.chatForNavigation = chat.id
-                                    }
-                                }
-                            }
-                            .onLongPress {
-                                withAnimation(.bouncy) {
-                                    chatListVM.selectedChats.append(chat.id)
+                                    chatListVM.chatForNavigation = chat.id
                                 }
                             }
                             .isSelected(index != nil)
