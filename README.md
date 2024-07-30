@@ -23,10 +23,12 @@ Storm is a real-time messaging application built using SwiftUI for the frontend 
      <img src="https://github.com/user-attachments/assets/8d4345c9-fe63-4911-9fa7-f5e0e31d5f43" width="400" />
      <img src="https://github.com/user-attachments/assets/17f4f078-c08e-4474-a0a7-3f646f281a66" width="400" /> 
      <img src="https://github.com/user-attachments/assets/a473603b-8a83-464a-8fe0-526d5fbb89d9" width="400" />
+   
  </p>
 <br />
 <br />
 <p float="center">
+  <img src="https://github.com/user-attachments/assets/1a1b6944-7a62-4db1-87b8-707acd1a88b5" width="400" />
   <img src="https://github.com/user-attachments/assets/9281194d-c93f-4c1f-9e48-cae1068e4c40" width="400" />
   <img src="https://github.com/user-attachments/assets/14179ce1-2b57-456a-8ec4-71ac08d33215" width="400" />
   <img src="https://github.com/user-attachments/assets/30750fe7-61f7-44e5-a771-d7815893bc98" width="400" />
