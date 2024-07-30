@@ -42,7 +42,7 @@ struct ContactsView: View {
                     .listStyle(.inset)
                     .scrollContentBackground(.hidden)
                     .navigationDestination(item: $contactsVM.selectedContact){ contact in
-                        Text("\(contact.contactUser.id)")
+                        ChatView(contact: contact.contactUser)
                     }
                 }
                 else if !self.contactsVM.isListLoading {
