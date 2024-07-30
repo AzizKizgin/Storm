@@ -18,11 +18,14 @@ class SocketManager {
     var connection: HubConnection?
     
     var onMessageReceived: ((Message) -> Void)?
+    var onMessageReceivedInChatList: ((Message) -> Void)?
     var onReadReceived: ((String) -> Void)?
+    var onReadReceivedInChatList: ((String) -> Void)?
     
     private func startConnection() {
         let url = Endpoints.getWebsocketURL()
         connection = HubConnectionBuilder(url: url)
+            .withAutoReconnect()
             .build()
 
         self.receiveMessages()
@@ -39,6 +42,7 @@ class SocketManager {
                 do {
                     let message = try JSONDecoder().decode(Message.self, from: jsonData)
                     self.onMessageReceived?(message)
+                    self.onMessageReceivedInChatList?(message)
                 } catch {
                     print("Failed to decode JSON: \(error)")
                 }
@@ -51,6 +55,7 @@ class SocketManager {
     private func receiveReads() {
         connection?.on(method: "ReceiveRead", callback: { (userId: String) in
             self.onReadReceived?(userId)
+            self.onReadReceivedInChatList?(userId)
         })
     }
     
