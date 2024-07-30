@@ -29,7 +29,6 @@ import Combine
     
     deinit {
         cancellable?.cancel()
-        closeConnection()
     }
     
     func onAppear() {
@@ -42,18 +41,6 @@ import Combine
         socketManager.onMessageReceivedInChatList = nil
     }
 
-    
-    func closeConnection() {
-        if cancellable != nil {
-            cancellable?.cancel()
-        }
-        Task {
-            if !chats.isEmpty {
-                let chatIds = self.chats.map { $0.id }
-                await self.socketManager.leaveRooms(chatIds: chatIds)
-            }
-        }
-    }
     
     func getAllChats() async{
         self.isLoading = true
